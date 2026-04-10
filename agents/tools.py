@@ -18,6 +18,8 @@ class TavilySearchError(ResearchToolError):
 
 def _get_client():
     api_key = os.getenv("TAVILY_API_KEY")
+    if api_key is not None:
+        api_key = api_key.strip()
     if not api_key:
         raise ValueError("TAVILY_API_KEY is not set.")
     return TavilyClient(api_key=api_key)

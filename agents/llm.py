@@ -14,6 +14,8 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 def _require_env(name):
     value = os.getenv(name)
+    if value is not None:
+        value = value.strip()
     if not value:
         raise ValueError(f"{name} is not set.")
     return value

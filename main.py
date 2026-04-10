@@ -4,11 +4,14 @@ import os
 import re
 import time
 import traceback
+from pathlib import Path
 from datetime import datetime, timezone
 from uuid import uuid4
 
 from dotenv import load_dotenv
+from openai import AuthenticationError
 from langchain_openai import ChatOpenAI
+import yaml
 
 from agents.crewai_runtime import get_crewai_components
 from agents.tools import build_source_bundle, search_tavily
@@ -42,7 +45,7 @@ class JsonFormatter(logging.Formatter):
                 payload[key] = getattr(record, key)
         if record.exc_info:
             payload["stack_trace"] = self.formatException(record.exc_info)
-        return json.dumps(payload, ensure_ascii=False)
+        return json.dumps(payload, ensure_ascii=False, default=str)
 
 
 def configure_logger():
@@ -116,9 +119,60 @@ class Trace:
 
 def require_env(name):
     value = os.getenv(name)
+    if value is not None:
+        value = value.strip()
     if not value:
         raise ValueError(f"{name} is not set.")
     return value
+
+
+def format_runtime_error(exc):
+    message = str(exc)
+    lowered = message.lower()
+
+    if isinstance(exc, AuthenticationError) or "401" in lowered or "user not found" in lowered:
+        return (
+            "OpenRouter authentication failed. Check `OPENROUTER_API_KEY` in `.env` "
+            "and replace it with a valid active key."
+        )
+
+    return message
+
+
+def log_event(level, message, agent_name, task_name, **kwargs):
+    LOGGER.log(
+        level,
+        message,
+        extra={"agent_name": agent_name, "task_name": task_name, **kwargs},
+    )
+
+
+def build_metrics():
+    return {
+        "total_execution_time": 0.0,
+        "per_agent_execution_time": {},
+        "number_of_tokens": 0,
+        "number_of_steps_executed": 0,
+        "error_count": 0,
+        "hallucination_rate": 0.0,
+        "average_confidence_score": 0.0,
+        "number_of_flagged_outputs": 0,
+        "agent_error_breakdown": {},
+        "confidence_scores": [],
+    }
+
+
+def finalize_metrics(metrics):
+    confidence_scores = metrics.pop("confidence_scores", [])
+    if confidence_scores:
+        metrics["average_confidence_score"] = round(
+            sum(confidence_scores) / len(confidence_scores), 6
+        )
+    if metrics["number_of_steps_executed"]:
+        metrics["hallucination_rate"] = round(
+            metrics["number_of_flagged_outputs"] / metrics["number_of_steps_executed"], 6
+        )
+    return metrics
 
 
 def build_llms():
@@ -271,14 +325,6 @@ def parse_json_block(text):
         raise
 
 
-def log_event(level, message, agent_name, task_name, **kwargs):
-    LOGGER.log(
-        level,
-        message,
-        extra={"agent_name": agent_name, "task_name": task_name, **kwargs},
-    )
-
-
 def execute_agent_step(agent, agent_name, task_name, input_data, trace, metrics):
     start_time = time.perf_counter()
     log_event(
@@ -316,6 +362,7 @@ def execute_agent_step(agent, agent_name, task_name, input_data, trace, metrics)
         )
         return output_data
     except Exception as exc:
+        friendly_error = format_runtime_error(exc)
         end_time = time.perf_counter()
         trace.add_span(
             step_name=task_name,
@@ -324,9 +371,7 @@ def execute_agent_step(agent, agent_name, task_name, input_data, trace, metrics)
             start_time=start_time,
             end_time=end_time,
             status="failed",
-            error=str(exc),
-            hallucination_flag=False,
-            evaluation_score=None,
+            error=friendly_error,
             agent_responsible=agent_name,
         )
         metrics["per_agent_execution_time"][agent_name] = round(end_time - start_time, 6)
@@ -338,11 +383,11 @@ def execute_agent_step(agent, agent_name, task_name, input_data, trace, metrics)
                 "agent_name": agent_name,
                 "task_name": task_name,
                 "input_data": input_data,
-                "error": str(exc),
+                "error": friendly_error,
                 "trace_id": trace.trace_id,
             },
         )
-        raise
+        raise RuntimeError(friendly_error) from exc
 
 
 def infer_agent_responsibility(issue, research_output, analysis_output, summary_output):
@@ -458,6 +503,7 @@ def evaluate_hallucination(
         )
         return evaluation
     except Exception as exc:
+        friendly_error = format_runtime_error(exc)
         end_time = time.perf_counter()
         trace.add_span(
             step_name="Evaluation",
@@ -466,9 +512,7 @@ def evaluate_hallucination(
             start_time=start_time,
             end_time=end_time,
             status="failed",
-            error=str(exc),
-            hallucination_flag=False,
-            evaluation_score=None,
+            error=friendly_error,
             agent_responsible="Evaluation Agent",
         )
         metrics["per_agent_execution_time"]["Evaluation Agent"] = round(end_time - start_time, 6)
@@ -480,11 +524,11 @@ def evaluate_hallucination(
                 "agent_name": "Evaluation Agent",
                 "task_name": "Evaluation",
                 "input_data": input_data,
-                "error": str(exc),
+                "error": friendly_error,
                 "trace_id": trace.trace_id,
             },
         )
-        raise
+        raise RuntimeError(friendly_error) from exc
 
 
 def retry_summary_if_needed(summary_agent, query, analysis_output, evaluation, trace, metrics):
@@ -507,41 +551,10 @@ def retry_summary_if_needed(summary_agent, query, analysis_output, evaluation, t
         trace=trace,
         metrics=metrics,
     )
-    return (
-        "This response may contain uncertain information.\n\n"
-        f"Safer fallback summary:\n{retry_output}"
-    )
+    return "This response may contain uncertain information.\n\n" f"Safer fallback summary:\n{retry_output}"
 
 
-def build_metrics():
-    return {
-        "total_execution_time": 0.0,
-        "per_agent_execution_time": {},
-        "number_of_tokens": 0,
-        "number_of_steps_executed": 0,
-        "error_count": 0,
-        "hallucination_rate": 0.0,
-        "average_confidence_score": 0.0,
-        "number_of_flagged_outputs": 0,
-        "agent_error_breakdown": {},
-        "confidence_scores": [],
-    }
-
-
-def finalize_metrics(metrics):
-    confidence_scores = metrics.pop("confidence_scores", [])
-    if confidence_scores:
-        metrics["average_confidence_score"] = round(
-            sum(confidence_scores) / len(confidence_scores), 6
-        )
-    if metrics["number_of_steps_executed"]:
-        metrics["hallucination_rate"] = round(
-            metrics["number_of_flagged_outputs"] / metrics["number_of_steps_executed"], 6
-        )
-    return metrics
-
-
-def run_system(query):
+def run_research_system(query):
     total_start = time.perf_counter()
     trace = Trace()
     metrics = build_metrics()
@@ -550,12 +563,7 @@ def run_system(query):
 
     try:
         _, crewai_llm = build_llms()
-        (
-            research_agent,
-            analysis_agent,
-            summary_agent,
-            evaluation_agent,
-        ) = create_agents(crewai_llm)
+        research_agent, analysis_agent, summary_agent, evaluation_agent = create_agents(crewai_llm)
 
         results = search_tavily(query)
         source_bundle = build_source_bundle(results)
@@ -570,11 +578,7 @@ def run_system(query):
             metrics=metrics,
         )
 
-        step_inputs = create_step_inputs(
-            query,
-            source_bundle,
-            research_output=research_output,
-        )
+        step_inputs = create_step_inputs(query, source_bundle, research_output=research_output)
         analysis_output = execute_agent_step(
             analysis_agent,
             agent_name="Analysis Agent",
@@ -635,19 +639,20 @@ def run_system(query):
             final_result = summary_output
     except Exception as exc:
         metrics["error_count"] += 1
+        friendly_error = format_runtime_error(exc)
         LOGGER.exception(
             "system_execution_failed",
             extra={
                 "agent_name": "System",
                 "task_name": "Run",
                 "input_data": query,
-                "error": str(exc),
+                "error": friendly_error,
                 "trace_id": trace.trace_id,
             },
         )
         final_result = {
             "status": "failed",
-            "error": str(exc),
+            "error": friendly_error,
             "stack_trace": traceback.format_exc(),
         }
         hallucination_report = {
@@ -665,12 +670,100 @@ def run_system(query):
     return final_result, hallucination_report, trace, metrics
 
 
-def main():
-    query = input("Enter your query: ").strip()
+def _prompt_with_default(prompt: str, env_name: str | None = None) -> str:
+    default_value = os.getenv(env_name, "").strip() if env_name else ""
+    suffix = f" [{default_value}]" if default_value else ""
+    value = input(f"{prompt}{suffix}: ").strip()
+    if value:
+        return value
+    if default_value:
+        return default_value
+    raise ValueError(f"{prompt} is required.")
+
+
+def _load_datafetch_config(config_path: str = "datafetch.yaml") -> dict:
+    path = Path(config_path)
+    if not path.exists():
+        return {}
+
+    with path.open("r", encoding="utf-8") as config_file:
+        data = yaml.safe_load(config_file) or {}
+
+    if not isinstance(data, dict):
+        raise ValueError("`datafetch.yaml` must contain a top-level mapping.")
+
+    return data
+
+
+def _get_runtime_setting(config: dict, key: str, env_name: str | None = None, prompt: str | None = None) -> str:
+    value = config.get(key)
+    if isinstance(value, str) and value.strip():
+        return value.strip()
+
+    if env_name:
+        env_value = os.getenv(env_name, "").strip()
+        if env_value:
+            return env_value
+
+    if prompt:
+        return _prompt_with_default(prompt, env_name)
+
+    raise ValueError(f"{key} is required.")
+
+
+def _apply_runtime_env(config: dict) -> None:
+    google_service_account_file = config.get("google_service_account_file")
+    if isinstance(google_service_account_file, str) and google_service_account_file.strip():
+        os.environ["GOOGLE_SERVICE_ACCOUNT_FILE"] = google_service_account_file.strip()
+
+
+def run_business_mode():
+    from agents.llm import get_llm
+    from db import connect_db
+    from interactive_query import ask_followup_questions, generate_insight
+    from pipeline_runner import run_pipeline
+    from query_engine import get_performance_data
+
+    config = _load_datafetch_config()
+    _apply_runtime_env(config)
+    sheet_url = _get_runtime_setting(
+        config,
+        "google_sheet_url",
+        "GOOGLE_SHEET_URL",
+        "Enter Google Sheet URL",
+    )
+    db_connection_string = _get_runtime_setting(
+        config,
+        "neon_database_url",
+        "NEON_DATABASE_URL",
+        "Enter Neon PostgreSQL connection string",
+    )
+
+    conn = connect_db(db_connection_string)
+    try:
+        pipeline_result = run_pipeline(sheet_url, conn)
+        print(json.dumps(pipeline_result, indent=2, default=str))
+
+        user_query = input("Ask your business question: ").strip()
+        if not user_query:
+            raise ValueError("A user query is required.")
+
+        user_answers = ask_followup_questions(user_query)
+        days = int(user_answers.get("days") or os.getenv("PERFORMANCE_LOOKBACK_DAYS", "30"))
+        metrics = get_performance_data(conn, days)
+        llm = get_llm()
+        insight = generate_insight(metrics, user_answers, llm)
+        print(insight)
+    finally:
+        conn.close()
+
+
+def run_research_mode():
+    query = input("Enter your research query: ").strip()
     if not query:
         raise ValueError("A query is required.")
 
-    final_result, hallucination_report, trace, metrics = run_system(query)
+    final_result, hallucination_report, trace, metrics = run_research_system(query)
     final_payload = {
         "final_answer": final_result,
         "hallucination_report": hallucination_report,
@@ -678,7 +771,22 @@ def main():
         "metrics_summary": metrics,
         "replay": trace.replay(),
     }
-    print(json.dumps(final_payload, indent=2, ensure_ascii=False))
+    print(json.dumps(final_payload, indent=2, ensure_ascii=False, default=str))
+
+
+def main():
+    mode = input(
+        "Choose mode: A = normal research, B = business research: "
+    ).strip().lower()
+
+    if mode == "a":
+        run_research_mode()
+        return
+    if mode == "b":
+        run_business_mode()
+        return
+
+    raise ValueError("Invalid choice. Enter `A` for normal research or `B` for business research.")
 
 
 if __name__ == "__main__":

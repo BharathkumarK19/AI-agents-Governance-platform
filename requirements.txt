@@ -1,0 +1,9 @@
+openai
+python-dotenv
+langchain-openai
+crewai
+tavily-python
+gspread
+google-auth
+psycopg2-binary
+PyYAML

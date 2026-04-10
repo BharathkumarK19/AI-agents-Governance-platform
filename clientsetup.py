@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from openai import OpenAI
+from openai import AuthenticationError, OpenAI
 
 
 MODEL_NAME = "openai/gpt-oss-20b:free"
@@ -34,14 +34,19 @@ client = OpenAI(
 
 
 if __name__ == "__main__":
-    response = client.chat.completions.create(
-        model=MODEL_NAME,
-        messages=[
-            {
-                "role": "user",
-                "content": "What is the capital of France? Reply in one short sentence.",
-            }
-        ],
-    )
-
-    print(response.choices[0].message.content)
+    try:
+        response = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[
+                {
+                    "role": "user",
+                    "content": "What is the capital of France? Reply in one short sentence.",
+                }
+            ],
+        )
+        print(response.choices[0].message.content)
+    except AuthenticationError as exc:
+        raise RuntimeError(
+            "OpenRouter authentication failed. Check `OPENROUTER_API_KEY` in `.env` "
+            "and replace it with a valid active key."
+        ) from exc
