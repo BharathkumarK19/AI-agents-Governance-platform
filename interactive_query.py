@@ -2,15 +2,18 @@ from typing import Any
 
 
 def ask_followup_questions(user_query, data_profile=None):
-    prompts = _build_prompts(user_query, data_profile=data_profile or {})
-    answers = {}
+    key, question = _build_single_prompt(user_query, data_profile=data_profile or {})
+    answer = input(f"{question} ").strip()
+    answers = {key: answer}
 
-    for key, question in prompts:
-        answers[key] = input(f"{question} ").strip()
-
-    days = _extract_days(answers.get("time_range", ""))
-    if days is not None:
-        answers["days"] = days
+    if key == "time_range":
+        days = _extract_days(answer)
+        if days is not None:
+            answers["days"] = days
+    elif key != "time_range":
+        days = _extract_days(answer)
+        if days is not None:
+            answers["days"] = days
 
     return answers
 
@@ -38,7 +41,7 @@ def generate_insight(metrics, user_answers, llm):
     raise TypeError("The provided LLM does not support invoke, predict, or direct calls.")
 
 
-def _build_prompts(user_query: str, data_profile: dict | None = None) -> list[tuple[str, str]]:
+def _build_single_prompt(user_query: str, data_profile: dict | None = None) -> tuple[str, str]:
     normalized = user_query.lower()
     data_profile = data_profile or {}
     top_items = [item.get("item_name", "") for item in data_profile.get("top_items", []) if item.get("item_name")]
@@ -46,31 +49,25 @@ def _build_prompts(user_query: str, data_profile: dict | None = None) -> list[tu
     sample_items = ", ".join(top_items[:3]) if top_items else "top-selling items"
     sample_customers = ", ".join(top_customers[:3]) if top_customers else "known customers"
 
-    prompts: list[tuple[str, str]] = []
-
     if any(term in normalized for term in ("compare", "vs", "versus")):
-        prompts.append(("comparison_target", f"Which items, customers, or periods should I compare? Example: {sample_items}"))
+        return ("comparison_target", f"Which items, customers, or periods should I compare? Example: {sample_items}")
 
     if any(term in normalized for term in ("customer", "buyer", "segment")):
-        prompts.append(("customer_filter", f"Do you want to focus on a specific customer or segment? Example: {sample_customers}"))
-    elif any(term in normalized for term in ("item", "product", "sku", "purchase")):
-        prompts.append(("item_filter", f"Do you want to focus on a specific item or SKU? Example: {sample_items}"))
+        return ("customer_filter", f"Which customer or segment should I focus on? Example: {sample_customers}")
+    if any(term in normalized for term in ("item", "product", "sku", "purchase")):
+        return ("item_filter", f"Which item or SKU should I focus on? Example: {sample_items}")
 
     if "profit" in normalized or "margin" in normalized:
-        prompts.append(("focus_area", "Should I emphasize profit, margin, or both?"))
-    elif any(term in normalized for term in ("sale", "sales", "revenue", "price")):
-        prompts.append(("focus_area", "Should I emphasize revenue, pricing, or discount impact?"))
-    elif "gst" in normalized or "tax" in normalized:
-        prompts.append(("focus_area", "Should I emphasize GST amounts, GST compliance, or tax impact?"))
-    else:
-        prompts.append(("focus_area", "Which business angle matters most here: sales, profit, margin, discount, GST, or customers?"))
+        return ("focus_area", "Should I emphasize profit, margin, or both?")
+    if any(term in normalized for term in ("sale", "sales", "revenue", "price")):
+        return ("focus_area", "Should I emphasize revenue, pricing, or discount impact?")
+    if "gst" in normalized or "tax" in normalized:
+        return ("focus_area", "Should I emphasize GST amounts, GST compliance, or tax impact?")
 
     if any(term in normalized for term in ("trend", "over time", "monthly", "daily", "weekly", "change")):
-        prompts.append(("time_granularity", "Do you want the trend grouped daily, weekly, or monthly?"))
+        return ("time_granularity", "Should I group the trend daily, weekly, or monthly?")
 
-    prompts.append(("time_range", "What time range should I consider in days?"))
-    prompts.append(("output_style", "Do you want a short summary, recommendations, or both?"))
-    return prompts
+    return ("time_range", "What time range should I consider in days?")
 
 
 def _extract_days(value: str) -> int | None:

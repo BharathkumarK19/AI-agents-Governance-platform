@@ -747,6 +747,7 @@ def _save_and_print_advanced_report(
     tools_used,
     intermediate_steps,
     reference_sources=None,
+    show_verified_sources=True,
 ):
     report_engine = HallucinationReportEngine()
     report = report_engine.generate_report(
@@ -766,13 +767,19 @@ def _save_and_print_advanced_report(
     }
     print(json.dumps(report_payload, indent=2, ensure_ascii=False, default=str))
     final_label = saved_report["report"].get("final_verdict", {}).get("label", "UNKNOWN")
-    verified_sources = saved_report["report"].get("evidence_analysis", {}).get("verified_sources", [])
-    if verified_sources:
-        print("Verified sources:")
-        for source in verified_sources[:10]:
-            title = source.get("title") or source.get("source_name") or "source"
-            url = source.get("url", "")
-            print(f"- {title}: {url}")
+    if show_verified_sources:
+        compared_resources = saved_report["report"].get("evidence_analysis", {}).get("compared_resources", [])
+        verified_sources = saved_report["report"].get("evidence_analysis", {}).get("verified_sources", [])
+        resources_to_show = verified_sources or compared_resources
+        if resources_to_show:
+            print("Compared / verified resources:")
+            for source in resources_to_show[:10]:
+                title = source.get("title") or source.get("source_name") or "source"
+                url = source.get("url", "")
+                summary = source.get("summary", "").strip()
+                print(f"- {title}: {url}")
+                if summary:
+                    print(f"  Compared using this resource: {summary[:220]}")
     print(f"Verification verdict: {'HALLUCINATED' if final_label == 'HALLUCINATED' else 'NOT HALLUCINATED'}")
     return saved_report
 
@@ -895,6 +902,83 @@ def _verify_business_query(user_query: str, data_profile: dict) -> dict:
     }
 
 
+def _verify_business_response(
+    user_query: str,
+    insight: str,
+    metrics: dict,
+    data_profile: dict,
+    user_answers: dict,
+) -> dict:
+    from hallucination_detector import HallucinationDetector
+
+    detector = HallucinationDetector()
+    verification_context = json.dumps(
+        {
+            "metrics": metrics,
+            "data_profile": data_profile,
+            "user_answers": user_answers,
+        },
+        ensure_ascii=False,
+        default=str,
+    )
+    analysis = detector.analyze(
+        query=user_query,
+        response=insight,
+        context=verification_context,
+        tools_used=["google_sheets", "neon_postgresql"],
+    )
+
+    response_numbers = sorted(set(re.findall(r"\b\d+(?:\.\d+)?\b", insight)))
+    context_numbers = set(re.findall(r"\b\d+(?:\.\d+)?\b", verification_context))
+    unsupported_numbers = [value for value in response_numbers if value not in context_numbers][:8]
+
+    proof_points = [
+        f"Context overlap score: {analysis['overlap_score']}",
+        f"Risk score: {analysis['risk_score']}",
+        f"Unsupported claims detected: {len(analysis.get('unsupported_claims', []))}",
+        f"Metrics used for verification: {json.dumps(metrics, ensure_ascii=False, default=str)}",
+    ]
+    if unsupported_numbers:
+        proof_points.append(
+            "Response introduced numbers not found in the business context: "
+            + ", ".join(unsupported_numbers)
+        )
+
+    hallucinated = (
+        analysis["label"] == "HALLUCINATED"
+        or bool(unsupported_numbers)
+        or analysis["overlap_score"] < 0.35
+    )
+    reason = (
+        "The business answer introduced unsupported claims or numeric values that are not grounded in the computed metrics."
+        if hallucinated
+        else "The business answer stayed aligned with the computed metrics, dataset profile, and user context."
+    )
+    summary = (
+        "Business answer is hallucinated because the generated insight is not sufficiently supported by the available metrics/data context."
+        if hallucinated
+        else "Business answer is not hallucinated because its claims remain grounded in the available metrics/data context."
+    )
+
+    return {
+        "hallucinated": hallucinated,
+        "reason": reason,
+        "summary": summary,
+        "proof_points": proof_points,
+        "analysis": analysis,
+        "unsupported_numbers": unsupported_numbers,
+    }
+
+
+def _print_short_business_verification(title: str, verification: dict) -> None:
+    print(title)
+    print(f"- Verdict: {'HALLUCINATED' if verification.get('hallucinated') else 'NOT HALLUCINATED'}")
+    print(f"- Summary: {verification.get('summary', '')}")
+    proof_points = verification.get("proof_points", [])[:3]
+    for proof in proof_points:
+        print(f"- Proof: {proof}")
+
+
 def _truncate_text(value, limit: int = 500) -> str:
     text = str(value) if value is not None else ""
     if len(text) <= limit:
@@ -939,9 +1023,7 @@ def run_business_mode():
 
         data_profile = get_business_data_profile(conn)
         verification = _verify_business_query(user_query, data_profile)
-        print("Business verification summary:")
-        print(json.dumps(verification, indent=2, ensure_ascii=False, default=str))
-        print(f"Verification verdict: {'HALLUCINATED' if verification['hallucinated'] else 'NOT HALLUCINATED'}")
+        _print_short_business_verification("Business query verification:", verification)
 
         if verification["hallucinated"]:
             response = (
@@ -977,6 +1059,14 @@ def run_business_mode():
         llm = get_llm()
         insight = generate_insight(metrics, user_answers, llm)
         print(insight)
+        response_verification = _verify_business_response(
+            user_query=user_query,
+            insight=insight,
+            metrics=metrics,
+            data_profile=data_profile,
+            user_answers=user_answers,
+        )
+        _print_short_business_verification("Business answer verification:", response_verification)
         _save_and_print_advanced_report(
             query=user_query,
             response=insight,
@@ -984,6 +1074,7 @@ def run_business_mode():
                 "pipeline_result": pipeline_result,
                 "data_profile": data_profile,
                 "verification": verification,
+                "response_verification": response_verification,
                 "metrics": metrics,
                 "user_answers": user_answers,
             },
@@ -993,7 +1084,17 @@ def run_business_mode():
                 metrics=metrics,
                 user_answers=user_answers,
                 insight=insight,
-            ),
+            )
+            + [
+                {
+                    "agent": "Business Answer Verifier",
+                    "action": "Validated generated answer against business metrics and dataset context",
+                    "output_summary": json.dumps(response_verification, ensure_ascii=False, default=str),
+                    "source_used": True,
+                    "basis": "metrics + dataset profile + user context",
+                }
+            ],
+            show_verified_sources=False,
         )
     finally:
         conn.close()
@@ -1025,6 +1126,7 @@ def run_research_mode():
         tools_used=["tavily"],
         intermediate_steps=_build_research_intermediate_steps(trace),
         reference_sources=source_results,
+        show_verified_sources=True,
     )
 
     if hallucination_report.get("hallucination_detected"):

@@ -121,12 +121,13 @@ class HallucinationReportEngine:
                 "context_provided": bool(context_text.strip()),
                 "context_documents_count": len(context_sentences),
                 "context_summary": self._summarize_context(context_sentences),
+                "compared_resources": self._collect_compared_resources(normalized_reference_sources),
                 "verification_method": {
                     "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
                     "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
                     "support_threshold": CLAIM_SUPPORT_THRESHOLD,
                     "multi_source_verification": (
-                        "Each claim is checked against retrieved tool results first, then against Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+                        "Each claim is checked with Serper search results and similarity scoring, then mapped back to the strongest supporting resources."
                     ),
                 },
                 "claims_in_response": verified_claims,
@@ -299,6 +300,7 @@ class HallucinationReportEngine:
                                     "source_name": source_name,
                                     "title": top_source.get("title", ""),
                                     "url": url,
+                                    "summary": top_source.get("summary", ""),
                                 }
                             )
                             seen.add(url)
@@ -308,12 +310,32 @@ class HallucinationReportEngine:
                             "source_name": source_name,
                             "title": "",
                             "url": source_url,
+                            "summary": source_result.get("evidence", ""),
                         }
                     )
                     seen.add(source_url)
                 if len(collected) >= 10:
                     return collected
         return collected
+
+    def _collect_compared_resources(self, reference_sources: list[dict]) -> list[dict]:
+        resources = []
+        seen = set()
+        for item in reference_sources[:10]:
+            url = str(item.get("url", "")).strip()
+            title = str(item.get("title", "")).strip()
+            summary = str(item.get("content", "") or item.get("summary", "")).strip()
+            if not url or url in seen:
+                continue
+            resources.append(
+                {
+                    "title": title or "resource",
+                    "url": url,
+                    "summary": summary[:220],
+                }
+            )
+            seen.add(url)
+        return resources
 
     def _is_verifiable_claim(self, text: str) -> bool:
         cleaned = text.strip(" -;:,*#|`")

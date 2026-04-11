@@ -98,6 +98,7 @@ class Verifier:
                     {
                         "title": item.get("title", ""),
                         "url": item.get("url", ""),
+                        "summary": item.get("content", "")[:220],
                     }
                     for item in results[:3]
                     if item.get("url")
