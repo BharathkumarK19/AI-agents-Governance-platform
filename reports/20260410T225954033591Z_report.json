@@ -1,0 +1,3914 @@
+{
+  "schema_version": "2.0",
+  "query": "what is machine learning and AI . why it is becoming powerful",
+  "response": "This response may contain uncertain information.\n\nSafer fallback summary:\n**Machine Learning (ML) vs Artificial Intelligence (AI)**  \n\n| Concept | Core Idea | Typical Techniques | What It Enables |\n|--------|----------|--------------------|----------------|\n| **Artificial Intelligence (AI)** | The broad discipline that aims to create systems that can perform tasks that normally require human‑level cognition (reasoning, perception, language understanding, decision‑making). | Knowledge‑representation, search & planning, rule‑based systems, probabilistic reasoning, **machine learning** (as a sub‑field). | Automates or augments any cognitive activity – from chatbots that converse in natural language to robots that navigate complex environments. |\n| **Machine Learning (ML)** | A **subset of AI** that builds statistical models from data. The model “learns” patterns during a training phase and then makes predictions or decisions on new, unseen data. | Supervised learning (regression, classification), unsupervised learning (clustering, dimensionality reduction), reinforcement learning, deep learning (neural networks, transformers, diffusion models). | Powers most of today’s practical AI applications – recommendation engines, fraud‑detection classifiers, image‑recognition systems, generative text‑or‑image models, etc. |\n\n---\n\n## Why AI/ML Is Gaining Extraordinary Momentum  \n\n| Driver | What Has Changed | Why It Matters |\n|--------|------------------|----------------|\n| **Explosion of Data** | Billions of devices, sensors, transactions, and social‑media posts now generate petabytes of structured and unstructured data every day. | More data → richer patterns for ML models to learn → higher accuracy and broader applicability. |\n| **Compute & Algorithm Advances** | • GPUs, TPUs, and specialized AI accelerators provide orders‑of‑magnitude more FLOPs at lower cost.<br>• Architectural breakthroughs such as **transformers** (for language and multimodal tasks) and **diffusion models** (for image/video generation).<br>• Training tricks (e.g., mixed‑precision, large‑batch scaling) reduce time‑to‑train. | Faster, cheaper training makes it feasible to build ever‑larger models (foundation models) and to iterate quickly on new ideas. |\n| **Clear Business ROI** | Companies can cut costs (automation, predictive maintenance), grow revenue (personalization, new AI‑driven products), and gain competitive advantage. | Executives see measurable financial benefits, prompting larger budgets and faster adoption cycles. |\n| **Maturing Ecosystem** | Cloud providers (AWS, Azure, GCP) now offer turnkey ML services (managed notebooks, AutoML, model‑as‑a‑service). Open‑source libraries (TensorFlow, PyTorch, Hugging Face) lower the technical barrier. | Teams can prototype and deploy models without building the underlying infrastructure from scratch. |\n| **Regulatory & Ethical Awareness** | Growing focus on bias audits, privacy‑preserving techniques (differential privacy, synthetic data), and model‑drift monitoring. | Helps organizations manage risk, build trust, and comply with emerging standards, making AI a safer strategic asset. |\n\n### Quantitative Snapshot (2024 MIT Sloan Survey)\n\n- **64 %** of senior data‑leadership respondents named **generative AI** the most transformative technology of their generation.  \n  *(Interpretation: a clear majority of senior leaders already view AI/ML as a strategic differentiator.)*\n\n---\n\n## How This Power Translates Into Real‑World Impact  \n\n| Sector | Representative ML‑driven Use‑Case | Observed Benefits (reported qualitatively) |\n|--------|-----------------------------------|--------------------------------------------|\n| **Retail** | Recommendation engines that suggest products in real time. | Higher conversion rates and larger average basket size (exact lift varies by implementation). |\n| **Finance** | Fraud‑detection classifiers that flag anomalous transactions. | Faster alerts and reduced loss; precise monetary impact depends on the institution’s baseline. |\n| **Healthcare** | Convolutional‑Neural‑Network (CNN) models for medical‑image analysis. | Earlier disease detection and reduced radiologist workload (exact percentages not universally quantified). |\n| **IT / Operations** | Time‑series forecasting for predictive equipment failure. | Lower unplanned downtime and maintenance cost (specific reduction numbers differ across sites). |\n| **Legal** | Large‑language‑model (LLM)‑based contract clause extraction. | Faster review cycles and improved risk identification (quantitative gains are context‑specific). |\n| **Manufacturing** | Vision‑inspection systems trained on synthetic data. | Defect‑rate reduction and scrap‑cost savings (exact figures vary by plant). |\n\n> **Note:** The above benefits are **qualitative trends** observed across many case studies. Precise numeric improvements (e.g., “30 % lift in conversion”) are **not universally documented** in the source material and therefore are omitted to avoid overstating evidence.\n\n---\n\n## Key Challenges & Mitigations (Current Best Practices)\n\n| Challenge | Typical Mitigation |\n|-----------|--------------------|\n| **Bias & Fairness** | Conduct bias audits, use diverse training data, apply fairness‑aware algorithms. |\n| **Hallucinations (especially in generative models)** | Human‑in‑the‑loop validation, confidence scoring, domain‑specific fine‑tuning. |\n| **Privacy & Governance** | Synthetic data generation, differential privacy, strict access controls. |\n| **Model Drift** | Continuous monitoring of performance metrics, automated retraining pipelines. |\n| **Talent Shortage** | Leverage managed AI services, low‑code/auto‑ML platforms, invest in upskilling programs. |\n\n---\n\n## Outlook (2026‑2030) – What to Watch\n\n- **AI‑first software architectures** – Applications will be built around AI components from the ground up.  \n- **Foundation models as services** – Large pre‑trained models (LLMs, multimodal diffusion) will be offered via APIs, with industry‑specific fine‑tuning layers.  \n- **End‑to‑end decision automation** – AI will not only recommend actions but also execute them (e.g., autonomous supply‑chain adjustments).  \n- **Standardized regulation** – Emerging frameworks for transparency, auditability, and risk management are expected to become common across jurisdictions.  \n- **Energy‑efficient AI** – Techniques such as model sparsity, quantization, and neuromorphic hardware are being explored to reduce the carbon footprint of large‑scale training and inference.\n\n---\n\n### Bottom Line\n\n- **Machine Learning** is the engine that converts massive, ever‑growing data streams into predictive or generative intelligence.  \n- **Artificial Intelligence** provides the broader cognitive context, encompassing ML as well as other reasoning and perception techniques.  \n- The convergence of **data abundance**, **compute breakthroughs**, **clear economic incentives**, and a **supportive ecosystem** is turning AI/ML from experimental research into a **strategic, measurable capability** across virtually every industry.  \n\nFeel free to let me know if you’d like deeper detail on any specific sector, technology, or implementation roadmap.",
+  "report_summary": {
+    "response_generation_status": "completed",
+    "claims_evaluated": 81,
+    "supported_claims": 4,
+    "independently_verified_claims": 0,
+    "unsupported_claims": 81,
+    "overall_outcome": "HALLUCINATED"
+  },
+  "generation_trace": {
+    "process_description": "Execution steps were recorded first. The final response was then audited using deterministic claim extraction, context matching, overlap scoring, tool-usage checks, and uncertainty checks.",
+    "response_construction_basis": "retrieved context only",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Research Agent",
+        "action": "Research",
+        "output_summary": "**Research Report – Machine Learning (ML) & Artificial Intelligence (AI): Definition, Why They Are Gaining Power, and Current Trends**  \n*Prepared 10 April 2026*  \n\n---\n\n## 1. Executive Summary  \n\n- **Artificial Intelligence (AI)** is the broad field of computer science that aims to create systems capable of tasks that normally require human intelligence (reasoning, perception, language, decision‑making).  \n- **Machine Learning (ML)** is a **subset of AI** that focuses on algorithms that auto...",
+        "source_used": true,
+        "basis": "retrieved context"
+      },
+      {
+        "step": 2,
+        "agent": "Analysis Agent",
+        "action": "Analysis",
+        "output_summary": "**Key Insights from the Research Report (10 Apr 2026)**  \n\n- **Definitions**  \n  - **AI** = the broader field that builds systems capable of human‑like cognition (reasoning, perception, language, decision‑making).  \n  - **ML** = a subset of AI that learns statistical patterns from data via training and then performs inference on new data.  \n  - **Generative AI** = ML models (e.g., transformers, diffusion) that create new content (text, images, code, synthetic data).  \n\n- **Why AI/ML Is Gainin...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 3,
+        "agent": "Summary Agent",
+        "action": "Summary",
+        "output_summary": "**Machine Learning & Artificial Intelligence – Why They’re Becoming So Powerful**  \n*Prepared 10 Apr 2026 – Presentation‑Ready Report*  \n\n---\n\n## 1.  Core Definitions  \n\n| Term | What It Is | Key Characteristics |\n|------|------------|----------------------|\n| **Artificial Intelligence (AI)** | The broader discipline that builds systems capable of human‑like cognition (reasoning, perception, language, decision‑making). | • Encompasses rule‑based, symbolic, and statistical approaches.<br>• Goa...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 4,
+        "agent": "Summary Agent",
+        "action": "Evaluation",
+        "output_summary": "{'hallucination_detected': True, 'confidence_score': 0.92, 'issues': [{'claim': '30‑40\\u202f% lift in conversion for retail recommendation engines.', 'reason': 'The source report provides a specific figure of +12\\u202f% conversion increase (and +8\\u202f% basket size). No 30‑40\\u202f% lift is mentioned.', 'severity': 'high', 'agent_responsible': 'Summary Agent'}, {'claim': 'Finance fraud detection loss reduction ≈ $45\\u202fM/yr, alert latency ↓ from 30\\u202fmin → 2\\u202fmin.', 'reason': 'The r...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 5,
+        "agent": "Summary Agent",
+        "action": "Summary Retry",
+        "output_summary": "**Machine Learning (ML) vs Artificial Intelligence (AI)**  \n\n| Concept | Core Idea | Typical Techniques | What It Enables |\n|--------|----------|--------------------|----------------|\n| **Artificial Intelligence (AI)** | The broad discipline that aims to create systems that can perform tasks that normally require human‑level cognition (reasoning, perception, language understanding, decision‑making). | Knowledge‑representation, search & planning, rule‑based systems, probabilistic reasoning, **...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_documents_count": 66,
+    "context_summary": "User query: what is machine learning and AI . why it is becoming powerful Live web findings:",
+    "verification_method": {
+      "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
+      "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
+      "support_threshold": 0.4,
+      "multi_source_verification": "Each claim is also checked independently with Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+    },
+    "claims_in_response": [
+      {
+        "claim": "This response may contain uncertain information.",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Safer fallback summary",
+        "supported_by_context": false,
+        "supporting_text": "Summary: # How AI and Machine Learning Are Transforming the IT Industry.",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "summary"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**Machine Learning (ML) vs Artificial Intelligence (AI)**",
+        "supported_by_context": true,
+        "supporting_text": "Tags: AI, Artificial Intelligence, Machine Learning, ML.",
+        "confidence": 0.86,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "ai",
+          "artificial",
+          "intelligence",
+          "learning",
+          "machine",
+          "ml"
+        ],
+        "support_reason": "Similarity 0.86 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Concept | Core Idea | Typical Techniques | What It Enables |",
+        "supported_by_context": false,
+        "supporting_text": "AI in IT Industry Machine Learning in IT AI automation.",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "it"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Artificial Intelligence (AI)** | The broad discipline that aims to create systems that can perform tasks that normally require human‑level cognition (reasoning, perception, language understanding, decision‑making).",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "confidence": 0.26,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "artificial",
+          "can",
+          "intelligence",
+          "that",
+          "the"
+        ],
+        "support_reason": "Similarity 0.26 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Knowledge‑representation, search & planning, rule‑based systems, probabilistic reasoning, **machine learning** (as a sub‑field).",
+        "supported_by_context": false,
+        "supporting_text": "Title: What is Machine Learning?",
+        "confidence": 0.23,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "learning",
+          "machine"
+        ],
+        "support_reason": "Similarity 0.23 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Automates or augments any cognitive activity – from chatbots that converse in natural language to robots that navigate complex environments.",
+        "supported_by_context": false,
+        "supporting_text": "Effective deployment of AI and machine learning improves time to value, delivers measurable business impact, and ensures that organizations remain competitive in their industries.",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "in",
+          "that",
+          "to"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Machine Learning (ML)** | A **subset of AI** that builds statistical models from data.",
+        "supported_by_context": true,
+        "supporting_text": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "confidence": 0.42,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "ai",
+          "data",
+          "learning",
+          "machine",
+          "of",
+          "subset",
+          "that"
+        ],
+        "support_reason": "Similarity 0.42 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "The model “learns” patterns during a training phase",
+        "supported_by_context": true,
+        "supporting_text": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "confidence": 0.43,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "a",
+          "model",
+          "patterns",
+          "the",
+          "training"
+        ],
+        "support_reason": "Similarity 0.43 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "then makes predictions or decisions on new, unseen data.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "confidence": 0.23,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "new",
+          "on"
+        ],
+        "support_reason": "Similarity 0.23 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Supervised learning (regression, classification), unsupervised learning (clustering, dimensionality reduction), reinforcement learning, deep learning (neural networks, transformers, diffusion models).",
+        "supported_by_context": false,
+        "supporting_text": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "confidence": 0.39,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "classification",
+          "learning",
+          "models",
+          "regression",
+          "supervised"
+        ],
+        "support_reason": "Similarity 0.39 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Powers most of today’s practical AI applications – recommendation engines, fraud‑detection classifiers, image‑recognition systems, generative text‑or‑image models, etc.",
+        "supported_by_context": false,
+        "supporting_text": "One of the most impactful applications of AI in the IT industry is AIOps - Artificial Intelligence for IT Operations.",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "applications",
+          "most",
+          "of"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "## Why AI/ML Is Gaining Extraordinary Momentum",
+        "supported_by_context": false,
+        "supporting_text": "why it is becoming powerful",
+        "confidence": 0.34,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "is",
+          "why"
+        ],
+        "support_reason": "Similarity 0.34 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Driver | What Has Changed | Why It Matters |",
+        "supported_by_context": false,
+        "supporting_text": "why it is becoming powerful",
+        "confidence": 0.34,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "it",
+          "why"
+        ],
+        "support_reason": "Similarity 0.34 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Explosion of Data** | Billions of devices, sensors, transactions",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "confidence": 0.32,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "of"
+        ],
+        "support_reason": "Similarity 0.32 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "social‑media posts now generate petabytes of structured",
+        "supported_by_context": false,
+        "supporting_text": "URL: https://plexustechnology.com/blog/impact-of-ai-machine-learning-on-the-future-of-it/",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "of"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "unstructured data every day.",
+        "supported_by_context": false,
+        "supporting_text": "Machine learning AI transforms operations into data-centric ecosystems where every process and decision delivers measurable value.",
+        "confidence": 0.24,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "every"
+        ],
+        "support_reason": "Similarity 0.24 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| More data → richer patterns for ML models to learn → higher accuracy",
+        "supported_by_context": false,
+        "supporting_text": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "confidence": 0.26,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "for",
+          "to"
+        ],
+        "support_reason": "Similarity 0.26 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Compute & Algorithm Advances** | • GPUs, TPUs",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "specialized AI accelerators provide orders‑of‑magnitude more FLOPs at lower cost.<br>• Architectural breakthroughs such as **transformers** (for language",
+        "supported_by_context": false,
+        "supporting_text": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "as",
+          "for",
+          "such"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**diffusion models** (for image/video generation).<br>• Training tricks (e.g., mixed‑precision, large‑batch scaling) reduce time‑to‑train.",
+        "supported_by_context": false,
+        "supporting_text": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "for",
+          "models",
+          "train"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Faster, cheaper training makes it feasible to build ever‑larger models (foundation models)",
+        "supported_by_context": false,
+        "supporting_text": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "confidence": 0.15,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "faster",
+          "to"
+        ],
+        "support_reason": "Similarity 0.15 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "to iterate quickly on new ideas.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "confidence": 0.22,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ideas",
+          "to"
+        ],
+        "support_reason": "Similarity 0.22 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Clear Business ROI** | Companies can cut costs (automation, predictive maintenance), grow revenue (personalization, new AI‑driven products)",
+        "supported_by_context": false,
+        "supporting_text": "AI in IT Industry Machine Learning in IT AI automation.",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "automation"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "gain competitive advantage.",
+        "supported_by_context": false,
+        "supporting_text": "Effective deployment of AI and machine learning improves time to value, delivers measurable business impact, and ensures that organizations remain competitive in their industries.",
+        "confidence": 0.11,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "competitive"
+        ],
+        "support_reason": "Similarity 0.11 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Executives see measurable financial benefits, prompting larger budgets",
+        "supported_by_context": false,
+        "supporting_text": "Machine learning AI transforms operations into data-centric ecosystems where every process and decision delivers measurable value.",
+        "confidence": 0.09,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "measurable"
+        ],
+        "support_reason": "Similarity 0.09 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "faster adoption cycles.",
+        "supported_by_context": false,
+        "supporting_text": "Plexus Technology works closely with Arizona businesses to guide AI adoption through expert consultation, managed services, and ongoing support.",
+        "confidence": 0.13,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "adoption"
+        ],
+        "support_reason": "Similarity 0.13 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Maturing Ecosystem** | Cloud providers (AWS, Azure, GCP) now offer turnkey ML services (managed notebooks, AutoML, model‑as‑a‑service).",
+        "supported_by_context": false,
+        "supporting_text": "The central premise of machine learning (ML) is that if you optimize a model’s performance on a dataset of tasks that adequately resemble the real-world problems it will be used for—through a process called model training—the model can make accurate predictions on the new data it sees in its ultimate use case.",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "a",
+          "ml",
+          "model"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Open‑source libraries (TensorFlow, PyTorch, Hugging Face) lower the technical barrier.",
+        "supported_by_context": false,
+        "supporting_text": "[Source 1]",
+        "confidence": 0.21,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "source"
+        ],
+        "support_reason": "Similarity 0.21 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Teams can prototype",
+        "supported_by_context": false,
+        "supporting_text": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "confidence": 0.11,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "can"
+        ],
+        "support_reason": "Similarity 0.11 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "deploy models without building the underlying infrastructure from scratch.",
+        "supported_by_context": false,
+        "supporting_text": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "confidence": 0.19,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "the"
+        ],
+        "support_reason": "Similarity 0.19 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Regulatory & Ethical Awareness** | Growing focus on bias audits, privacy‑preserving techniques (differential privacy, synthetic data)",
+        "supported_by_context": false,
+        "supporting_text": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "confidence": 0.14,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "synthetic"
+        ],
+        "support_reason": "Similarity 0.14 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Helps organizations manage risk, build trust",
+        "supported_by_context": false,
+        "supporting_text": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "confidence": 0.12,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "helps",
+          "organizations"
+        ],
+        "support_reason": "Similarity 0.12 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "comply with emerging standards, making AI a safer strategic asset.",
+        "supported_by_context": false,
+        "supporting_text": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "confidence": 0.19,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "a",
+          "ai"
+        ],
+        "support_reason": "Similarity 0.19 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "### Quantitative Snapshot (2024 MIT Sloan Survey)",
+        "supported_by_context": false,
+        "supporting_text": "[Learn More](https://mitsloan.mit.edu/faculty/directory/rama-ramakrishnan).",
+        "confidence": 0.13,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "mit"
+        ],
+        "support_reason": "Similarity 0.13 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**64 %** of senior data‑leadership respondents named **generative AI** the most transformative technology of their generation.",
+        "supported_by_context": true,
+        "supporting_text": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "confidence": 0.5,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "64",
+          "ai",
+          "data",
+          "generation",
+          "generative",
+          "most",
+          "of",
+          "respondents",
+          "senior",
+          "technology"
+        ],
+        "support_reason": "Similarity 0.50 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "*(Interpretation: a clear majority of senior leaders already view AI/ML as a strategic differentiator.)*",
+        "supported_by_context": false,
+        "supporting_text": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "confidence": 0.27,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "a",
+          "ai",
+          "leaders",
+          "of",
+          "senior"
+        ],
+        "support_reason": "Similarity 0.27 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "## How This Power Translates Into Real‑World Impact",
+        "supported_by_context": false,
+        "supporting_text": "Create a detailed research report focused on trends, facts, and real-world data.",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "real",
+          "world"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Sector | Representative ML‑driven Use‑Case | Observed Benefits (reported qualitatively) |",
+        "supported_by_context": false,
+        "supporting_text": "Use the provided findings as evidence.",
+        "confidence": 0.13,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "use"
+        ],
+        "support_reason": "Similarity 0.13 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Retail** | Recommendation engines that suggest products in real time.",
+        "supported_by_context": false,
+        "supporting_text": "Effective deployment of AI and machine learning improves time to value, delivers measurable business impact, and ensures that organizations remain competitive in their industries.",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "in",
+          "that",
+          "time"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Higher conversion rates",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "larger average basket size (exact lift varies by implementation).",
+        "supported_by_context": false,
+        "supporting_text": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "confidence": 0.05,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "by"
+        ],
+        "support_reason": "Similarity 0.05 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Finance** | Fraud‑detection classifiers that flag anomalous transactions.",
+        "supported_by_context": false,
+        "supporting_text": "Tracking these metrics ensures that AI and machine learning initiatives align with business objectives and deliver measurable outcomes.",
+        "confidence": 0.08,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "that"
+        ],
+        "support_reason": "Similarity 0.08 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Faster alerts",
+        "supported_by_context": false,
+        "supporting_text": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "confidence": 0.14,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "faster"
+        ],
+        "support_reason": "Similarity 0.14 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "reduced loss; precise monetary impact depends on the institution’s baseline.",
+        "supported_by_context": false,
+        "supporting_text": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "confidence": 0.3,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "loss",
+          "s",
+          "the"
+        ],
+        "support_reason": "Similarity 0.30 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Healthcare** | Convolutional‑Neural‑Network (CNN) models for medical‑image analysis.",
+        "supported_by_context": false,
+        "supporting_text": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "for",
+          "models"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Earlier disease detection",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "reduced radiologist workload (exact percentages not universally quantified).",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **IT / Operations** | Time‑series forecasting for predictive equipment failure.",
+        "supported_by_context": false,
+        "supporting_text": "One of the most impactful applications of AI in the IT industry is AIOps - Artificial Intelligence for IT Operations.",
+        "confidence": 0.27,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "for",
+          "it",
+          "operations"
+        ],
+        "support_reason": "Similarity 0.27 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Lower unplanned downtime",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "maintenance cost (specific reduction numbers differ across sites).",
+        "supported_by_context": false,
+        "supporting_text": "Across industries, artificial intelligence (AI) and machine learning (ML) are no longer futuristic concepts; they’re integral tools driving innovation, automation, and smarter decision-making.",
+        "confidence": 0.07,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "across"
+        ],
+        "support_reason": "Similarity 0.07 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "HTTP 202",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Legal** | Large‑language‑model (LLM)‑based contract clause extraction.",
+        "supported_by_context": false,
+        "supporting_text": "The central premise of machine learning (ML) is that if you optimize a model’s performance on a dataset of tasks that adequately resemble the real-world problems it will be used for—through a process called model training—the model can make accurate predictions on the new data it sees in its ultimate use case.",
+        "confidence": 0.11,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "model"
+        ],
+        "support_reason": "Similarity 0.11 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Faster review cycles",
+        "supported_by_context": false,
+        "supporting_text": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "confidence": 0.12,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "faster"
+        ],
+        "support_reason": "Similarity 0.12 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "improved risk identification (quantitative gains are context‑specific).",
+        "supported_by_context": false,
+        "supporting_text": "# How AI and Machine Learning Are Transforming the IT Industry.",
+        "confidence": 0.11,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "are"
+        ],
+        "support_reason": "Similarity 0.11 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Manufacturing** | Vision‑inspection systems trained on synthetic data.",
+        "supported_by_context": false,
+        "supporting_text": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "synthetic"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Defect‑rate reduction",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "scrap‑cost savings (exact figures vary by plant).",
+        "supported_by_context": false,
+        "supporting_text": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "confidence": 0.05,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "by"
+        ],
+        "support_reason": "Similarity 0.05 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "> **Note:** The above benefits are **qualitative trends** observed across many case studies.",
+        "supported_by_context": false,
+        "supporting_text": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "confidence": 0.21,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "across",
+          "the"
+        ],
+        "support_reason": "Similarity 0.21 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Precise numeric improvements (e.g., “30 % lift in conversion”) are **not universally documented** in the source material",
+        "supported_by_context": false,
+        "supporting_text": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "confidence": 0.23,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "are",
+          "in",
+          "the"
+        ],
+        "support_reason": "Similarity 0.23 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "therefore are omitted to avoid overstating evidence.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "are",
+          "to"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "## Key Challenges & Mitigations (Current Best Practices)",
+        "supported_by_context": false,
+        "supporting_text": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "confidence": 0.08,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "challenges"
+        ],
+        "support_reason": "Similarity 0.08 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Challenge | Typical Mitigation |",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Bias & Fairness** | Conduct bias audits, use diverse training data, apply fairness‑aware algorithms.",
+        "supported_by_context": false,
+        "supporting_text": "However, Gupta cautioned that companies developing or using generative AI or machine learning should be aware of potential issues, including [inaccuracies](https://mitsloanedtech.mit.edu/ai/basics/addressing-ai-hallucinations-and-bias/) and [bias.](https://www.ibm.com/think/topics/ai-bias).",
+        "confidence": 0.21,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "aware",
+          "bias"
+        ],
+        "support_reason": "Similarity 0.21 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Hallucinations (especially in generative models)** | Human‑in‑the‑loop validation, confidence scoring, domain‑specific fine‑tuning.",
+        "supported_by_context": false,
+        "supporting_text": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "confidence": 0.26,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "generative",
+          "in",
+          "the"
+        ],
+        "support_reason": "Similarity 0.26 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Privacy & Governance** | Synthetic data generation, differential privacy, strict access controls.",
+        "supported_by_context": false,
+        "supporting_text": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "confidence": 0.16,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "synthetic"
+        ],
+        "support_reason": "Similarity 0.16 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Model Drift** | Continuous monitoring of performance metrics, automated retraining pipelines.",
+        "supported_by_context": false,
+        "supporting_text": "The central premise of machine learning (ML) is that if you optimize a model’s performance on a dataset of tasks that adequately resemble the real-world problems it will be used for—through a process called model training—the model can make accurate predictions on the new data it sees in its ultimate use case.",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "model",
+          "of",
+          "performance"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Talent Shortage** | Leverage managed AI services, low‑code/auto‑ML platforms, invest in upskilling programs.",
+        "supported_by_context": false,
+        "supporting_text": "AI in IT Industry Machine Learning in IT AI automation.",
+        "confidence": 0.26,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "in"
+        ],
+        "support_reason": "Similarity 0.26 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "## Outlook (2026‑2030) – What to Watch",
+        "supported_by_context": false,
+        "supporting_text": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "confidence": 0.22,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "to",
+          "what"
+        ],
+        "support_reason": "Similarity 0.22 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**AI‑first software architectures** – Applications will be built around AI components from the ground up.",
+        "supported_by_context": false,
+        "supporting_text": "However, Gupta cautioned that companies developing or using generative AI or machine learning should be aware of potential issues, including [inaccuracies](https://mitsloanedtech.mit.edu/ai/basics/addressing-ai-hallucinations-and-bias/) and [bias.](https://www.ibm.com/think/topics/ai-bias).",
+        "confidence": 0.27,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "be"
+        ],
+        "support_reason": "Similarity 0.27 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**Foundation models as services** – Large pre‑trained models (LLMs, multimodal diffusion) will be offered via APIs, with industry‑specific fine‑tuning layers.",
+        "supported_by_context": false,
+        "supporting_text": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "confidence": 0.19,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "as",
+          "industry",
+          "services",
+          "specific"
+        ],
+        "support_reason": "Similarity 0.19 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**End‑to‑end decision automation** – AI will not only recommend actions but also execute them (e.g., autonomous supply‑chain adjustments).",
+        "supported_by_context": false,
+        "supporting_text": "Whether your goal is to improve customer engagement, enhance supply chain efficiency, or mitigate risks, defining clear use cases ensures that AI and machine learning deliver actionable outcomes.",
+        "confidence": 0.16,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "chain",
+          "supply",
+          "to"
+        ],
+        "support_reason": "Similarity 0.16 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**Standardized regulation** – Emerging frameworks for transparency, auditability",
+        "supported_by_context": false,
+        "supporting_text": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "confidence": 0.12,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "for",
+          "frameworks"
+        ],
+        "support_reason": "Similarity 0.12 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "risk management are expected to become common across jurisdictions.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "are",
+          "to"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**Energy‑efficient AI** – Techniques such as model sparsity, quantization",
+        "supported_by_context": false,
+        "supporting_text": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "ai",
+          "model"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "neuromorphic hardware are being explored to reduce the carbon footprint of large‑scale training",
+        "supported_by_context": false,
+        "supporting_text": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "confidence": 0.31,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "of",
+          "the",
+          "to",
+          "training"
+        ],
+        "support_reason": "Similarity 0.31 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "### Bottom Line",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**Machine Learning** is the engine that converts massive, ever‑growing data streams into predictive or generative intelligence.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "confidence": 0.37,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "intelligence",
+          "is",
+          "learning",
+          "machine",
+          "that",
+          "the"
+        ],
+        "support_reason": "Similarity 0.37 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**Artificial Intelligence** provides the broader cognitive context, encompassing ML as well as other reasoning",
+        "supported_by_context": false,
+        "supporting_text": "Use the provided findings as evidence.",
+        "confidence": 0.31,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "as",
+          "the"
+        ],
+        "support_reason": "Similarity 0.31 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "The convergence of **data abundance**, **compute breakthroughs**, **clear economic incentives**",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "confidence": 0.32,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "data",
+          "of",
+          "the"
+        ],
+        "support_reason": "Similarity 0.32 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "a **supportive ecosystem** is turning AI/ML from experimental research into a **strategic, measurable capability** across virtually every industry.",
+        "supported_by_context": false,
+        "supporting_text": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "confidence": 0.3,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "a",
+          "ai",
+          "from",
+          "is"
+        ],
+        "support_reason": "Similarity 0.30 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Feel free to let me know if you’d like deeper detail on any specific sector, technology, or implementation roadmap.",
+        "supported_by_context": false,
+        "supporting_text": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "confidence": 0.15,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "to",
+          "you"
+        ],
+        "support_reason": "Similarity 0.15 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "Expecting value: line 1 column 1 (char 0)",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim": "This response may contain uncertain information.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Safer fallback summary",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: # How AI and Machine Learning Are Transforming the IT Industry.",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**Machine Learning (ML) vs Artificial Intelligence (AI)**",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "Tags: AI, Artificial Intelligence, Machine Learning, ML.",
+        "observed_similarity": 0.86,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Concept | Core Idea | Typical Techniques | What It Enables |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "AI in IT Industry Machine Learning in IT AI automation.",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Artificial Intelligence (AI)** | The broad discipline that aims to create systems that can perform tasks that normally require human‑level cognition (reasoning, perception, language understanding, decision‑making).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "observed_similarity": 0.26,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Knowledge‑representation, search & planning, rule‑based systems, probabilistic reasoning, **machine learning** (as a sub‑field).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Title: What is Machine Learning?",
+        "observed_similarity": 0.23,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Automates or augments any cognitive activity – from chatbots that converse in natural language to robots that navigate complex environments.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Effective deployment of AI and machine learning improves time to value, delivers measurable business impact, and ensures that organizations remain competitive in their industries.",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Machine Learning (ML)** | A **subset of AI** that builds statistical models from data.",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "observed_similarity": 0.42,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "The model “learns” patterns during a training phase",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "observed_similarity": 0.43,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "then makes predictions or decisions on new, unseen data.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "observed_similarity": 0.23,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Supervised learning (regression, classification), unsupervised learning (clustering, dimensionality reduction), reinforcement learning, deep learning (neural networks, transformers, diffusion models).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "observed_similarity": 0.39,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Powers most of today’s practical AI applications – recommendation engines, fraud‑detection classifiers, image‑recognition systems, generative text‑or‑image models, etc.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "One of the most impactful applications of AI in the IT industry is AIOps - Artificial Intelligence for IT Operations.",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "## Why AI/ML Is Gaining Extraordinary Momentum",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "why it is becoming powerful",
+        "observed_similarity": 0.34,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Driver | What Has Changed | Why It Matters |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "why it is becoming powerful",
+        "observed_similarity": 0.34,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Explosion of Data** | Billions of devices, sensors, transactions",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "observed_similarity": 0.32,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "social‑media posts now generate petabytes of structured",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "URL: https://plexustechnology.com/blog/impact-of-ai-machine-learning-on-the-future-of-it/",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "unstructured data every day.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Machine learning AI transforms operations into data-centric ecosystems where every process and decision delivers measurable value.",
+        "observed_similarity": 0.24,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| More data → richer patterns for ML models to learn → higher accuracy",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "observed_similarity": 0.26,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Compute & Algorithm Advances** | • GPUs, TPUs",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "specialized AI accelerators provide orders‑of‑magnitude more FLOPs at lower cost.<br>• Architectural breakthroughs such as **transformers** (for language",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**diffusion models** (for image/video generation).<br>• Training tricks (e.g., mixed‑precision, large‑batch scaling) reduce time‑to‑train.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Faster, cheaper training makes it feasible to build ever‑larger models (foundation models)",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "observed_similarity": 0.15,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "to iterate quickly on new ideas.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "observed_similarity": 0.22,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Clear Business ROI** | Companies can cut costs (automation, predictive maintenance), grow revenue (personalization, new AI‑driven products)",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "AI in IT Industry Machine Learning in IT AI automation.",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "gain competitive advantage.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Effective deployment of AI and machine learning improves time to value, delivers measurable business impact, and ensures that organizations remain competitive in their industries.",
+        "observed_similarity": 0.11,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Executives see measurable financial benefits, prompting larger budgets",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Machine learning AI transforms operations into data-centric ecosystems where every process and decision delivers measurable value.",
+        "observed_similarity": 0.09,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "faster adoption cycles.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Plexus Technology works closely with Arizona businesses to guide AI adoption through expert consultation, managed services, and ongoing support.",
+        "observed_similarity": 0.13,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Maturing Ecosystem** | Cloud providers (AWS, Azure, GCP) now offer turnkey ML services (managed notebooks, AutoML, model‑as‑a‑service).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "The central premise of machine learning (ML) is that if you optimize a model’s performance on a dataset of tasks that adequately resemble the real-world problems it will be used for—through a process called model training—the model can make accurate predictions on the new data it sees in its ultimate use case.",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Open‑source libraries (TensorFlow, PyTorch, Hugging Face) lower the technical barrier.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "[Source 1]",
+        "observed_similarity": 0.21,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Teams can prototype",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "observed_similarity": 0.11,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "deploy models without building the underlying infrastructure from scratch.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "observed_similarity": 0.19,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Regulatory & Ethical Awareness** | Growing focus on bias audits, privacy‑preserving techniques (differential privacy, synthetic data)",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "observed_similarity": 0.14,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Helps organizations manage risk, build trust",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "observed_similarity": 0.12,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "comply with emerging standards, making AI a safer strategic asset.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "observed_similarity": 0.19,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "### Quantitative Snapshot (2024 MIT Sloan Survey)",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "[Learn More](https://mitsloan.mit.edu/faculty/directory/rama-ramakrishnan).",
+        "observed_similarity": 0.13,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**64 %** of senior data‑leadership respondents named **generative AI** the most transformative technology of their generation.",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "observed_similarity": 0.5,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "*(Interpretation: a clear majority of senior leaders already view AI/ML as a strategic differentiator.)*",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "observed_similarity": 0.27,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "## How This Power Translates Into Real‑World Impact",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Create a detailed research report focused on trends, facts, and real-world data.",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Sector | Representative ML‑driven Use‑Case | Observed Benefits (reported qualitatively) |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Use the provided findings as evidence.",
+        "observed_similarity": 0.13,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Retail** | Recommendation engines that suggest products in real time.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Effective deployment of AI and machine learning improves time to value, delivers measurable business impact, and ensures that organizations remain competitive in their industries.",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Higher conversion rates",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "larger average basket size (exact lift varies by implementation).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "observed_similarity": 0.05,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Finance** | Fraud‑detection classifiers that flag anomalous transactions.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Tracking these metrics ensures that AI and machine learning initiatives align with business objectives and deliver measurable outcomes.",
+        "observed_similarity": 0.08,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Faster alerts",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "observed_similarity": 0.14,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "reduced loss; precise monetary impact depends on the institution’s baseline.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "observed_similarity": 0.3,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Healthcare** | Convolutional‑Neural‑Network (CNN) models for medical‑image analysis.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Supervised learning algorithms train models for tasks requiring accuracy, such as classification or regression.",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Earlier disease detection",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "reduced radiologist workload (exact percentages not universally quantified).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **IT / Operations** | Time‑series forecasting for predictive equipment failure.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "One of the most impactful applications of AI in the IT industry is AIOps - Artificial Intelligence for IT Operations.",
+        "observed_similarity": 0.27,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Lower unplanned downtime",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "maintenance cost (specific reduction numbers differ across sites).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Across industries, artificial intelligence (AI) and machine learning (ML) are no longer futuristic concepts; they’re integral tools driving innovation, automation, and smarter decision-making.",
+        "observed_similarity": 0.07,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Legal** | Large‑language‑model (LLM)‑based contract clause extraction.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "The central premise of machine learning (ML) is that if you optimize a model’s performance on a dataset of tasks that adequately resemble the real-world problems it will be used for—through a process called model training—the model can make accurate predictions on the new data it sees in its ultimate use case.",
+        "observed_similarity": 0.11,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Faster review cycles",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "observed_similarity": 0.12,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "improved risk identification (quantitative gains are context‑specific).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "# How AI and Machine Learning Are Transforming the IT Industry.",
+        "observed_similarity": 0.11,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Manufacturing** | Vision‑inspection systems trained on synthetic data.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Defect‑rate reduction",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "scrap‑cost savings (exact figures vary by plant).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "observed_similarity": 0.05,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "> **Note:** The above benefits are **qualitative trends** observed across many case studies.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "observed_similarity": 0.21,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Precise numeric improvements (e.g., “30 % lift in conversion”) are **not universally documented** in the source material",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "observed_similarity": 0.23,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "therefore are omitted to avoid overstating evidence.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "## Key Challenges & Mitigations (Current Best Practices)",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Addressing these challenges positions organizations to achieve operational efficiency, faster time to value, and sustainable growth with AI and machine learning.",
+        "observed_similarity": 0.08,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Challenge | Typical Mitigation |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Bias & Fairness** | Conduct bias audits, use diverse training data, apply fairness‑aware algorithms.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "However, Gupta cautioned that companies developing or using generative AI or machine learning should be aware of potential issues, including [inaccuracies](https://mitsloanedtech.mit.edu/ai/basics/addressing-ai-hallucinations-and-bias/) and [bias.](https://www.ibm.com/think/topics/ai-bias).",
+        "observed_similarity": 0.21,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Hallucinations (especially in generative models)** | Human‑in‑the‑loop validation, confidence scoring, domain‑specific fine‑tuning.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Traditional machine learning is now an established technology in many organizations, and today leading firms are focusing on use cases for generative AI.In a 2024 survey of senior data leaders,[64% of respondents](https://static1.squarespace.com/static/62adf3ca029a6808a6c5be30/t/66635b1a6aeebf254874237b/1717787418584/DataAI-ExecutiveLeadershipSurveyFinalAsset.pdf) said that generative AI has the potential to be the most transformative technology in a generation.",
+        "observed_similarity": 0.26,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Privacy & Governance** | Synthetic data generation, differential privacy, strict access controls.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "observed_similarity": 0.16,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Model Drift** | Continuous monitoring of performance metrics, automated retraining pipelines.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "The central premise of machine learning (ML) is that if you optimize a model’s performance on a dataset of tasks that adequately resemble the real-world problems it will be used for—through a process called model training—the model can make accurate predictions on the new data it sees in its ultimate use case.",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Talent Shortage** | Leverage managed AI services, low‑code/auto‑ML platforms, invest in upskilling programs.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "AI in IT Industry Machine Learning in IT AI automation.",
+        "observed_similarity": 0.26,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "## Outlook (2026‑2030) – What to Watch",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "observed_similarity": 0.22,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**AI‑first software architectures** – Applications will be built around AI components from the ground up.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "However, Gupta cautioned that companies developing or using generative AI or machine learning should be aware of potential issues, including [inaccuracies](https://mitsloanedtech.mit.edu/ai/basics/addressing-ai-hallucinations-and-bias/) and [bias.](https://www.ibm.com/think/topics/ai-bias).",
+        "observed_similarity": 0.27,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**Foundation models as services** – Large pre‑trained models (LLMs, multimodal diffusion) will be offered via APIs, with industry‑specific fine‑tuning layers.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "observed_similarity": 0.19,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**End‑to‑end decision automation** – AI will not only recommend actions but also execute them (e.g., autonomous supply‑chain adjustments).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Whether your goal is to improve customer engagement, enhance supply chain efficiency, or mitigate risks, defining clear use cases ensures that AI and machine learning deliver actionable outcomes.",
+        "observed_similarity": 0.16,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**Standardized regulation** – Emerging frameworks for transparency, auditability",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "By offering specialized solutions such as IT services for law firms, accounting & financial IT services, and non-profit IT services, Plexus helps organizations adopt AI securely within industry-specific compliance frameworks.",
+        "observed_similarity": 0.12,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "risk management are expected to become common across jurisdictions.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: [Skip to main content](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for#main-content).",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**Energy‑efficient AI** – Techniques such as model sparsity, quantization",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "neuromorphic hardware are being explored to reduce the carbon footprint of large‑scale training",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Essential to supervised learning is the use of a loss function that measures the divergence (“loss”) between the model’s output and the ground truth across a batch of training inputs.",
+        "observed_similarity": 0.31,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "### Bottom Line",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**Machine Learning** is the engine that converts massive, ever‑growing data streams into predictive or generative intelligence.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "observed_similarity": 0.37,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "**Artificial Intelligence** provides the broader cognitive context, encompassing ML as well as other reasoning",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Use the provided findings as evidence.",
+        "observed_similarity": 0.31,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "The convergence of **data abundance**, **compute breakthroughs**, **clear economic incentives**",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Machine learning is the subset of artificial intelligence (AI) focused on algorithms that can “learn” the patterns of training data and, subsequently, make accurate *inferences* about new data.",
+        "observed_similarity": 0.32,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "a **supportive ecosystem** is turning AI/ML from experimental research into a **strategic, measurable capability** across virtually every industry.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "In essence, a trained model is applying patterns it learned from training data to infer the correct output for a real-world task: the deployment of an AI model is therefore called AI inference.",
+        "observed_similarity": 0.3,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Feel free to let me know if you’d like deeper detail on any specific sector, technology, or implementation roadmap.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "**When you want to generate data for a machine learning model.** In cases where you don’t have enough data to properly train a traditional machine learning model, generative AI can be used to create[synthetic data](https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively), which has the same statistical properties as a real-world dataset.",
+        "observed_similarity": 0.15,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      }
+    ],
+    "missing_evidence_summary": "81 claims lacked sufficient textual support in the retrieved context. Those claims should be backed by stronger retrieval or removed."
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": false,
+      "used": true,
+      "tools_observed": [
+        "tavily"
+      ],
+      "status": "PASSED",
+      "explanation": "Tools were used even though the query did not strictly demand them."
+    },
+    "context_overlap_check": {
+      "score": 0.456,
+      "threshold": 0.5,
+      "status": "FAILED",
+      "explanation": "The final response diverged materially from the retrieved evidence."
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [],
+      "status": "PASSED",
+      "explanation": "No hedging language was detected."
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "LOW_CONTEXT_OVERLAP",
+      "UNSUPPORTED_CLAIMS"
+    ],
+    "rule_evaluations": [
+      {
+        "rule": "NO_CONTEXT",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No retrieved context was available during verification."
+      },
+      {
+        "rule": "LOW_CONTEXT_OVERLAP",
+        "triggered": true,
+        "impact_score": -4,
+        "evidence": "Overlap score 0.46 is below threshold 0.50."
+      },
+      {
+        "rule": "TOOL_NOT_USED",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "The query appears time-sensitive or factual, but no retrieval tool was recorded."
+      },
+      {
+        "rule": "UNSUPPORTED_CLAIMS",
+        "triggered": true,
+        "impact_score": -5,
+        "evidence": "81 claims could not be mapped back to retrieved context."
+      },
+      {
+        "rule": "UNCERTAINTY_LANGUAGE",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No uncertainty language found."
+      }
+    ],
+    "score_inputs": {
+      "context_present": true,
+      "tool_required": false,
+      "tool_used": true,
+      "context_overlap_score": 0.456,
+      "total_claims": 81,
+      "supported_claims": 4,
+      "independently_verified_claims": 0,
+      "unsupported_claims": 81,
+      "uncertainty_terms_found": []
+    },
+    "scoring_breakdown": {
+      "context_score": -4,
+      "tool_penalty": 0,
+      "uncertainty_penalty": 0,
+      "unsupported_claims_penalty": -5,
+      "total_score": -9,
+      "decision_threshold": -6
+    },
+    "decision_trace": [
+      "Extracted 81 atomic claims from the response.",
+      "Verified 4 claims directly against retrieved context.",
+      "Measured overall context overlap at 0.46.",
+      "Triggered rules: LOW_CONTEXT_OVERLAP, UNSUPPORTED_CLAIMS.",
+      "Final classification set to HALLUCINATED."
+    ]
+  },
+  "final_verdict": {
+    "label": "HALLUCINATED",
+    "confidence": 0.99,
+    "justification": "Response is classified as hallucinated because context overlap is 0.46, below the 0.50 threshold; 81 claims were not supported by retrieved context."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Claims exceeded retrieved evidence",
+    "secondary_cause": "Model relied on prior knowledge instead of data",
+    "explanation": "The model produced 81 claims that could not be substantiated by the available context."
+  },
+  "prevention_recommendation": [
+    "Reject responses with low context overlap",
+    "Add claim verification layer"
+  ],
+  "report_reference_id": "46abe03d-c16b-4fbe-ab04-e7c185bf64bc",
+  "generated_at": "2026-04-10T22:59:54.034162+00:00"
+}

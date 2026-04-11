@@ -1,0 +1,165 @@
+{
+  "schema_version": "2.0",
+  "query": "\"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra. Present the results in a table.\"",
+  "response": "{\"status\": \"failed\", \"error\": \"Expecting property name enclosed in double quotes: line 22 column 7 (char 1466)\", \"stack_trace\": \"Traceback (most recent call last):\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\main.py\\\", line 337, in parse_json_block\\n    return json.loads(cleaned)\\n           ^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\json\\\\__init__.py\\\", line 346, in loads\\n    return _default_decoder.decode(s)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\json\\\\decoder.py\\\", line 337, in decode\\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\json\\\\decoder.py\\\", line 353, in raw_decode\\n    obj, end = self.scan_once(s, idx)\\n               ^^^^^^^^^^^^^^^^^^^^^^\\njson.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 22 column 7 (char 1466)\\n\\nDuring handling of the above exception, another exception occurred:\\n\\nTraceback (most recent call last):\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\main.py\\\", line 458, in evaluate_hallucination\\n    evaluation = parse_json_block(output_text)\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\main.py\\\", line 341, in parse_json_block\\n    return json.loads(match.group(0))\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\json\\\\__init__.py\\\", line 346, in loads\\n    return _default_decoder.decode(s)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\json\\\\decoder.py\\\", line 337, in decode\\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\json\\\\decoder.py\\\", line 353, in raw_decode\\n    obj, end = self.scan_once(s, idx)\\n               ^^^^^^^^^^^^^^^^^^^^^^\\njson.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 22 column 7 (char 1466)\\n\\nThe above exception was the direct cause of the following exception:\\n\\nTraceback (most recent call last):\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\main.py\\\", line 624, in run_research_system\\n    hallucination_report = evaluate_hallucination(\\n                           ^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\main.py\\\", line 548, in evaluate_hallucination\\n    raise RuntimeError(friendly_error) from exc\\nRuntimeError: Expecting property name enclosed in double quotes: line 22 column 7 (char 1466)\\n\"}",
+  "report_summary": {
+    "response_generation_status": "completed",
+    "claims_evaluated": 0,
+    "supported_claims": 0,
+    "independently_verified_claims": 0,
+    "unsupported_claims": 0,
+    "overall_outcome": "GROUNDED"
+  },
+  "generation_trace": {
+    "process_description": "Execution steps were recorded first. The final response was then audited using deterministic claim extraction, context matching, overlap scoring, tool-usage checks, and uncertainty checks.",
+    "response_construction_basis": "retrieved context only",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Research Agent",
+        "action": "Research",
+        "output_summary": "### Battery Life and Charging Speeds: iPhone 16 Pro vs. Samsung Galaxy S24 Ultra\n\nThe **iPhone 16 Pro** offers strong battery endurance, with Apple's rated video playback up to 23 hours and real-world tests around 9-14 hours, while the **Samsung Galaxy S24 Ultra** edges out in charging speed at up to 45W wired but has comparable daily battery life per limited direct comparisons.[1][2][3][6]\n\n#### Key Comparison Table\n| Aspect              | iPhone 16 Pro                                       ...",
+        "source_used": true,
+        "basis": "retrieved context"
+      },
+      {
+        "step": 2,
+        "agent": "Analysis Agent",
+        "action": "Analysis",
+        "output_summary": "Here are the key insights from the research output:\n\n*   **Comparable Daily Battery Life:** Both the iPhone 16 Pro and Samsung Galaxy S24 Ultra offer comparable \"all-day\" battery life for typical users, with real-world tests showing them lasting a full day without needing a recharge.\n*   **Samsung Leads in Wired Charging Speed:** The Samsung Galaxy S24 Ultra has a clear advantage in wired charging speed, supporting up to 45W, which is faster than the iPhone 16 Pro's estimated ~30W.\n*   **iPho...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 3,
+        "agent": "Summary Agent",
+        "action": "Summary",
+        "output_summary": "# Executive Comparison: Battery & Charging Performance\n**iPhone 16 Pro vs. Samsung Galaxy S24 Ultra**\n\n---\n\n### **Executive Summary**\nBoth the iPhone 16 Pro and the Samsung Galaxy S24 Ultra are top-tier performers capable of delivering reliable \"all-day\" battery life. While the iPhone 16 Pro shows significant incremental improvements in efficiency and endurance over previous models, the Samsung Galaxy S24 Ultra maintains a competitive edge in raw wired charging speeds.\n\n---\n\n### **Performance...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 4,
+        "agent": "Evaluation Agent",
+        "action": "Evaluation",
+        "output_summary": "",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_documents_count": 32,
+    "context_summary": "User query: \"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra. Present the results in a table.\" Live web findings:",
+    "verification_method": {
+      "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
+      "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
+      "support_threshold": 0.4,
+      "multi_source_verification": "Each claim is checked against retrieved tool results first, then against Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+    },
+    "claims_in_response": [],
+    "unsupported_claims": [],
+    "missing_evidence_summary": "No major evidence gaps were found."
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": false,
+      "used": true,
+      "tools_observed": [
+        "tavily"
+      ],
+      "status": "PASSED",
+      "explanation": "Tools were used even though the query did not strictly demand them."
+    },
+    "context_overlap_check": {
+      "score": 0.0096,
+      "threshold": 0.5,
+      "status": "FAILED",
+      "explanation": "The final response diverged materially from the retrieved evidence."
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [],
+      "status": "PASSED",
+      "explanation": "No hedging language was detected."
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "LOW_CONTEXT_OVERLAP"
+    ],
+    "rule_evaluations": [
+      {
+        "rule": "NO_CONTEXT",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No retrieved context was available during verification."
+      },
+      {
+        "rule": "LOW_CONTEXT_OVERLAP",
+        "triggered": true,
+        "impact_score": -4,
+        "evidence": "Overlap score 0.01 is below threshold 0.50."
+      },
+      {
+        "rule": "TOOL_NOT_USED",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "The query appears time-sensitive or factual, but no retrieval tool was recorded."
+      },
+      {
+        "rule": "UNSUPPORTED_CLAIMS",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "0 claims could not be mapped back to retrieved context."
+      },
+      {
+        "rule": "UNCERTAINTY_LANGUAGE",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No uncertainty language found."
+      }
+    ],
+    "score_inputs": {
+      "context_present": true,
+      "tool_required": false,
+      "tool_used": true,
+      "context_overlap_score": 0.0096,
+      "total_claims": 0,
+      "supported_claims": 0,
+      "independently_verified_claims": 0,
+      "unsupported_claims": 0,
+      "uncertainty_terms_found": []
+    },
+    "scoring_breakdown": {
+      "context_score": -4,
+      "tool_penalty": 0,
+      "uncertainty_penalty": 0,
+      "unsupported_claims_penalty": 0,
+      "total_score": -4,
+      "decision_threshold": -6
+    },
+    "decision_trace": [
+      "Extracted 0 atomic claims from the response.",
+      "Verified 0 claims directly against retrieved context.",
+      "Measured overall context overlap at 0.01.",
+      "Triggered rules: LOW_CONTEXT_OVERLAP.",
+      "Final classification set to GROUNDED."
+    ]
+  },
+  "final_verdict": {
+    "label": "GROUNDED",
+    "confidence": 0.6,
+    "justification": "Response is grounded overall, although minor warnings were noted: context overlap is 0.01, below the 0.50 threshold."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Weak grounding context",
+    "secondary_cause": "Model relied on prior knowledge instead of data",
+    "explanation": "The response-context similarity score of 0.01 was too low for a grounded answer."
+  },
+  "prevention_recommendation": [
+    "Reject responses with low context overlap"
+  ],
+  "report_reference_id": "23566ddc-ee23-4c78-8b6d-6fd1b81f39d9",
+  "generated_at": "2026-04-11T01:01:51.182707+00:00"
+}

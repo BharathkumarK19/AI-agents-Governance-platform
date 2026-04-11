@@ -1,0 +1,92 @@
+{
+  "id": "ff7711b2-5d5c-4c69-8160-34e51c1505c4",
+  "attempt": 2,
+  "timestamp": "2026-04-11T00:39:31.392253+00:00",
+  "query": "What are the top 3 highest-rated vegetarian restaurants currently open in Hyderabad? List their signature dishes and one recent customer review for each.\"",
+  "data_source_used": "hybrid",
+  "model_used": "openai/gpt-4o-mini",
+  "response": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes, and recent customer reviews.",
+  "claims": [
+    {
+      "claim": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "The 10 Best Vegetarian Restaurants in Hyderabad (2026) Vegetarian-Friendly Restaurants in Hyderabad · 1. Mekong. 4.9. (1,050 reviews). Thai, Szechuan$$$$ · 2. Bidri. 4.9. (1,010 reviews) · 3. Yi ... Vegetarian Food in Hyderabad - 29 Restaurants Tried & Tasted ... There are a lot of vegetarian restaurants in Hyderabad serving good food. From breakfast to dinner and desserts, you'll find a variety of food options on offer. Top 5 Premium Pure Veg Restaurants Hyderabad 2025 - YouTube luv4foodntravel",
+          "source": "https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html",
+          "results_checked": 5,
+          "overlap": 0.2727
+        }
+      }
+    },
+    {
+      "claim": "recent customer reviews.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Trustpilot Reviews: Experience the power of customer reviews We're all about consumer reviews. Get the real inside story from shoppers like you. Read, write and share reviews on Trustpilot today. Consumer Reports: Product Reviews and Ratings, Buying Advice ... Get unbiased ratings and reviews for 10000+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most. The Best List of Positive Review Response Examples - Usersnap – “I recently made a pu",
+          "source": "https://www.trustpilot.com/",
+          "results_checked": 5,
+          "overlap": 0.6667
+        }
+      }
+    }
+  ],
+  "scores": {
+    "total_claims": 2,
+    "verified_claims": 1,
+    "weakly_supported_claims": 0,
+    "unsupported_claims": 1,
+    "verification_score": 0.5,
+    "confidence_score": 0.5,
+    "consistency_score": 0.55,
+    "risk_score": 4,
+    "label": "GROUNDED"
+  },
+  "failure_reason": "FACT_MISMATCH",
+  "latency_ms": 10457.33,
+  "tools_used": [
+    "tavily",
+    "serper"
+  ],
+  "retrieval_source_count": 10,
+  "retrieval_sources_preview": [
+    {
+      "title": "The 10 Best Vegetarian Restaurants in Hyderabad (2026)",
+      "url": "https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html",
+      "source": "tavily"
+    },
+    {
+      "title": "Top 5 newly opened pure vegetarian restaurants in Hyderabad ...",
+      "url": "https://www.instagram.com/reel/DB8Buy4PEr1/?hl=en",
+      "source": "tavily"
+    },
+    {
+      "title": "Best Veg Restaurants, Pure Veg in Hyderabad - Zomato",
+      "url": "https://www.zomato.com/hyderabad/vegetarian-restaurants",
+      "source": "tavily"
+    },
+    {
+      "title": "Good vegetarian restaurants in Hyderabad - Reddit",
+      "url": "https://www.reddit.com/r/hyderabad/comments/1irk6zq/good_vegetarian_restaurants_in_hyderabad/",
+      "source": "tavily"
+    },
+    {
+      "title": "Best Pure Veg Restaurants in Hyderabad - Order Food Online",
+      "url": "https://www.justdial.com/Hyderabad/Pure-Veg-Restaurants/nct-10396867",
+      "source": "tavily"
+    }
+  ],
+  "comparison_summary": {
+    "supported_claims_by_source": {
+      "serper": 1
+    },
+    "verified_claims": 1,
+    "weakly_supported_claims": 0,
+    "unsupported_claims": 1
+  }
+}

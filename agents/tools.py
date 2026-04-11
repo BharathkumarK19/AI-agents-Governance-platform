@@ -1,4 +1,6 @@
 import os
+import re
+from html import unescape
 
 import requests
 from dotenv import load_dotenv
@@ -13,6 +15,10 @@ class ResearchToolError(Exception):
 
 
 class TavilySearchError(ResearchToolError):
+    pass
+
+
+class DuckDuckGoSearchError(ResearchToolError):
     pass
 
 
@@ -39,6 +45,61 @@ def search_tavily(query):
         raise TavilySearchError(
             "Tavily search failed before the research crew could start."
         ) from exc
+
+
+def search_duckduckgo(query, max_results=5):
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/124.0 Safari/537.36"
+        )
+    }
+    try:
+        response = requests.get(
+            "https://html.duckduckgo.com/html/",
+            params={"q": query},
+            headers=headers,
+            timeout=15,
+        )
+        response.raise_for_status()
+        html = response.text
+        pattern = re.compile(
+            r'<a[^>]*class="result__a"[^>]*href="(?P<url>[^"]+)"[^>]*>(?P<title>.*?)</a>.*?'
+            r'<a[^>]*class="result__snippet"[^>]*>(?P<snippet>.*?)</a>',
+            re.DOTALL,
+        )
+        results = []
+        for match in pattern.finditer(html):
+            title = _strip_html(match.group("title"))
+            url = unescape(match.group("url"))
+            snippet = _strip_html(match.group("snippet"))
+            if title and snippet:
+                results.append(
+                    {
+                        "title": title,
+                        "url": url,
+                        "content": snippet,
+                        "source": "duckduckgo_search",
+                    }
+                )
+            if len(results) >= max_results:
+                break
+        return results
+    except requests.exceptions.RequestException as exc:
+        raise DuckDuckGoSearchError(
+            "DuckDuckGo search is unavailable right now."
+        ) from exc
+    except Exception as exc:
+        raise DuckDuckGoSearchError(
+            "DuckDuckGo search parsing failed."
+        ) from exc
+
+
+def _strip_html(value):
+    text = re.sub(r"<[^>]+>", " ", value or "")
+    text = unescape(text)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def build_source_bundle(results):

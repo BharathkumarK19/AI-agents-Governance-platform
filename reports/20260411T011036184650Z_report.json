@@ -1,0 +1,625 @@
+{
+  "schema_version": "2.0",
+  "query": "\"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra. Present the results in a table.\"",
+  "response": "# Comparison Report: Battery & Charging Performance\n**iPhone 16 Pro vs. Samsung Galaxy S24 Ultra**\n\n## **Executive Summary**\nBoth the iPhone 16 Pro and the Samsung Galaxy S24 Ultra are top-tier performers capable of lasting a full day under heavy usage. While the iPhone 16 Pro excels in software-hardware optimization and efficiency, the Samsung Galaxy S24 Ultra maintains a competitive edge in raw charging speeds.\n\n---\n\n## **Performance Comparison Table**\n\n| Feature | iPhone 16 Pro | Samsung Galaxy S24 Ultra |\n| :--- | :--- | :--- |\n| **Wired Charging Speed** | ~30W Peak | **45W Peak** |\n| **Real-World Endurance** | 9–14 hours of active use | Full day (Competitive in drain tests) |\n| **Efficiency Driver** | A18 Pro Chip Optimization | Large Capacity & AI Management |\n| **End-of-Day Reserve** | ~30–35% (Heavy usage) | High (Varies by display settings) |\n| **Primary Advantage** | Video playback & standby efficiency | Rapid wired power recovery |\n\n---\n\n## **Key Insights & Analysis**\n\n### **1. Battery Life & Endurance**\n*   **iPhone 16 Pro:** Benefits significantly from the new A18 Pro chip, which enhances efficiency. Apple provides specific metrics for video playback, and real-world testing shows users typically finish a heavy day with over 30% battery remaining.\n*   **Samsung Galaxy S24 Ultra:** Consistently ranks as one of the longest-lasting Android devices. While specific lab metrics vary, it is designed to survive a full day of intensive tasks, including high-resolution gaming and multitasking.\n\n### **2. Charging Capabilities**\n*   **The Samsung Advantage:** The S24 Ultra supports **45W wired charging**, allowing it to replenish a large portion of its battery in significantly less time than the iPhone.\n*   **The iPhone Approach:** The iPhone 16 Pro peaks at approximately **30W**. While slower than Samsung, it focuses on battery longevity and thermal management during the charging cycle.\n\n### **3. Real-World Considerations**\n*   **Variable Factors:** Battery performance on both devices is heavily influenced by screen brightness, 5G connectivity, and refresh rate settings (both support 120Hz).\n*   **Data Nuance:** While the iPhone provides detailed \"rated\" hours for specific tasks (like video playback), the S24 Ultra’s performance is often measured by users through multi-phone \"drain tests,\" where it remains a top-tier contender.\n\n---\n\n## **Final Verdict**\n*   **Choose the iPhone 16 Pro** if you prioritize consistent standby time, efficient video playback, and a seamless integration between hardware and software.\n*   **Choose the Samsung Galaxy S24 Ultra** if you require the fastest possible wired charging speeds and a large-cell battery designed for heavy multitasking.",
+  "report_summary": {
+    "response_generation_status": "completed",
+    "claims_evaluated": 8,
+    "supported_claims": 3,
+    "independently_verified_claims": 5,
+    "unsupported_claims": 5,
+    "overall_outcome": "HALLUCINATED"
+  },
+  "generation_trace": {
+    "process_description": "Execution steps were recorded first. The final response was then audited using deterministic claim extraction, context matching, overlap scoring, tool-usage checks, and uncertainty checks.",
+    "response_construction_basis": "retrieved context only",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Research Agent",
+        "action": "Research",
+        "output_summary": "### Battery Life Comparison\nThe **iPhone 16 Pro** offers solid battery endurance, with Apple's rated video playback up to 23 hours and real-world tests around 9-14 hours, while the **Samsung Galaxy S24 Ultra** matches or exceeds it in daily use per user reports, often lasting a full day.[1][3][4][6] Charging is faster on the **S24 Ultra** (up to 45W wired), reaching full charge quicker than the iPhone 16 Pro's ~30W wired speed.[1][2]\n\n### Detailed Specs and Tests\nApple rates the iPhone 16 Pro...",
+        "source_used": true,
+        "basis": "retrieved context"
+      },
+      {
+        "step": 2,
+        "agent": "Analysis Agent",
+        "action": "Analysis",
+        "output_summary": "Here are the key insights from the research output:\n\n*   **Battery Life:** Both the iPhone 16 Pro and Samsung Galaxy S24 Ultra offer strong, full-day battery performance in real-world usage.\n*   **Charging Speed:** The Samsung Galaxy S24 Ultra has a clear advantage in wired charging speed, supporting up to 45W compared to the iPhone 16 Pro's ~30W.\n*   **Specific Metrics:** The iPhone 16 Pro provides more detailed rated battery life metrics (e.g., video playback hours), while the S24 Ultra's b...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 3,
+        "agent": "Summary Agent",
+        "action": "Summary",
+        "output_summary": "# Comparison Report: Battery & Charging Performance\n**iPhone 16 Pro vs. Samsung Galaxy S24 Ultra**\n\n## **Executive Summary**\nBoth the iPhone 16 Pro and the Samsung Galaxy S24 Ultra are top-tier performers capable of lasting a full day under heavy usage. While the iPhone 16 Pro excels in software-hardware optimization and efficiency, the Samsung Galaxy S24 Ultra maintains a competitive edge in raw charging speeds.\n\n---\n\n## **Performance Comparison Table**\n\n| Feature | iPhone 16 Pro | Samsung G...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 4,
+        "agent": "Evaluation",
+        "action": "Evaluation",
+        "output_summary": "{'hallucination_detected': False, 'confidence_score': 1.0, 'issues': [], 'verdict': 'Reliable', 'explanation': 'No major unsupported or fabricated claims were detected against the research evidence.', 'suggested_failed_agents': []}",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_documents_count": 32,
+    "context_summary": "User query: \"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra. Present the results in a table.\" Live web findings:",
+    "verification_method": {
+      "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
+      "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
+      "support_threshold": 0.4,
+      "multi_source_verification": "Each claim is checked against retrieved tool results first, then against Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+    },
+    "claims_in_response": [
+      {
+        "claim": "# Comparison Report: Battery & Charging Performance",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.27,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "battery",
+          "charging"
+        ],
+        "support_reason": "Similarity 0.27 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "Charging Speed vs. Daily Performance: A Comparative Analysis of ... This study focuses on the instantaneous effects of fast charging technologies, in terms of the daily operation of mobile devices, ... [PDF] Comparison of the fast-charging capability of various battery electric ... P3 developed the P3 Charging Index to compare the charging speed of several battery electric vehicles. (BEVs), from a user perspective. Comparative evaluation of battery charging strategies These findings collectively",
+              "source": "https://www.mdpi.com/2673-4591/124/1/74",
+              "top_sources": [
+                {
+                  "title": "Charging Speed vs. Daily Performance: A Comparative Analysis of ...",
+                  "url": "https://www.mdpi.com/2673-4591/124/1/74"
+                },
+                {
+                  "title": "[PDF] Comparison of the fast-charging capability of various battery electric ...",
+                  "url": "https://evs38-program.org/images/Proceedings/A%20Vehicle%20&%20Transportation%20Systems/61_%20P3%20Charging%20Index%20Comparison%20of%20the%20fast-charging%20capability%20of%20various%20battery%20electric%20vehicles.pdf"
+                },
+                {
+                  "title": "Comparative evaluation of battery charging strategies",
+                  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0017931025012827"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.5714
+            }
+          }
+        }
+      },
+      {
+        "claim": "the Samsung Galaxy S24 Ultra are top-tier performers capable of lasting a full day under heavy usage.",
+        "supported_by_context": false,
+        "supporting_text": "User query: \"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "confidence": 0.36,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "galaxy",
+          "of",
+          "s24",
+          "samsung",
+          "the",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.36 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "Galaxy S24 Ultra long-term review | Still the BEST of Android? ... best display? 2:12 - Fingerprint scanner 2:43 - S Pen 3:12 - Performance powerhouse 4:46 - Camera and quality 6:56 - Long-lasting battery ... Samsung S Series Ranked: Best to Worst Based on Specs, Battery ... S23 Ultra / S24 Ultra – Excellent thermals due to Snapdragon 8 Gen 2/3, big battery, and top-tier specs. S23 Ultra is slightly more efficient ... Samsung Galaxy S24 Ultra Long-Term Review | 9 Months Later In this video, I've",
+              "source": "https://www.youtube.com/watch?v=8DwX-64SUeg",
+              "top_sources": [
+                {
+                  "title": "Galaxy S24 Ultra long-term review | Still the BEST of Android?",
+                  "url": "https://www.youtube.com/watch?v=8DwX-64SUeg"
+                },
+                {
+                  "title": "Samsung S Series Ranked: Best to Worst Based on Specs, Battery ...",
+                  "url": "https://www.reddit.com/r/samsung/comments/1kc7kzm/samsung_s_series_ranked_best_to_worst_based_on/"
+                },
+                {
+                  "title": "Samsung Galaxy S24 Ultra Long-Term Review | 9 Months Later",
+                  "url": "https://www.youtube.com/watch?v=-2O8PCT7sPA"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.7059
+            }
+          }
+        }
+      },
+      {
+        "claim": "While the iPhone 16 Pro excels in software-hardware optimization",
+        "supported_by_context": true,
+        "supporting_text": "Title: iPhone 16 Pro vs.",
+        "confidence": 0.42,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "16",
+          "iphone",
+          "pro"
+        ],
+        "support_reason": "Similarity 0.42 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "Exploring the Powerful Upgrades of iPhone 16 Pro With the combination of hardware advancements and software optimizations, this latest model ensures that users can engage in their daily activities without ... iPhone 16 Pro - Software/Hardware issues … - Apple Community A week after getting the SWAP device, again, the phone automatically restarting, screen layout looked fragmented. I go to the Apple Store 2nd ... GPU in basic iPhone 16 is more powerful than GeForce GTX 1050 Ti It's kinda impressi",
+              "source": "https://dynamic-computers.net/exploring-the-powerful-upgrades-of-iphone-16-pro/",
+              "top_sources": [
+                {
+                  "title": "Exploring the Powerful Upgrades of iPhone 16 Pro",
+                  "url": "https://dynamic-computers.net/exploring-the-powerful-upgrades-of-iphone-16-pro/"
+                },
+                {
+                  "title": "iPhone 16 Pro - Software/Hardware issues … - Apple Community",
+                  "url": "https://discussions.apple.com/thread/255809425"
+                },
+                {
+                  "title": "GPU in basic iPhone 16 is more powerful than GeForce GTX 1050 Ti",
+                  "url": "https://www.reddit.com/r/iphone/comments/1fg5sc0/gpu_in_basic_iphone_16_is_more_powerful_than/"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.5556
+            }
+          }
+        }
+      },
+      {
+        "claim": "efficiency, the Samsung Galaxy S24 Ultra maintains a competitive edge in raw charging speeds.",
+        "supported_by_context": true,
+        "supporting_text": "User query: \"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "confidence": 0.45,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "charging",
+          "galaxy",
+          "s24",
+          "samsung",
+          "speeds",
+          "the",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.45 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "Charging Review of Samsung S24 Ultra - Chargerlab The battery capacity is 5000mAh. It supports 45W wired charging and 15W wireless charging. It also supports wired or wireless reverse charging. Labs Team says S24 Ultra can go 0~100% using 65W charging, but ... S24 Ultra supports up to 65W in superfast charging . Official charger of S24 Ultra is rated at 45W, might be that they used a third party ... Samsung Galaxy S24 Ultra Review: A Powerhouse That Lasts - Box Battery capacity remains at 5000mA",
+              "source": "https://www.chargerlab.com/charging-review-of-samsung-s24-ultra/",
+              "top_sources": [
+                {
+                  "title": "Charging Review of Samsung S24 Ultra - Chargerlab",
+                  "url": "https://www.chargerlab.com/charging-review-of-samsung-s24-ultra/"
+                },
+                {
+                  "title": "Labs Team says S24 Ultra can go 0~100% using 65W charging, but ...",
+                  "url": "https://www.reddit.com/r/LinusTechTips/comments/1ahpzmd/labs_team_says_s24_ultra_can_go_0100_using_65w/"
+                },
+                {
+                  "title": "Samsung Galaxy S24 Ultra Review: A Powerhouse That Lasts - Box",
+                  "url": "https://box.co.uk/blog/samsung-galaxy-s24-ultra-overview"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.6429
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Feature | iPhone 16 Pro | Samsung Galaxy S24 Ultra |",
+        "supported_by_context": true,
+        "supporting_text": "Title: Samsung Galaxy S24 Ultra VS iPhone 16 pro max charging Speed ...",
+        "confidence": 0.71,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "16",
+          "galaxy",
+          "iphone",
+          "pro",
+          "s24",
+          "samsung",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.71 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without charging, ... iPhone 16 Pro Max vs Galaxy S24 Ultra: Battle of the Bigs The iPhone 16 Pro Max also change slightly, to 163mm x 77.6mm, whereas the Galaxy S24 Ultra is 162.3 x 79. So yes, the Galaxy is wider, which helps with S Pen ... Galaxy S24 Ultra vs iPhone 16 Pro Max - Camera ShowDOWN Galaxy S24 Ul",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "top_sources": [
+                {
+                  "title": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit",
+                  "url": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/"
+                },
+                {
+                  "title": "iPhone 16 Pro Max vs Galaxy S24 Ultra: Battle of the Bigs",
+                  "url": "https://www.phonearena.com/reviews/iphone-16-pro-max-vs-galaxy-s24-ultra_id6277"
+                },
+                {
+                  "title": "Galaxy S24 Ultra vs iPhone 16 Pro Max - Camera ShowDOWN",
+                  "url": "https://www.youtube.com/watch?v=uFHE9Rc3kss"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.7778
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Wired Charging Speed** | ~30W Peak | **45W Peak** |",
+        "supported_by_context": false,
+        "supporting_text": "Title: Samsung Galaxy S24 Ultra VS iPhone 16 pro max charging Speed ...",
+        "confidence": 0.19,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "charging",
+          "speed"
+        ],
+        "support_reason": "Similarity 0.19 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "45W vs 30W Charging Speed: How Much Time Can You ... - Anker Because a 45W charger has more \"headroom,\" it stays cooler and can maintain peak charging wattage for a longer portion of the cycle compared to ... Is 45W Faster Than 30W? Real Charging Speed Difference Explained While a 45W charger technically provides more power capacity than a 30W charger, smartphones and other devices regulate how much power they ... Pixel 9 supports 27W wired charging — should I get a 30W or 45W ... As long as it ",
+              "source": "https://www.anker.com/blogs/chargers/45w-vs-30w-charging-speed-iphone",
+              "top_sources": [
+                {
+                  "title": "45W vs 30W Charging Speed: How Much Time Can You ... - Anker",
+                  "url": "https://www.anker.com/blogs/chargers/45w-vs-30w-charging-speed-iphone"
+                },
+                {
+                  "title": "Is 45W Faster Than 30W? Real Charging Speed Difference Explained",
+                  "url": "https://www.anker.com/blogs/chargers/is-45w-faster-than-30w-iphone-charging"
+                },
+                {
+                  "title": "Pixel 9 supports 27W wired charging — should I get a 30W or 45W ...",
+                  "url": "https://www.reddit.com/r/GooglePixel/comments/1nr0w72/pixel_9_supports_27w_wired_charging_should_i_get/"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.25
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Real-World Endurance** | 9–14 hours of active use | Full day (Competitive in drain tests) |",
+        "supported_by_context": false,
+        "supporting_text": "Both phones can last a full day without",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "day",
+          "full"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "A new reliable laboratory test of endurance performance for road ... The high reliability of this laboratory test will make the test useful for research on performance of competitive road cyclists. [PDF] Endurance and Ultra-endurance Athletes - JBLearning Endurance athletes regularly engaging in training and competitive sessions lasting longer than 4 hours should use the higher-sodium versions. Look for. Can S25 plus owners post their battery and screen on time stats? The battery life of S25 Ult",
+              "source": "https://pubmed.ncbi.nlm.nih.gov/9861609/",
+              "top_sources": [
+                {
+                  "title": "A new reliable laboratory test of endurance performance for road ...",
+                  "url": "https://pubmed.ncbi.nlm.nih.gov/9861609/"
+                },
+                {
+                  "title": "[PDF] Endurance and Ultra-endurance Athletes - JBLearning",
+                  "url": "https://samples.jblearning.com/0763726575/Chapter_12_Fink_Practical_Applications_in_Sports_Nutrition.pdf"
+                },
+                {
+                  "title": "Can S25 plus owners post their battery and screen on time stats?",
+                  "url": "https://www.reddit.com/r/samsung/comments/1ig7oke/can_s25_plus_owners_post_their_battery_and_screen/"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.2857
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Efficiency Driver** | A18 Pro Chip Optimization | Large Capacity & AI Management |",
+        "supported_by_context": false,
+        "supporting_text": "Title: iPhone 16 Pro vs.",
+        "confidence": 0.14,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "pro"
+        ],
+        "support_reason": "Similarity 0.14 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "Apple's A18 Pro chip expected to make new entry-level MacBook ... Neural Engine and AI/ML TasksWith a 35 TOPS Neural Engine (NPU), the A18 Pro excels in on-device AI features — think Apple Intelligence tasks, ... MacBook Neo (13-inch, A18 Pro) - Tech Specs - Apple Support Apple A18 Pro chip. 6‑core CPU with 2 performance cores and 4 efficiency cores. 5‑core GPU. Hardware-accelerated ray tracing. 16-core Neural Engine. 60GB/s ... Apple announced a new generation of lightweight MacBook Air and ...",
+              "source": "https://macdailynews.com/2026/02/27/apples-a18-pro-chip-expected-to-make-new-entry-level-macbook-feel-premium-and-future-proof/",
+              "top_sources": [
+                {
+                  "title": "Apple's A18 Pro chip expected to make new entry-level MacBook ...",
+                  "url": "https://macdailynews.com/2026/02/27/apples-a18-pro-chip-expected-to-make-new-entry-level-macbook-feel-premium-and-future-proof/"
+                },
+                {
+                  "title": "MacBook Neo (13-inch, A18 Pro) - Tech Specs - Apple Support",
+                  "url": "https://support.apple.com/en-us/126322"
+                },
+                {
+                  "title": "Apple announced a new generation of lightweight MacBook Air and ...",
+                  "url": "https://www.facebook.com/forbes/posts/apple-announced-a-new-generation-of-lightweight-macbook-air-and-high-powered-mac/1298004155522905/"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.3333
+            }
+          }
+        }
+      }
+    ],
+    "verified_sources": [
+      {
+        "source_name": "serper",
+        "title": "Charging Speed vs. Daily Performance: A Comparative Analysis of ...",
+        "url": "https://www.mdpi.com/2673-4591/124/1/74"
+      },
+      {
+        "source_name": "serper",
+        "title": "[PDF] Comparison of the fast-charging capability of various battery electric ...",
+        "url": "https://evs38-program.org/images/Proceedings/A%20Vehicle%20&%20Transportation%20Systems/61_%20P3%20Charging%20Index%20Comparison%20of%20the%20fast-charging%20capability%20of%20various%20battery%20electric%20vehicles.pdf"
+      },
+      {
+        "source_name": "serper",
+        "title": "Comparative evaluation of battery charging strategies",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0017931025012827"
+      },
+      {
+        "source_name": "serper",
+        "title": "Galaxy S24 Ultra long-term review | Still the BEST of Android?",
+        "url": "https://www.youtube.com/watch?v=8DwX-64SUeg"
+      },
+      {
+        "source_name": "serper",
+        "title": "Samsung S Series Ranked: Best to Worst Based on Specs, Battery ...",
+        "url": "https://www.reddit.com/r/samsung/comments/1kc7kzm/samsung_s_series_ranked_best_to_worst_based_on/"
+      },
+      {
+        "source_name": "serper",
+        "title": "Samsung Galaxy S24 Ultra Long-Term Review | 9 Months Later",
+        "url": "https://www.youtube.com/watch?v=-2O8PCT7sPA"
+      },
+      {
+        "source_name": "serper",
+        "title": "Exploring the Powerful Upgrades of iPhone 16 Pro",
+        "url": "https://dynamic-computers.net/exploring-the-powerful-upgrades-of-iphone-16-pro/"
+      },
+      {
+        "source_name": "serper",
+        "title": "iPhone 16 Pro - Software/Hardware issues … - Apple Community",
+        "url": "https://discussions.apple.com/thread/255809425"
+      },
+      {
+        "source_name": "serper",
+        "title": "GPU in basic iPhone 16 is more powerful than GeForce GTX 1050 Ti",
+        "url": "https://www.reddit.com/r/iphone/comments/1fg5sc0/gpu_in_basic_iphone_16_is_more_powerful_than/"
+      },
+      {
+        "source_name": "serper",
+        "title": "Charging Review of Samsung S24 Ultra - Chargerlab",
+        "url": "https://www.chargerlab.com/charging-review-of-samsung-s24-ultra/"
+      },
+      {
+        "source_name": "serper",
+        "title": "Labs Team says S24 Ultra can go 0~100% using 65W charging, but ...",
+        "url": "https://www.reddit.com/r/LinusTechTips/comments/1ahpzmd/labs_team_says_s24_ultra_can_go_0100_using_65w/"
+      },
+      {
+        "source_name": "serper",
+        "title": "Samsung Galaxy S24 Ultra Review: A Powerhouse That Lasts - Box",
+        "url": "https://box.co.uk/blog/samsung-galaxy-s24-ultra-overview"
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim": "# Comparison Report: Battery & Charging Performance",
+        "reason": "Claim was not supported by retrieved context even though external support may exist.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.27,
+        "multi_source_status": "VERIFIED",
+        "multi_source_support_count": 1
+      },
+      {
+        "claim": "the Samsung Galaxy S24 Ultra are top-tier performers capable of lasting a full day under heavy usage.",
+        "reason": "Claim was not supported by retrieved context even though external support may exist.",
+        "best_available_context": "User query: \"Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "observed_similarity": 0.36,
+        "multi_source_status": "VERIFIED",
+        "multi_source_support_count": 1
+      },
+      {
+        "claim": "| **Wired Charging Speed** | ~30W Peak | **45W Peak** |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Title: Samsung Galaxy S24 Ultra VS iPhone 16 pro max charging Speed ...",
+        "observed_similarity": 0.19,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Real-World Endurance** | 9–14 hours of active use | Full day (Competitive in drain tests) |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Both phones can last a full day without",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Efficiency Driver** | A18 Pro Chip Optimization | Large Capacity & AI Management |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Title: iPhone 16 Pro vs.",
+        "observed_similarity": 0.14,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      }
+    ],
+    "missing_evidence_summary": "5 claims lacked sufficient textual support in the retrieved context. Those claims should be backed by stronger retrieval or removed."
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": false,
+      "used": true,
+      "tools_observed": [
+        "tavily"
+      ],
+      "status": "PASSED",
+      "explanation": "Tools were used even though the query did not strictly demand them."
+    },
+    "context_overlap_check": {
+      "score": 0.6368,
+      "threshold": 0.5,
+      "status": "PASSED",
+      "explanation": "The final response remained sufficiently close to the retrieved evidence."
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [
+        "typically"
+      ],
+      "status": "WARNING",
+      "explanation": "Hedging language was detected, which can signal weak evidence or model uncertainty."
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "UNSUPPORTED_CLAIMS",
+      "UNCERTAINTY_LANGUAGE"
+    ],
+    "rule_evaluations": [
+      {
+        "rule": "NO_CONTEXT",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No retrieved context was available during verification."
+      },
+      {
+        "rule": "LOW_CONTEXT_OVERLAP",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "Overlap score 0.64 is below threshold 0.50."
+      },
+      {
+        "rule": "TOOL_NOT_USED",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "The query appears time-sensitive or factual, but no retrieval tool was recorded."
+      },
+      {
+        "rule": "UNSUPPORTED_CLAIMS",
+        "triggered": true,
+        "impact_score": -5,
+        "evidence": "5 claims could not be mapped back to retrieved context."
+      },
+      {
+        "rule": "UNCERTAINTY_LANGUAGE",
+        "triggered": true,
+        "impact_score": -2,
+        "evidence": "Uncertainty markers found: typically."
+      }
+    ],
+    "score_inputs": {
+      "context_present": true,
+      "tool_required": false,
+      "tool_used": true,
+      "context_overlap_score": 0.6368,
+      "total_claims": 8,
+      "supported_claims": 3,
+      "independently_verified_claims": 5,
+      "unsupported_claims": 5,
+      "uncertainty_terms_found": [
+        "typically"
+      ]
+    },
+    "scoring_breakdown": {
+      "context_score": 0,
+      "tool_penalty": 0,
+      "uncertainty_penalty": -2,
+      "unsupported_claims_penalty": -5,
+      "total_score": -7,
+      "decision_threshold": -6
+    },
+    "decision_trace": [
+      "Extracted 8 atomic claims from the response.",
+      "Verified 3 claims directly against retrieved context.",
+      "Measured overall context overlap at 0.64.",
+      "Triggered rules: UNSUPPORTED_CLAIMS, UNCERTAINTY_LANGUAGE.",
+      "Final classification set to HALLUCINATED."
+    ]
+  },
+  "final_verdict": {
+    "label": "HALLUCINATED",
+    "confidence": 0.99,
+    "justification": "Response is classified as hallucinated because 5 claims were not supported by retrieved context; uncertainty language was found: typically."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Claims exceeded retrieved evidence",
+    "secondary_cause": "Model relied on hedged language instead of evidence-backed statements",
+    "explanation": "The model produced 5 claims that could not be substantiated by the available context."
+  },
+  "prevention_recommendation": [
+    "Add claim verification layer",
+    "Flag hedged factual statements for review"
+  ],
+  "report_reference_id": "e60d149d-b5ff-4d74-9745-a904bc102f1d",
+  "generated_at": "2026-04-11T01:10:36.184650+00:00"
+}

@@ -1,0 +1,237 @@
+{
+  "id": "ff7711b2-5d5c-4c69-8160-34e51c1505c4",
+  "timestamp": "2026-04-11T00:39:31.392253+00:00",
+  "query": "What are the top 3 highest-rated vegetarian restaurants currently open in Hyderabad? List their signature dishes and one recent customer review for each.\"",
+  "data_source_used": "hybrid",
+  "model_used": "openai/gpt-4o-mini",
+  "response": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes, and recent customer reviews.",
+  "claims": [
+    {
+      "text": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes",
+      "status": "UNSUPPORTED"
+    },
+    {
+      "text": "recent customer reviews.",
+      "status": "VERIFIED"
+    }
+  ],
+  "scores": {
+    "verification_score": 0.5,
+    "confidence_score": 0.5,
+    "risk_score": 4
+  },
+  "final_label": "GROUNDED",
+  "decision_trace": [
+    "Attempt 1 failed verification; switching to model openai/gpt-4o-mini and datasource hybrid.",
+    "Attempt 2 accepted with hybrid and openai/gpt-4o-mini."
+  ],
+  "evolution_steps": [
+    {
+      "step": 1,
+      "query": "What are the top 3 highest-rated vegetarian restaurants currently open in Hyderabad? List their signature dishes and one recent customer review for each.\"",
+      "model_used": "openrouter/auto",
+      "data_source_used": "tavily",
+      "tools_used": [
+        "tavily"
+      ],
+      "tool_activity": [
+        {
+          "tool_name": "tavily",
+          "status": "used"
+        }
+      ],
+      "retrieval": {
+        "source_count": 5,
+        "sources_preview": [
+          {
+            "title": "The 10 Best Vegetarian Restaurants in Hyderabad (2026)",
+            "url": "https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html",
+            "source": ""
+          },
+          {
+            "title": "Top 5 newly opened pure vegetarian restaurants in Hyderabad ...",
+            "url": "https://www.instagram.com/reel/DB8Buy4PEr1/?hl=en",
+            "source": ""
+          },
+          {
+            "title": "11 restaurants for surprisingly good vegetarian food in Hyderabad",
+            "url": "https://thegoodlifewithiq.com/6-great-restaurants-for-vegetarians-hyderabad/",
+            "source": ""
+          },
+          {
+            "title": "Top 5 Premium Pure Veg Restaurants Hyderabad 2025 - YouTube",
+            "url": "https://www.youtube.com/watch?v=Atrv1gj2T40",
+            "source": ""
+          },
+          {
+            "title": "5 Must-try Vegetarian Restaurants in Hyderabad",
+            "url": "https://www.localguidesconnect.com/t/5-must-try-vegetarian-restaurants-in-hyderabad/220796",
+            "source": ""
+          }
+        ]
+      },
+      "generation": {
+        "response_preview": "I’m sorry, but the retrieved evidence does not contain enough information to identify the three highest‑rated vegetarian restaurants that are currently open in Hyderabad, nor does it provide their signature dishes or recent customer reviews.",
+        "claim_count": 1
+      },
+      "comparison": {
+        "summary": {
+          "supported_claims_by_source": {},
+          "verified_claims": 0,
+          "weakly_supported_claims": 0,
+          "unsupported_claims": 1
+        },
+        "claims": [
+          {
+            "claim": "I’m sorry, but the retrieved evidence does not contain enough information to identify the three highest‑rated vegetarian restaurants that are currently open in Hyderabad, nor does it provide their signature dishes or recent customer reviews.",
+            "status": "UNSUPPORTED",
+            "support_count": 0,
+            "sources": {
+              "serper": {
+                "supported": false,
+                "evidence": "The 10 Best Vegetarian Restaurants in Hyderabad (2026) Vegetarian-Friendly Restaurants in Hyderabad · 1. Mekong. 4.9. (1,050 reviews). Thai, Szechuan$$$$ · 2. Bidri. 4.9. (1,010 reviews) · 3. Yi ... Vegetarian Food in Hyderabad - 29 Restaurants Tried & Tasted ... A fine dining puer vegetarian restaurant in Jubilee Hills, Tatva is a popular place for pure vegetarian food. It has got good ambience, service ... Here are 7 must-try veg restaurants in Hyderabad - Facebook Went to Food Corner Hyderaba",
+                "source": "https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html",
+                "results_checked": 5,
+                "overlap": 0.303
+              }
+            }
+          }
+        ]
+      },
+      "scores": {
+        "total_claims": 1,
+        "verified_claims": 0,
+        "weakly_supported_claims": 0,
+        "unsupported_claims": 1,
+        "verification_score": 0.0,
+        "confidence_score": 0.0,
+        "consistency_score": 1.0,
+        "risk_score": 7,
+        "label": "HALLUCINATED"
+      },
+      "confidence": {
+        "confidence_score": 0.0,
+        "verification_score": 0.0,
+        "consistency_score": 1.0,
+        "risk_score": 7
+      },
+      "decision": "Attempt 1 failed verification; switching to model openai/gpt-4o-mini and datasource hybrid.",
+      "failure_reason": "FACT_MISMATCH",
+      "latency_ms": 10085.02
+    },
+    {
+      "step": 2,
+      "query": "What are the top 3 highest-rated vegetarian restaurants currently open in Hyderabad? List their signature dishes and one recent customer review for each.\"",
+      "model_used": "openai/gpt-4o-mini",
+      "data_source_used": "hybrid",
+      "tools_used": [
+        "tavily",
+        "serper"
+      ],
+      "tool_activity": [
+        {
+          "tool_name": "tavily",
+          "status": "used"
+        },
+        {
+          "tool_name": "serper",
+          "status": "used"
+        }
+      ],
+      "retrieval": {
+        "source_count": 10,
+        "sources_preview": [
+          {
+            "title": "The 10 Best Vegetarian Restaurants in Hyderabad (2026)",
+            "url": "https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html",
+            "source": "tavily"
+          },
+          {
+            "title": "Top 5 newly opened pure vegetarian restaurants in Hyderabad ...",
+            "url": "https://www.instagram.com/reel/DB8Buy4PEr1/?hl=en",
+            "source": "tavily"
+          },
+          {
+            "title": "Best Veg Restaurants, Pure Veg in Hyderabad - Zomato",
+            "url": "https://www.zomato.com/hyderabad/vegetarian-restaurants",
+            "source": "tavily"
+          },
+          {
+            "title": "Good vegetarian restaurants in Hyderabad - Reddit",
+            "url": "https://www.reddit.com/r/hyderabad/comments/1irk6zq/good_vegetarian_restaurants_in_hyderabad/",
+            "source": "tavily"
+          },
+          {
+            "title": "Best Pure Veg Restaurants in Hyderabad - Order Food Online",
+            "url": "https://www.justdial.com/Hyderabad/Pure-Veg-Restaurants/nct-10396867",
+            "source": "tavily"
+          }
+        ]
+      },
+      "generation": {
+        "response_preview": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes, and recent customer reviews.",
+        "claim_count": 2
+      },
+      "comparison": {
+        "summary": {
+          "supported_claims_by_source": {
+            "serper": 1
+          },
+          "verified_claims": 1,
+          "weakly_supported_claims": 0,
+          "unsupported_claims": 1
+        },
+        "claims": [
+          {
+            "claim": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes",
+            "status": "UNSUPPORTED",
+            "support_count": 0,
+            "sources": {
+              "serper": {
+                "supported": false,
+                "evidence": "The 10 Best Vegetarian Restaurants in Hyderabad (2026) Vegetarian-Friendly Restaurants in Hyderabad · 1. Mekong. 4.9. (1,050 reviews). Thai, Szechuan$$$$ · 2. Bidri. 4.9. (1,010 reviews) · 3. Yi ... Vegetarian Food in Hyderabad - 29 Restaurants Tried & Tasted ... There are a lot of vegetarian restaurants in Hyderabad serving good food. From breakfast to dinner and desserts, you'll find a variety of food options on offer. Top 5 Premium Pure Veg Restaurants Hyderabad 2025 - YouTube luv4foodntravel",
+                "source": "https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html",
+                "results_checked": 5,
+                "overlap": 0.2727
+              }
+            }
+          },
+          {
+            "claim": "recent customer reviews.",
+            "status": "VERIFIED",
+            "support_count": 1,
+            "sources": {
+              "serper": {
+                "supported": true,
+                "evidence": "Trustpilot Reviews: Experience the power of customer reviews We're all about consumer reviews. Get the real inside story from shoppers like you. Read, write and share reviews on Trustpilot today. Consumer Reports: Product Reviews and Ratings, Buying Advice ... Get unbiased ratings and reviews for 10000+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most. The Best List of Positive Review Response Examples - Usersnap – “I recently made a pu",
+                "source": "https://www.trustpilot.com/",
+                "results_checked": 5,
+                "overlap": 0.6667
+              }
+            }
+          }
+        ]
+      },
+      "scores": {
+        "total_claims": 2,
+        "verified_claims": 1,
+        "weakly_supported_claims": 0,
+        "unsupported_claims": 1,
+        "verification_score": 0.5,
+        "confidence_score": 0.5,
+        "consistency_score": 0.55,
+        "risk_score": 4,
+        "label": "GROUNDED"
+      },
+      "confidence": {
+        "confidence_score": 0.5,
+        "verification_score": 0.5,
+        "consistency_score": 0.55,
+        "risk_score": 4
+      },
+      "decision": "Attempt 2 accepted with hybrid and openai/gpt-4o-mini.",
+      "failure_reason": "FACT_MISMATCH",
+      "latency_ms": 10457.33
+    }
+  ]
+}

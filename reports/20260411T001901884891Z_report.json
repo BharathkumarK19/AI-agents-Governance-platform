@@ -1,0 +1,1808 @@
+{
+  "schema_version": "2.0",
+  "query": "Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra. Present the results in a table",
+  "response": "This response may contain uncertain information.\n\nSafer fallback summary:\n**iPhone 16 Pro vs. Samsung Galaxy S24 Ultra – Battery & Charging Comparison**  \n\n| **Metric** | **iPhone 16 Pro** | **Samsung Galaxy S24 Ultra** | **Notes / Uncertainty** |\n|------------|-------------------|------------------------------|--------------------------|\n| **Battery capacity** | ~3,300 mAh (estimated from teardowns) | 5,200 mAh (official spec) | iPhone capacity has not been officially disclosed; the figure is a widely‑reported estimate. |\n| **Official video‑playback claim** | Up to **20 h** (Apple’s “video playback” spec) | Up to **22 h** (Samsung’s “video playback” spec) | Claims come from each manufacturer’s marketing material; real‑world results can vary. |\n| **Real‑world mixed‑use endurance** (screen‑on time) | ≈ 10.5 h (average from third‑party tests) | ≈ 13 h (average from third‑party tests) | Values are based on publicly available benchmark tests (e.g., DxOMark, GSMArena). Individual usage patterns will affect results. |\n| **Wired fast‑charging (USB‑C PD)** | **20 W** (Apple‑certified charger) – ~30 min to 50 %<br>~1 h 15 min to 100 % | **45 W** (Samsung‑certified charger) – ~20 min to 50 %<br>~45 min to 100 % | Times are taken from manufacturer‑published charging curves and independent reviews. Exact times can differ with charger quality, cable length, and battery temperature. |\n| **Wireless charging (Qi/MagSafe)** | **15 W** (MagSafe) – ~45 min to 50 % | **15 W** (Qi) – ~45 min to 50 % | Both devices reach similar 0‑50 % times; full‑charge wireless times are not widely reported, so only the 0‑50 % metric is shown. |\n| **Reverse wireless charging** | **5 W** (Apple) – suitable for low‑power accessories | **4.5 W** (Samsung) – suitable for low‑power accessories | These rates are sufficient only for small peripherals (e.g., earbuds, wearables). |\n| **Charging ecosystem** | • MagSafe ecosystem provides a single‑click, Apple‑controlled experience.<br>• USB‑C fast‑charge limited to 20 W (Apple does not support higher‑wattage PD). | • Flexible USB‑C ecosystem; 45 W charger is standard, and higher‑wattage (up to 65 W) chargers are compatible with other Samsung models.<br>• Wireless charging rates are comparable to Apple’s. | Ecosystem differences affect convenience more than raw speed. |\n\n### Key Take‑aways (conservative)\n\n| **Aspect** | **iPhone 16 Pro** | **Galaxy S24 Ultra** |\n|------------|-------------------|----------------------|\n| **Battery size & endurance** | Smaller battery; real‑world endurance ~2–3 h less than the S24 Ultra. | Larger battery; longest endurance among the two. |\n| **Wired fast‑charging speed** | 20 W → full charge ≈ 1 h 15 min (≈30 min slower than Samsung). | 45 W → full charge ≈ 45 min (≈30 min faster than Apple). |\n| **Wireless charging** | Same 15 W rate; no clear advantage. | Same 15 W rate; no clear advantage. |\n| **Ecosystem convenience** | Highly integrated MagSafe and certified USB‑C accessories; consistent experience but capped at 20 W. | More open USB‑C ecosystem; higher‑wattage chargers available, but accessory experience is less tightly controlled. |\n\n> **Caveat:** All figures are based on the best‑available public information (manufacturer specifications, reputable third‑party testing, and teardown estimates). Exact performance can vary with software updates, battery health, ambient temperature, and the specific charger or cable used.",
+  "report_summary": {
+    "response_generation_status": "completed",
+    "claims_evaluated": 31,
+    "supported_claims": 4,
+    "independently_verified_claims": 0,
+    "unsupported_claims": 30,
+    "overall_outcome": "HALLUCINATED"
+  },
+  "generation_trace": {
+    "process_description": "Execution steps were recorded first. The final response was then audited using deterministic claim extraction, context matching, overlap scoring, tool-usage checks, and uncertainty checks.",
+    "response_construction_basis": "retrieved context only",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Research Agent",
+        "action": "Research",
+        "output_summary": "**Battery Life & Charging Speed Comparison  \niPhone 16 Pro vs. Samsung Galaxy S24 Ultra**\n\n| Feature | iPhone 16 Pro | Samsung Galaxy S24 Ultra |\n|---------|---------------|--------------------------|\n| **Battery capacity** | 3,300 mAh (Apple does not publish exact mAh, but teardowns confirm ~3,300 mAh)【1†L1-L4】 | 5,200 mAh (official spec)【2†L1-L3】 |\n| **Typical screen‑on endurance (real‑world tests)** | ~10 h 30 min (Apple’s internal test, similar to iPhone 15 Pro’s 10 h 53 min)【3†L1-L4】 | ~...",
+        "source_used": true,
+        "basis": "retrieved context"
+      },
+      {
+        "step": 2,
+        "agent": "Analysis Agent",
+        "action": "Analysis",
+        "output_summary": "- **Battery capacity gap** – The Galaxy S24 Ultra’s 5,200 mAh cell is ~57 % larger than the iPhone 16 Pro’s ~3,300 mAh, giving it a clear size advantage.  \n- **Real‑world endurance** – In mixed‑use tests the S24 Ultra lasts about 13 h vs. the iPhone 16 Pro’s ≈10.5 h, translating to roughly 2‑3 h more screen‑on time per charge.  \n- **Video playback claims** – Apple advertises up to 20 h, Samsung up to 22 h; the difference mirrors the larger battery and slightly more efficient Snapdragon 8 Gen ...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 3,
+        "agent": "Summary Agent",
+        "action": "Summary",
+        "output_summary": "## iPhone 16 Pro vs. Samsung Galaxy S24 Ultra – Battery & Charging Comparison  \n*(All figures are from manufacturer specifications, reputable tech‑review labs, and real‑world mixed‑use testing published up to April 2026.)*  \n\n---  \n\n### 1. Quick‑look Summary  \n\n| Feature | **iPhone 16 Pro** | **Galaxy S24 Ultra** |\n|---|---|---|\n| **Battery capacity** | ~3,300 mAh (Li‑ion) | 5,200 mAh (Li‑ion) |\n| **Advertised video playback** | Up to 20 h | Up to 22 h |\n| **Mixed‑use endurance (screen‑on)** ...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 4,
+        "agent": "Research Agent",
+        "action": "Evaluation",
+        "output_summary": "{'hallucination_detected': True, 'confidence_score': 0.85, 'issues': [{'claim': 'Samsung’s 45\\u202fW wired fast‑charging is more than double Apple’s 20\\u202fW, shaving ~15‑20\\u202fminutes off a full‑charge cycle.', 'reason': 'Research indicates the full‑charge time difference is about 30\\u202fminutes (≈75\\u202fmin for iPhone vs. ≈45\\u202fmin for Samsung). The claim understates the time saved, making it only partially supported.', 'severity': 'medium', 'agent_responsible': 'Research Agent'}], ...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 5,
+        "agent": "Summary Agent",
+        "action": "Summary Retry",
+        "output_summary": "**iPhone 16 Pro vs. Samsung Galaxy S24 Ultra – Battery & Charging Comparison**  \n\n| **Metric** | **iPhone 16 Pro** | **Samsung Galaxy S24 Ultra** | **Notes / Uncertainty** |\n|------------|-------------------|------------------------------|--------------------------|\n| **Battery capacity** | ~3,300 mAh (estimated from teardowns) | 5,200 mAh (official spec) | iPhone capacity has not been officially disclosed; the figure is a widely‑reported estimate. |\n| **Official video‑playback claim** | Up t...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_documents_count": 38,
+    "context_summary": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra. Present the results in a table Live web findings:",
+    "verification_method": {
+      "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
+      "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
+      "support_threshold": 0.4,
+      "multi_source_verification": "Each claim is checked against retrieved tool results first, then against Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+    },
+    "claims_in_response": [
+      {
+        "claim": "This response may contain uncertain information.",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "No usable retrieved evidence.",
+              "source": "RetrievedContext"
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Safer fallback summary",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "summary"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "No usable retrieved evidence.",
+              "source": "RetrievedContext"
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "**iPhone 16 Pro vs.",
+        "supported_by_context": true,
+        "supporting_text": "Title: iPhone 16 Pro vs.",
+        "confidence": 0.89,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "16",
+          "iphone",
+          "pro",
+          "vs"
+        ],
+        "support_reason": "Similarity 0.89 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "WEAKLY_SUPPORTED",
+          "support_count": 1,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": true,
+              "evidence": "iPhone 16 Pro vs. Samsung Galaxy S24 Ultra - Tom's Guide At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+              "source": "https://www.tomsguide.com/phones/iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.5
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Samsung Galaxy S24 Ultra – Battery & Charging Comparison**",
+        "supported_by_context": true,
+        "supporting_text": "Samsung Galaxy S24 Ultra - Tom's Guide",
+        "confidence": 0.57,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "galaxy",
+          "s24",
+          "samsung",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.57 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.1667
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Metric** | **iPhone 16 Pro** | **Samsung Galaxy S24 Ultra** | **Notes / Uncertainty** |",
+        "supported_by_context": true,
+        "supporting_text": "Title: Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus",
+        "confidence": 0.67,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "16",
+          "galaxy",
+          "iphone",
+          "pro",
+          "s24",
+          "samsung",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.67 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Samsung Galaxy S24 Ultra vs Apple iPhone 16 Pro - specs comparison - PhoneArena | 200 MP (OIS, Laser and PDAF) Sensor name: Samsung ISOCELL HP2 Aperture size: F1.7 Focal length: 24 mm Sensor size: 1/1.3\" Pixel size: 0.6 μm | 48 MP (Sensor-shift OIS, PDAF) Sensor name: Sony IMX903 Aperture size: F1.8 Focal length: 24 mm Sensor size: 1/1.28\" Pixel size: 1.22 μm |. | 12 MP (Ultra-wide, PDAF) Sensor name: Sony IMX564 Aperture size: F2.2 Focal Length: 13 mm Sensor size: 1/2.55\" Pixel size: 1.4 μm | 4",
+              "source": "https://www.phonearena.com/phones/compare/Samsung-Galaxy-S24-Ultra,Apple-iPhone-16-Pro/phones/12115,12239",
+              "overlap": 0.1429
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Battery capacity** | ~3,300 mAh (estimated from teardowns) | 5,200 mAh (official spec) | iPhone capacity has not been officially disclosed; the figure is a widely‑reported estimate.",
+        "supported_by_context": false,
+        "supporting_text": "The iPhone 16 Pro Max starts a $1,199 compared to the $1,300 Samsung Galaxy",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "300",
+          "a",
+          "iphone",
+          "the"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.1304
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Official video‑playback claim** | Up to **20 h** (Apple’s “video playback” spec) | Up to **22 h** (Samsung’s “video playback” spec) | Claims come from each manufacturer’s marketing material; real‑world results can vary.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.23,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "apple",
+          "claims",
+          "to",
+          "up"
+        ],
+        "support_reason": "Similarity 0.23 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro Max Specs vs. Galaxy S24 Ultra: Big Phones ... - CNET Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ... The iPhone 16 Pro Max starts a $1,199 compared to the $1,300 Samsung Galaxy",
+              "source": "https://www.cnet.com/tech/mobile/iphone-16-pro-max-specs-vs-galaxy-s24-ultra-big-phones-compared/",
+              "overlap": 0.125
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Real‑world mixed‑use endurance** (screen‑on time) | ≈ 10.5 h (average from third‑party tests) | ≈ 13 h (average from third‑party tests) | Values are based on publicly available benchmark tests (e.g., DxOMark, GSMArena).",
+        "supported_by_context": false,
+        "supporting_text": "Create a detailed research report focused on trends, facts, and real-world data.",
+        "confidence": 0.15,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "on",
+          "real",
+          "world"
+        ],
+        "support_reason": "Similarity 0.15 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro vs. Samsung Galaxy S24 Ultra - Tom's Guide At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+              "source": "https://www.tomsguide.com/phones/iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.0435
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Individual usage patterns will affect results.",
+        "supported_by_context": false,
+        "supporting_text": "Present the results in a table",
+        "confidence": 0.17,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "results"
+        ],
+        "support_reason": "Similarity 0.17 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "No usable retrieved evidence.",
+              "source": "RetrievedContext"
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Wired fast‑charging (USB‑C PD)** | **20 W** (Apple‑certified charger) – ~30 min to 50 %<br>~1 h 15 min to 100 % | **45 W** (Samsung‑certified charger) – ~20 min to 50 %<br>~45 min to 100 % | Times are taken from manufacturer‑published charging curves",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.23,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "apple",
+          "charging",
+          "to"
+        ],
+        "support_reason": "Similarity 0.23 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro vs. Samsung Galaxy S24 Ultra - Tom's Guide At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+              "source": "https://www.tomsguide.com/phones/iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.0417
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Exact times can differ with charger quality, cable length",
+        "supported_by_context": false,
+        "supporting_text": "Both phones can last a full day without",
+        "confidence": 0.12,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "can"
+        ],
+        "support_reason": "Similarity 0.12 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.1111
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Wireless charging (Qi/MagSafe)** | **15 W** (MagSafe) – ~45 min to 50 % | **15 W** (Qi) – ~45 min to 50 % | Both devices reach similar 0‑50 % times; full‑charge wireless times are not widely reported, so only the 0‑50 % metric is shown.",
+        "supported_by_context": false,
+        "supporting_text": "| 50 MP (Telephoto, Periscope, OIS, PDAF) Sensor name: Sony IMX854 Optical zoom: 5.0x Aperture size: F3.4 Focal Length: 111 mm Sensor size: 1/2.52\" Pixel size: 0.7 μm |  |.",
+        "confidence": 0.11,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "0",
+          "50"
+        ],
+        "support_reason": "Similarity 0.11 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.0667
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Reverse wireless charging** | **5 W** (Apple) – suitable for low‑power accessories | **4.5 W** (Samsung) – suitable for low‑power accessories | These rates are sufficient only for small peripherals (e.g., earbuds, wearables).",
+        "supported_by_context": false,
+        "supporting_text": "[Source 5]",
+        "confidence": 0.2,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "5"
+        ],
+        "support_reason": "Similarity 0.20 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.0435
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Charging ecosystem** | • MagSafe ecosystem provides a single‑click, Apple‑controlled experience.<br>• USB‑C fast‑charge limited to 20 W (Apple does not support higher‑wattage PD).",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.22,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "apple",
+          "charging",
+          "to"
+        ],
+        "support_reason": "Similarity 0.22 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro Max Specs vs. Galaxy S24 Ultra: Big Phones ... - CNET Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ... The iPhone 16 Pro Max starts a $1,199 compared to the $1,300 Samsung Galaxy",
+              "source": "https://www.cnet.com/tech/mobile/iphone-16-pro-max-specs-vs-galaxy-s24-ultra-big-phones-compared/",
+              "overlap": 0.0909
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| • Flexible USB‑C ecosystem; 45 W charger is standard",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Why is Galaxy S24 Ultra better than iPhone 16 Pro?",
+        "confidence": 0.1,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "is"
+        ],
+        "support_reason": "Similarity 0.10 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus Why is Galaxy S24 Ultra better than iPhone 16 Pro? · 39.59% more battery power ? · 8.91% higher pixel density ? · 4GB more RAM memory ? · Has branded damage-",
+              "source": "https://versus.com/en/apple-iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.1111
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "higher‑wattage (up to 65 W) chargers are compatible with other Samsung models.<br>• Wireless charging rates are comparable to Apple’s.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.3,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "apple",
+          "charging",
+          "to",
+          "up"
+        ],
+        "support_reason": "Similarity 0.30 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro vs. Samsung Galaxy S24 Ultra - Tom's Guide At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+              "source": "https://www.tomsguide.com/phones/iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.125
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Ecosystem differences affect convenience more than raw speed.",
+        "supported_by_context": false,
+        "supporting_text": "· 4GB more RAM memory ?",
+        "confidence": 0.18,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "more"
+        ],
+        "support_reason": "Similarity 0.18 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus Why is Galaxy S24 Ultra better than iPhone 16 Pro? · 39.59% more battery power ? · 8.91% higher pixel density ? · 4GB more RAM memory ? · Has branded damage-",
+              "source": "https://versus.com/en/apple-iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.2222
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "### Key Take‑aways (conservative)",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "No usable retrieved evidence.",
+              "source": "RetrievedContext"
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Aspect** | **iPhone 16 Pro** | **Galaxy S24 Ultra** |",
+        "supported_by_context": true,
+        "supporting_text": "Title: Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus",
+        "confidence": 0.68,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "16",
+          "galaxy",
+          "iphone",
+          "pro",
+          "s24",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.68 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Samsung Galaxy S24 Ultra vs Apple iPhone 16 Pro - specs comparison - PhoneArena | 200 MP (OIS, Laser and PDAF) Sensor name: Samsung ISOCELL HP2 Aperture size: F1.7 Focal length: 24 mm Sensor size: 1/1.3\" Pixel size: 0.6 μm | 48 MP (Sensor-shift OIS, PDAF) Sensor name: Sony IMX903 Aperture size: F1.8 Focal length: 24 mm Sensor size: 1/1.28\" Pixel size: 1.22 μm |. | 12 MP (Ultra-wide, PDAF) Sensor name: Sony IMX564 Aperture size: F2.2 Focal Length: 13 mm Sensor size: 1/2.55\" Pixel size: 1.4 μm | 4",
+              "source": "https://www.phonearena.com/phones/compare/Samsung-Galaxy-S24-Ultra,Apple-iPhone-16-Pro/phones/12115,12239",
+              "overlap": 0.25
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Battery size & endurance** | Smaller battery; real‑world endurance ~2–3 h less than the S24 Ultra.",
+        "supported_by_context": false,
+        "supporting_text": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "confidence": 0.3,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "battery",
+          "s24",
+          "the",
+          "ultra"
+        ],
+        "support_reason": "Similarity 0.30 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.0714
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Larger battery; longest endurance among the two.",
+        "supported_by_context": false,
+        "supporting_text": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "confidence": 0.29,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "battery",
+          "the"
+        ],
+        "support_reason": "Similarity 0.29 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.125
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Wired fast‑charging speed** | 20 W → full charge ≈ 1 h 15 min (≈30 min slower than Samsung).",
+        "supported_by_context": false,
+        "supporting_text": "[Source 1]",
+        "confidence": 0.16,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "1"
+        ],
+        "support_reason": "Similarity 0.16 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.0769
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| 45 W → full charge ≈ 45 min (≈30 min faster than Apple).",
+        "supported_by_context": false,
+        "supporting_text": "Both phones can last a full day without",
+        "confidence": 0.09,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "full"
+        ],
+        "support_reason": "Similarity 0.09 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.2
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Wireless charging** | Same 15 W rate; no clear advantage.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "confidence": 0.1,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "charging"
+        ],
+        "support_reason": "Similarity 0.10 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Samsung Galaxy S24 Ultra vs Apple iPhone 16 Pro - specs comparison - PhoneArena | 200 MP (OIS, Laser and PDAF) Sensor name: Samsung ISOCELL HP2 Aperture size: F1.7 Focal length: 24 mm Sensor size: 1/1.3\" Pixel size: 0.6 μm | 48 MP (Sensor-shift OIS, PDAF) Sensor name: Sony IMX903 Aperture size: F1.8 Focal length: 24 mm Sensor size: 1/1.28\" Pixel size: 1.22 μm |. | 12 MP (Ultra-wide, PDAF) Sensor name: Sony IMX564 Aperture size: F2.2 Focal Length: 13 mm Sensor size: 1/2.55\" Pixel size: 1.4 μm | 4",
+              "source": "https://www.phonearena.com/phones/compare/Samsung-Galaxy-S24-Ultra,Apple-iPhone-16-Pro/phones/12115,12239",
+              "overlap": 0.1111
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| Same 15 W rate; no clear advantage.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+        "confidence": 0.07,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "rate"
+        ],
+        "support_reason": "Similarity 0.07 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Samsung Galaxy S24 Ultra vs Apple iPhone 16 Pro - specs comparison - PhoneArena | 200 MP (OIS, Laser and PDAF) Sensor name: Samsung ISOCELL HP2 Aperture size: F1.7 Focal length: 24 mm Sensor size: 1/1.3\" Pixel size: 0.6 μm | 48 MP (Sensor-shift OIS, PDAF) Sensor name: Sony IMX903 Aperture size: F1.8 Focal length: 24 mm Sensor size: 1/1.28\" Pixel size: 1.22 μm |. | 12 MP (Ultra-wide, PDAF) Sensor name: Sony IMX564 Aperture size: F2.2 Focal Length: 13 mm Sensor size: 1/2.55\" Pixel size: 1.4 μm | 4",
+              "source": "https://www.phonearena.com/phones/compare/Samsung-Galaxy-S24-Ultra,Apple-iPhone-16-Pro/phones/12115,12239",
+              "overlap": 0.1429
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **Ecosystem convenience** | Highly integrated MagSafe",
+        "supported_by_context": false,
+        "supporting_text": "",
+        "confidence": 0.0,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [],
+        "support_reason": "Similarity 0.00 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Samsung Galaxy S24 Ultra vs Apple iPhone 16 Pro - specs comparison - PhoneArena | 200 MP (OIS, Laser and PDAF) Sensor name: Samsung ISOCELL HP2 Aperture size: F1.7 Focal length: 24 mm Sensor size: 1/1.3\" Pixel size: 0.6 μm | 48 MP (Sensor-shift OIS, PDAF) Sensor name: Sony IMX903 Aperture size: F1.8 Focal length: 24 mm Sensor size: 1/1.28\" Pixel size: 1.22 μm |. | 12 MP (Ultra-wide, PDAF) Sensor name: Sony IMX564 Aperture size: F2.2 Focal Length: 13 mm Sensor size: 1/2.55\" Pixel size: 1.4 μm | 4",
+              "source": "https://www.phonearena.com/phones/compare/Samsung-Galaxy-S24-Ultra,Apple-iPhone-16-Pro/phones/12115,12239",
+              "overlap": 0.1667
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "certified USB‑C accessories; consistent experience but capped at 20 W.",
+        "supported_by_context": false,
+        "supporting_text": "Summary: At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+        "confidence": 0.06,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "at"
+        ],
+        "support_reason": "Similarity 0.06 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro vs. Samsung Galaxy S24 Ultra - Tom's Guide At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+              "source": "https://www.tomsguide.com/phones/iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.1111
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "| More open USB‑C ecosystem; higher‑wattage chargers available, but accessory experience is less tightly controlled.",
+        "supported_by_context": false,
+        "supporting_text": "· 4GB more RAM memory ?",
+        "confidence": 0.12,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "more"
+        ],
+        "support_reason": "Similarity 0.12 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus Why is Galaxy S24 Ultra better than iPhone 16 Pro? · 39.59% more battery power ? · 8.91% higher pixel density ? · 4GB more RAM memory ? · Has branded damage-",
+              "source": "https://versus.com/en/apple-iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.1333
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "> **Caveat:** All figures are based on the best‑available public information (manufacturer specifications, reputable third‑party testing",
+        "supported_by_context": false,
+        "supporting_text": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "confidence": 0.14,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "the"
+        ],
+        "support_reason": "Similarity 0.14 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro vs. Samsung Galaxy S24 Ultra - Tom's Guide At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+              "source": "https://www.tomsguide.com/phones/iphone-16-pro-vs-samsung-galaxy-s24-ultra",
+              "overlap": 0.125
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "Exact performance can vary with software updates, battery health, ambient temperature",
+        "supported_by_context": false,
+        "supporting_text": "· 39.59% more battery power ?",
+        "confidence": 0.13,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "battery"
+        ],
+        "support_reason": "Similarity 0.13 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.1818
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      },
+      {
+        "claim": "the specific charger or cable used.",
+        "supported_by_context": false,
+        "supporting_text": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "confidence": 0.23,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "the"
+        ],
+        "support_reason": "Similarity 0.23 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "RetrievedContext",
+            "Wikipedia",
+            "DuckDuckGo",
+            "NewsAPI"
+          ],
+          "sources": {
+            "retrieved_context": {
+              "supported": false,
+              "evidence": "iPhone 16 Pro or Galaxy S24 Ultra for Long-Term Use? - Reddit In terms of battery life and charging, the S24 Ultra charges faster when using a 45W charger. Both phones can last a full day without",
+              "source": "https://www.reddit.com/r/GalaxyS24Ultra/comments/1hvi36v/iphone_16_pro_or_galaxy_s24_ultra_for_longterm_use/",
+              "overlap": 0.3333
+            },
+            "wikipedia": {
+              "supported": false,
+              "evidence": "HTTP 403",
+              "source": "Wikipedia"
+            },
+            "duckduckgo": {
+              "supported": false,
+              "evidence": "DuckDuckGo search is unavailable right now.",
+              "source": "DuckDuckGo"
+            },
+            "newsapi": {
+              "supported": false,
+              "evidence": "Not required for this claim.",
+              "source": "NewsAPI"
+            }
+          }
+        }
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim": "This response may contain uncertain information.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Safer fallback summary",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Samsung Galaxy S24 Ultra – Battery & Charging Comparison**",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "Samsung Galaxy S24 Ultra - Tom's Guide",
+        "observed_similarity": 0.57,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Metric** | **iPhone 16 Pro** | **Samsung Galaxy S24 Ultra** | **Notes / Uncertainty** |",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "Title: Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus",
+        "observed_similarity": 0.67,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Battery capacity** | ~3,300 mAh (estimated from teardowns) | 5,200 mAh (official spec) | iPhone capacity has not been officially disclosed; the figure is a widely‑reported estimate.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "The iPhone 16 Pro Max starts a $1,199 compared to the $1,300 Samsung Galaxy",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Official video‑playback claim** | Up to **20 h** (Apple’s “video playback” spec) | Up to **22 h** (Samsung’s “video playback” spec) | Claims come from each manufacturer’s marketing material; real‑world results can vary.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.23,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Real‑world mixed‑use endurance** (screen‑on time) | ≈ 10.5 h (average from third‑party tests) | ≈ 13 h (average from third‑party tests) | Values are based on publicly available benchmark tests (e.g., DxOMark, GSMArena).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Create a detailed research report focused on trends, facts, and real-world data.",
+        "observed_similarity": 0.15,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Individual usage patterns will affect results.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Present the results in a table",
+        "observed_similarity": 0.17,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Wired fast‑charging (USB‑C PD)** | **20 W** (Apple‑certified charger) – ~30 min to 50 %<br>~1 h 15 min to 100 % | **45 W** (Samsung‑certified charger) – ~20 min to 50 %<br>~45 min to 100 % | Times are taken from manufacturer‑published charging curves",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.23,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Exact times can differ with charger quality, cable length",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Both phones can last a full day without",
+        "observed_similarity": 0.12,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Wireless charging (Qi/MagSafe)** | **15 W** (MagSafe) – ~45 min to 50 % | **15 W** (Qi) – ~45 min to 50 % | Both devices reach similar 0‑50 % times; full‑charge wireless times are not widely reported, so only the 0‑50 % metric is shown.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "| 50 MP (Telephoto, Periscope, OIS, PDAF) Sensor name: Sony IMX854 Optical zoom: 5.0x Aperture size: F3.4 Focal Length: 111 mm Sensor size: 1/2.52\" Pixel size: 0.7 μm |  |.",
+        "observed_similarity": 0.11,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Reverse wireless charging** | **5 W** (Apple) – suitable for low‑power accessories | **4.5 W** (Samsung) – suitable for low‑power accessories | These rates are sufficient only for small peripherals (e.g., earbuds, wearables).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "[Source 5]",
+        "observed_similarity": 0.2,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Charging ecosystem** | • MagSafe ecosystem provides a single‑click, Apple‑controlled experience.<br>• USB‑C fast‑charge limited to 20 W (Apple does not support higher‑wattage PD).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.22,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| • Flexible USB‑C ecosystem; 45 W charger is standard",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Why is Galaxy S24 Ultra better than iPhone 16 Pro?",
+        "observed_similarity": 0.1,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "higher‑wattage (up to 65 W) chargers are compatible with other Samsung models.<br>• Wireless charging rates are comparable to Apple’s.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.3,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Ecosystem differences affect convenience more than raw speed.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "· 4GB more RAM memory ?",
+        "observed_similarity": 0.18,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "### Key Take‑aways (conservative)",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Aspect** | **iPhone 16 Pro** | **Galaxy S24 Ultra** |",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "Title: Apple iPhone 16 Pro vs Samsung Galaxy S24 Ultra - Versus",
+        "observed_similarity": 0.68,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Battery size & endurance** | Smaller battery; real‑world endurance ~2–3 h less than the S24 Ultra.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "observed_similarity": 0.3,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Larger battery; longest endurance among the two.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "observed_similarity": 0.29,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Wired fast‑charging speed** | 20 W → full charge ≈ 1 h 15 min (≈30 min slower than Samsung).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "[Source 1]",
+        "observed_similarity": 0.16,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| 45 W → full charge ≈ 45 min (≈30 min faster than Apple).",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Both phones can last a full day without",
+        "observed_similarity": 0.09,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Wireless charging** | Same 15 W rate; no clear advantage.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: Battery/charging speeds, Undisclosed, Apple claims up to 33 hours ...",
+        "observed_similarity": 0.1,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| Same 15 W rate; no clear advantage.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+        "observed_similarity": 0.07,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **Ecosystem convenience** | Highly integrated MagSafe",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "",
+        "observed_similarity": 0.0,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "certified USB‑C accessories; consistent experience but capped at 20 W.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: At any rate, we'd expect the iPhone 16 Pro to improve on its predecessor's battery test result of 10 hours and 53 minutes, just about an hour",
+        "observed_similarity": 0.06,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| More open USB‑C ecosystem; higher‑wattage chargers available, but accessory experience is less tightly controlled.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "· 4GB more RAM memory ?",
+        "observed_similarity": 0.12,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "> **Caveat:** All figures are based on the best‑available public information (manufacturer specifications, reputable third‑party testing",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "observed_similarity": 0.14,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "Exact performance can vary with software updates, battery health, ambient temperature",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "· 39.59% more battery power ?",
+        "observed_similarity": 0.13,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "the specific charger or cable used.",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "User query: Compare the battery life and charging speeds of the iPhone 16 Pro and the Samsung Galaxy S24 Ultra.",
+        "observed_similarity": 0.23,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      }
+    ],
+    "missing_evidence_summary": "30 claims lacked sufficient textual support in the retrieved context. Those claims should be backed by stronger retrieval or removed."
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": false,
+      "used": true,
+      "tools_observed": [
+        "tavily"
+      ],
+      "status": "PASSED",
+      "explanation": "Tools were used even though the query did not strictly demand them."
+    },
+    "context_overlap_check": {
+      "score": 0.2769,
+      "threshold": 0.5,
+      "status": "FAILED",
+      "explanation": "The final response diverged materially from the retrieved evidence."
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [],
+      "status": "PASSED",
+      "explanation": "No hedging language was detected."
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "LOW_CONTEXT_OVERLAP",
+      "UNSUPPORTED_CLAIMS"
+    ],
+    "rule_evaluations": [
+      {
+        "rule": "NO_CONTEXT",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No retrieved context was available during verification."
+      },
+      {
+        "rule": "LOW_CONTEXT_OVERLAP",
+        "triggered": true,
+        "impact_score": -4,
+        "evidence": "Overlap score 0.28 is below threshold 0.50."
+      },
+      {
+        "rule": "TOOL_NOT_USED",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "The query appears time-sensitive or factual, but no retrieval tool was recorded."
+      },
+      {
+        "rule": "UNSUPPORTED_CLAIMS",
+        "triggered": true,
+        "impact_score": -5,
+        "evidence": "30 claims could not be mapped back to retrieved context."
+      },
+      {
+        "rule": "UNCERTAINTY_LANGUAGE",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No uncertainty language found."
+      }
+    ],
+    "score_inputs": {
+      "context_present": true,
+      "tool_required": false,
+      "tool_used": true,
+      "context_overlap_score": 0.2769,
+      "total_claims": 31,
+      "supported_claims": 4,
+      "independently_verified_claims": 0,
+      "unsupported_claims": 30,
+      "uncertainty_terms_found": []
+    },
+    "scoring_breakdown": {
+      "context_score": -4,
+      "tool_penalty": 0,
+      "uncertainty_penalty": 0,
+      "unsupported_claims_penalty": -5,
+      "total_score": -9,
+      "decision_threshold": -6
+    },
+    "decision_trace": [
+      "Extracted 31 atomic claims from the response.",
+      "Verified 4 claims directly against retrieved context.",
+      "Measured overall context overlap at 0.28.",
+      "Triggered rules: LOW_CONTEXT_OVERLAP, UNSUPPORTED_CLAIMS.",
+      "Final classification set to HALLUCINATED."
+    ]
+  },
+  "final_verdict": {
+    "label": "HALLUCINATED",
+    "confidence": 0.99,
+    "justification": "Response is classified as hallucinated because context overlap is 0.28, below the 0.50 threshold; 30 claims were not supported by retrieved context."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Claims exceeded retrieved evidence",
+    "secondary_cause": "Model relied on prior knowledge instead of data",
+    "explanation": "The model produced 30 claims that could not be substantiated by the available context."
+  },
+  "prevention_recommendation": [
+    "Reject responses with low context overlap",
+    "Add claim verification layer"
+  ],
+  "report_reference_id": "863bde0a-78d8-40fc-a641-8eb0b46dccd9",
+  "generated_at": "2026-04-11T00:19:01.884891+00:00"
+}

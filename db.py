@@ -25,6 +25,25 @@ CREATE TABLE IF NOT EXISTS transactions (
 );
 """
 
+CREATE_AGENT_OBSERVABILITY_LOGS_SQL = """
+CREATE TABLE IF NOT EXISTS agent_observability_logs (
+    id UUID PRIMARY KEY,
+    query TEXT NOT NULL,
+    response TEXT NOT NULL,
+    context TEXT,
+    tools_used JSONB NOT NULL DEFAULT '[]'::jsonb,
+    overlap_score FLOAT NOT NULL,
+    risk_score INT NOT NULL,
+    label TEXT NOT NULL,
+    reasoning JSONB NOT NULL,
+    root_cause TEXT NOT NULL,
+    prevention TEXT NOT NULL,
+    report_reference_id TEXT,
+    report_file_path TEXT,
+    created_at TIMESTAMP NOT NULL
+);
+"""
+
 
 def connect_db(connection_string: str):
     if not connection_string or not connection_string.strip():
@@ -45,6 +64,40 @@ def create_transactions_table(conn) -> None:
                 """
                 CREATE INDEX IF NOT EXISTS idx_transactions_lookup
                 ON transactions (customer_id, item_id, timestamp)
+                """
+            )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+
+
+def create_observability_logs_table(conn) -> None:
+    try:
+        with conn.cursor() as cursor:
+            cursor.execute(CREATE_AGENT_OBSERVABILITY_LOGS_SQL)
+            cursor.execute(
+                """
+                ALTER TABLE agent_observability_logs
+                ADD COLUMN IF NOT EXISTS report_reference_id TEXT
+                """
+            )
+            cursor.execute(
+                """
+                ALTER TABLE agent_observability_logs
+                ADD COLUMN IF NOT EXISTS report_file_path TEXT
+                """
+            )
+            cursor.execute(
+                """
+                CREATE INDEX IF NOT EXISTS idx_agent_observability_logs_created_at
+                ON agent_observability_logs (created_at)
+                """
+            )
+            cursor.execute(
+                """
+                CREATE INDEX IF NOT EXISTS idx_agent_observability_logs_label
+                ON agent_observability_logs (label)
                 """
             )
         conn.commit()
@@ -149,6 +202,52 @@ def insert_transaction(conn, processed_data: dict) -> None:
                     Json(_json_ready(processed_data.get("research_output"))),
                     Json(_json_ready(processed_data.get("analysis_output"))),
                     Json(_json_ready(processed_data.get("summary_output"))),
+                ),
+            )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+
+
+def insert_observability_log(conn, log_record: dict) -> None:
+    try:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                """
+                INSERT INTO agent_observability_logs (
+                    id,
+                    query,
+                    response,
+                    context,
+                    tools_used,
+                    overlap_score,
+                    risk_score,
+                    label,
+                    reasoning,
+                    root_cause,
+                    prevention,
+                    report_reference_id,
+                    report_file_path,
+                    created_at
+                )
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """,
+                (
+                    log_record["id"],
+                    log_record["query"],
+                    log_record["response"],
+                    log_record.get("context"),
+                    Json(_json_ready(log_record.get("tools_used", []))),
+                    log_record["overlap_score"],
+                    log_record["risk_score"],
+                    log_record["label"],
+                    Json(_json_ready(log_record["reasoning"])),
+                    log_record["root_cause"],
+                    log_record["prevention"],
+                    log_record.get("report_reference_id"),
+                    log_record.get("report_file_path"),
+                    _normalize_timestamp(log_record["created_at"]),
                 ),
             )
         conn.commit()

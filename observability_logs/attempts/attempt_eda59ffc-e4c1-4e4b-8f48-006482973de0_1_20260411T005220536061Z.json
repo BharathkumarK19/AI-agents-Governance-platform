@@ -1,0 +1,803 @@
+{
+  "id": "eda59ffc-e4c1-4e4b-8f48-006482973de0",
+  "attempt": 1,
+  "timestamp": "2026-04-11T00:52:20.536061+00:00",
+  "query": "\"Give me a 5-step guide on how to set up a CI/CD pipeline using GitHub Actions for a simple Python Flask app. Include a code snippet for the .yml file.\"",
+  "data_source_used": "tavily",
+  "model_used": "openrouter/auto",
+  "response": "**5‑Step Guide to a GitHub‑Actions CI/CD pipeline for a simple Flask app**\n\n| Step | What to do | Why it matters (evidence) |\n|------|------------|---------------------------|\n| **1️⃣ Create the Flask project and push it to GitHub** | • Write a minimal `app.py` (e.g., `from flask import Flask …`). <br>• Add a `requirements.txt` (Flask, pytest, etc.) and a basic test file (e.g., `test_app.py`). <br>• Initialise a Git repo, commit the code, and push it to a new GitHub repository. | The guides start by “Create a Simple Flask Application” and then “push the project to GitHub” before any CI/CD work can begin【Source 2】. |\n| **2️⃣ (Optional) Add Docker‑related secrets** | If you want the pipeline to build and push a Docker image, create a Docker Hub personal‑access‑token and store it in the repository’s **Settings → Secrets** as `DOCKER_USERNAME` and `DOCKER_TOKEN`. | The Dev Community article shows the step “Set Up Docker Hub Secrets in GitHub” before the workflow is added【Source 2】. |\n| **3️⃣ Add a workflow file** | Create the file `.github/workflows/ci.yml` (or any name you like). This file tells GitHub Actions what to run on each push or PR. | The Medium article provides a complete example of such a YAML file, including checkout, Python setup, dependency install, test run, Docker build and push【Source 4】. |\n| **4️⃣ Define the CI steps** | Inside the YAML file, include the following core steps: <br>1. `actions/checkout@v3` – fetch the code. <br>2. `actions/setup-python@v4` – install the desired Python version (e.g., 3.9). <br>3. `pip install -r requirements.txt` – install app & test deps. <br>4. `pytest` (or any test command) – run unit tests. | These are the exact commands shown in the “test” job of the example workflow【Source 4】. |\n| **5️⃣ Push the workflow and watch it run** | Commit the `ci.yml` file, push to the `main` (or any) branch. GitHub automatically triggers the workflow; you can view the run under the **Actions** tab. If the tests pass, the Docker image will be built and pushed (when secrets are set). | The article notes that “once I pushed the workflow file, the GitHub Action triggered automatically, built my Docker image and pushed it to Docker Hub”【Source 2】. |\n\n---\n\n### Example `.github/workflows/ci.yml`\n\n```yaml\nname: CI/CD Pipeline\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    branches: [ main ]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: Set up Python\n        uses: actions/setup-python@v4\n        with:\n          python-version: '3.9'\n\n      - name: Install dependencies\n        run: |\n          pip install -r requirements.txt\n\n      - name: Run tests\n        run: |\n          pytest\n\n  build:\n    needs: test          # only runs if tests succeed\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: Build Docker image\n        run: |\n          docker build -t flask-app:latest .\n\n      - name: Push to Docker Hub\n        env:\n          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}\n          DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}\n        run: |\n          echo \"$DOCKER_TOKEN\" | docker login -u \"$DOCKER_USERNAME\" --password-stdin\n          docker tag flask-app:latest ${{ secrets.DOCKER_USERNAME }}/flask-app:latest\n          docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest\n```\n\n*The snippet mirrors the structure shown in the Medium guide (jobs `test` and `build`, Python setup, dependency install, pytest, Docker build & push)【Source 4】.*\n\n---\n\n**Result:**  \n- Every push or PR to `main` runs the **test** job.  \n- If tests pass, the **build** job creates a Docker image and pushes it to Docker Hub (or any registry you configure).  \n- You now have a minimal, fully‑automated CI/CD pipeline for your Flask application using only GitHub Actions.",
+  "claims": [
+    {
+      "claim": "**5‑Step Guide to a GitHub‑Actions CI/CD pipeline for a simple Flask app**",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Automate Your Flask App Deployment with GitHub Actions CI/CD ... In this guide, we'll set up a GitHub Actions CI/CD pipeline to automate testing, building, and deploying a Flask application. From Flask App to CI/CD Pipeline with GitHub Actions & Docker Hub 1.1 Set up a project folder · 1.2 Create a virtual environment and install Flask · 1.3 Create your Flask app · 1.4 Run the app locally · 2.1 Create ... Build a CI/CD pipeline for Flask apps using GitHub Actions In this article, you will learn ",
+          "source": "https://medium.com/@rajiv8982/automate-your-flask-app-deployment-with-github-actions-ci-cd-pipeline-dde07593a92f",
+          "results_checked": 5,
+          "overlap": 0.6364
+        }
+      }
+    },
+    {
+      "claim": "| Step | What to do | Why it matters (evidence) |",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "5 Why Evidence Matters - Sage How do U.S. divorce rates compare to divorce rates around the world? • How does divorce affect people (especially children of divorced parents)?. “These ... Why Evidence Matters | Arnold Ventures In the realm of hard sciences, it is taken for granted that research and evidence can be used to answer tough questions and create useful ... The Power of Claim-Evidence-Question - Dr. Catlin Tucker During the Evidence step, students are tasked with supporting their claim w",
+          "source": "https://uk.sagepub.com/sites/default/files/upm-assets/57863_book_item_57863.pdf",
+          "results_checked": 5,
+          "overlap": 0.7778
+        }
+      }
+    },
+    {
+      "claim": "| **1️⃣ Create the Flask project",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Quickstart — Flask Documentation (3.1.x) First we imported the Flask class. An instance of this class will be our WSGI application. Next we create an instance of this class. The first argument is the ... The Flask Mega-Tutorial, Part I: Hello, World! - miguelgrinberg.com In this first chapter, you are going to learn how to set up a Flask project. By the end of this chapter you are going to have a simple Flask web application ... First Flask Project - Flask Tutorial Series #1 - YouTube This is th",
+          "source": "https://flask.palletsprojects.com/en/stable/quickstart/",
+          "results_checked": 5,
+          "overlap": 0.8333
+        }
+      }
+    },
+    {
+      "claim": "push it to GitHub** | • Write a minimal `app.py` (e.g., `from flask import Flask …`).",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Flask Mastery: Pushing Your First Flask App to GitHub - YouTube Welcome to the Flask Mastery! In this step-by-step Flask tutorial, I'll guide you through the process of pushing your very first Flask app ... How to Deploy a Flask App on Render - YouTube How to Deploy a Flask App with GitHub on Render | Flask Deployment Tutorial In this tutorial, we'll walk you through the process of ... How to Create Python Flask Website with Shared Hosting and No ... Second, we need to install pip by typing pyth",
+          "source": "https://www.youtube.com/watch?v=uwyd64lLTeU",
+          "results_checked": 5,
+          "overlap": 0.4667
+        }
+      }
+    },
+    {
+      "claim": "<br>• Add a `requirements.txt` (Flask, pytest, etc.)",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Adding Python library to Flask app requirements.txt - Stack Overflow The easiest way is to use pip3 freeze, which will add all the modules you installed in your virtual environment in the requirements.txt file. How to Create and Pip Install Requirements.txt in Python To create a requirements file, you must set up your virtual environment. If you use Pycharm, there's a virtual environment already setup (.venv) ... How to Install Requirements.txt in Python (For Beginners) - YouTube ... requirement",
+          "source": "https://stackoverflow.com/questions/75375549/adding-python-library-to-flask-app-requirements-txt",
+          "results_checked": 5,
+          "overlap": 0.4286
+        }
+      }
+    },
+    {
+      "claim": "a basic test file (e.g., `test_app.py`).",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Getting Started With Testing in Python In this tutorial, you'll learn how to create a basic test, execute it, and find the bugs before your users do! Get started with app testing - Streamlit Docs Name your test scripts of the form test_<name>.py or <name>_test.py . For example, you can use test_myapp.py or myapp_test.py . How to Write Great Unit Tests in Python - YouTube ... example—from basic testing principles to powerful pytest features ... The Basics of Unit Testing 3:45 Monkey Patching 8:51",
+          "source": "https://realpython.com/python-testing/",
+          "results_checked": 5,
+          "overlap": 0.6667
+        }
+      }
+    },
+    {
+      "claim": "<br>• Initialise a Git repo, commit the code",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Git init: Set Up Your Git Repo | Atlassian Git Tutorial Set up a git repository: git init creates a new repo, git clone copies an existing repo, git config configures your Git installation from the command line. How do I do an initial push to a remote repository with Git? On server: mkdir my_project.git cd my_project.git git --bare init On client: mkdir my_project cd my_project touch .gitignore git init git add . git commit -m \" ... Tutorial: Make your first Git commit - GitLab Docs This tutoria",
+          "source": "https://www.atlassian.com/git/tutorials/setting-up-a-repository",
+          "results_checked": 5,
+          "overlap": 0.75
+        }
+      }
+    },
+    {
+      "claim": "push it to a new GitHub repository.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Adding locally hosted code to GitHub To create a repository for your project on GitHub, use the gh repo create subcommand. When prompted, select Push an existing local repository to GitHub and ... Git: Push a new or existing repo to Github 1. Navigate to repo in question. 2. Fork the repo to your own account. 3. Clone the forked repo to your local environment. 4. Make your changes and push them ... Git push existing repo to a new and different remote repo server? To push your existing repo into ",
+          "source": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+          "results_checked": 5,
+          "overlap": 1.0
+        }
+      }
+    },
+    {
+      "claim": "| The guides start by “Create a Simple Flask Application”",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "How to Create A Simple Flask Application on Windows - Medium How to Create A Simple Flask Application on Windows · Step 1: Create Project Folder · Step 1.1: Open Folder with Visual Studio Code · Step 2: Setup ... How to create a simple Flask application - DEV Community To create a simple Flask application, I have created a new project within PyCharm. The advantage of doing that in PyCharm is, that my IDE ... Deploying a Flask App: A Step-by-Step Guide for Developers First, ensure you have Python",
+          "source": "https://medium.com/@albertnwachukwu/how-to-create-a-simple-flask-application-9be43f9aadcd",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "then “push the project to GitHub” before any CI/CD work can begin【Source 2】.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "How to Push an Existing Local Project to GitHub: A Beginner's Guide To push the project to GitHub, you first need to add your files to the Git staging area. Get Ravi Patel's stories in your inbox. Join Medium ... How to Set Up a CI/CD Pipeline with Husky and GitHub Actions If you don't know how to start, you can check out this guide for some examples. Push the project to GitHub. Log in into your GitHub account and ... How to Push a Project and Contribute on GitHub? - GeeksforGeeks Before you can",
+          "source": "https://medium.com/@ravipatel.it/how-to-push-an-existing-local-project-to-github-a-beginners-guide-ede021feb717",
+          "results_checked": 5,
+          "overlap": 0.5
+        }
+      }
+    },
+    {
+      "claim": "| **2️⃣ (Optional) Add Docker‑related secrets** | If you want the pipeline to build",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Build secrets - Docker Docs A build secret is any piece of sensitive information, such as a password or API token, consumed as part of your application's build process. Using secrets with GitHub Actions - Docker Build A build secret is sensitive information, such as a password or API token, consumed as part of the build process. Docker Build supports two forms of secrets. Docker@2 - Docker v2 task - Microsoft Learn For example, use the Docker task to sign in to any Azure Container Registry, and ",
+          "source": "https://docs.docker.com/build/building/secrets/",
+          "results_checked": 5,
+          "overlap": 0.3077
+        }
+      }
+    },
+    {
+      "claim": "push a Docker image, create a Docker Hub personal‑access‑token",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Is it possible to use Access Tokens to login & push images to Docker ... Turns out this is possible. Docker just re-uses the \"password\" mechanics for the access token, which seems misleading and inconsistent with similar types of ... Create Your Image and Push to Docker Hub | by Lorenzo Uriel ... Docker Hub Account -> Account Settings and generate a Personal Access Token: Press enter or click to view image in full size. Source: Author. New in Docker Hub: Personal Access Tokens Personal access to",
+          "source": "https://stackoverflow.com/questions/61315231/is-it-possible-to-use-access-tokens-to-login-push-images-to-docker-hub-from-tr",
+          "results_checked": 5,
+          "overlap": 0.7143
+        }
+      }
+    },
+    {
+      "claim": "store it in the repository’s **Settings → Secrets** as `DOCKER_USERNAME`",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Using secrets with GitHub Actions - Docker Build The secret-files input lets you mount existing files as secrets in your build. This is useful when you need to use credential files that are generated during ... GitHub Action to login against a Docker registry. Secure drop-in ... Save the contents of the file as a secret named GCR_JSON_KEY in your GitHub repository. Set the username to _json_key . name: ci on: push: branches: ... Working with Repository Level Secrets - KodeKloud Under Secrets and",
+          "source": "https://docs.docker.com/build/ci/github-actions/secrets/",
+          "results_checked": 5,
+          "overlap": 0.625
+        }
+      }
+    },
+    {
+      "claim": "| The Dev Community article shows the step “Set Up Docker Hub Secrets in GitHub” before the workflow is added【Source 2】.",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "No search results returned.",
+          "source": "Serper"
+        }
+      }
+    },
+    {
+      "claim": "| **3️⃣ Add a workflow file** | Create the file `.github/workflows/ci.yml` (or any name you like).",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Creating an example workflow - GitHub Docs Each workflow is stored as a separate YAML file in your code repository, in a directory named .github/workflows . You can create an example workflow in your ... Workflow syntax for GitHub Actions Workflow files use YAML syntax, and must have either a .yml or .yaml file extension. If you're new to YAML and want to learn more, see Learn YAML in Y minutes. Creating a Workflow file on GitHub for GitHub Actions - YouTube This video describes how to create a ",
+          "source": "https://docs.github.com/en/actions/tutorials/create-an-example-workflow",
+          "results_checked": 5,
+          "overlap": 0.5333
+        }
+      }
+    },
+    {
+      "claim": "This file tells GitHub Actions what to run on each push or PR.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Workflow syntax for GitHub Actions A workflow with the following path filter will only run on push events that include at least one file outside the docs directory at the root of the repository. Why is my GitHub workflow running on every push even if there are ... This runs when PR is opened and there are changes to the files, but it also runs on every single push after that even if the push doesn't ... How to prevent running actions on push when pull_request is also ... If you want to run a bui",
+          "source": "https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions",
+          "results_checked": 5,
+          "overlap": 0.6154
+        }
+      }
+    },
+    {
+      "claim": "| The Medium article provides a complete example of such a YAML file, including checkout, Python setup, dependency install, test run, Docker build",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "A Complete Guide with Flask, Docker, and GitHub Actions - Medium The pipeline sets up the required environment, typically including: Installing Python; Installing dependencies from requirements.txt; Setting up ... Crafting a Beginner's Deployment Workflow with Docker and GCP Install dependencies: We tell the workflow to create a virtual environment in which it will install the dependencies needed to run the ... Building and Testing Python with GitHub Actions: A CI/CD Primer This guide will walk ",
+          "source": "https://medium.com/@noorfatimaafzalbutt/building-a-production-ready-ci-cd-pipeline-a-complete-guide-with-flask-docker-and-github-actions-c2bcea4bcf5b",
+          "results_checked": 5,
+          "overlap": 0.4091
+        }
+      }
+    },
+    {
+      "claim": "| **4️⃣ Define the CI steps** | Inside the YAML file, include the following core steps: <br>1.",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Use CI/CD configuration from other files - GitLab Docs Use the `include` keyword to extend your CI/CD configuration with content from other YAML files. Explaining CI/CD YAML file and how it's triggered during a Git push ... A CI/CD YAML file, also known as a pipeline definition file, is a configuration file that defines the steps necessary to build, test, and deploy an application. YAML and CI - GitHub Pages This YAML configuration represents a basic GitLab CI/CD pipeline with one stage ( build ",
+          "source": "https://docs.gitlab.com/ci/yaml/includes/",
+          "results_checked": 5,
+          "overlap": 0.2857
+        }
+      }
+    },
+    {
+      "claim": "`actions/checkout@v3` – fetch the code.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "actions/checkout: Action for checking out a repo - GitHub This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it. Only a single commit is fetched by default. What's the purpose of actions/checkout@v3, when the repository is ... Without the checkout action GitHub wont clone your repository and you will get an empty folder. You can check this with a very basic action. true doesn't actually fetch any tags · Issue #1471 · actions/checkout Using fetch-tags: tru",
+          "source": "https://github.com/actions/checkout",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "`actions/setup-python@v4` – install the desired Python version (e.g., 3.9).",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Set up your GitHub Actions workflow with a specific version of Python This action provides the following functionality for GitHub Actions users: Installing a version of Python or PyPy and (by default) adding it to the PATH ... Github action using wrong version of Python - Stack Overflow The currently activated Python version 3.8.10 is not supported by the project (>=3.10,<3.11). Trying to find and use a compatible version. setup-python failing for 3.9 on macos-latest #981 - GitHub The setup-pyth",
+          "source": "https://github.com/actions/setup-python",
+          "results_checked": 5,
+          "overlap": 0.4444
+        }
+      }
+    },
+    {
+      "claim": "`pip install -r requirements.txt` – install app & test deps.",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Install Python packages using `requirements.txt` - Mage Pro At the root of your project directory, there is a file named requirements.txt. Open this file and add the Python package you want installed and available. Specify Python Version for Virtualenv in Requirements.txt I'm using virtualenv to develop a django application with a team. The server we're deploying on is running python 2.6, but the default for our machines is 2.7. ... How do you create the requirements.txt file - by hand, or by pi",
+          "source": "https://docs.mage.ai/development/dependencies/requirements",
+          "results_checked": 5,
+          "overlap": 0.1111
+        }
+      }
+    },
+    {
+      "claim": "`pytest` (or any test command) – run unit tests.",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "How to invoke pytest Pytest supports several ways to run and select tests from the command-line or from a file (see below for reading arguments from file). Run tests in a module. How to use unittest-based tests with pytest pytest supports running Python unittest -based tests out of the box. It's meant for leveraging existing unittest -based test suites to use pytest as a test ... How to run test with \"pytest\" command - python - Stack Overflow I imported pytest in my testing file and installed al",
+          "source": "https://docs.pytest.org/en/stable/how-to/usage.html",
+          "results_checked": 5,
+          "overlap": 0.3333
+        }
+      }
+    },
+    {
+      "claim": "| These are the exact commands shown in the “test” job of the example workflow【Source 4】.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Workflow syntax for GitHub Actions These options are described in the following sections. Using a single event. For example ... jobs: test: runs-on: ubuntu-latest continue-on-error: ${{ matrix ... Commands - Trail of Bits Skills - Mintlify Test error cases. /command-name # Missing required arg /command-name invalid # Invalid arg value /command-name arg --invalid-flag. 4. Test edge cases. / ... The Best GitHub workflow for a .NET app - Coding Stephan Set up a workflow to automatically test your .",
+          "source": "https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions",
+          "results_checked": 5,
+          "overlap": 0.5385
+        }
+      }
+    },
+    {
+      "claim": "| **5️⃣ Push the workflow",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Workflow syntax for GitHub Actions A workflow is a configurable automated process made up of one or more jobs. You must create a YAML file to define your workflow configuration. GitHub Actions run on push to all branches - Stack Overflow How can I trigger a GitHub Actions workflow on push to another branch? 5 · Github Action not triggered when pushing to branch · 3 · Github ... Events that trigger workflows - GitHub Docs You can configure your workflows to run when specific activity on GitHub ha",
+          "source": "https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "watch it run** | Commit the `ci.yml` file, push to the `main` (or any) branch.",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Run job only when push to develop or tag on main - Stack Overflow My idea is to build a docker image only when I create tag on the main branch with git tag as a docker tag or when I do a push to develop. Tutorial: Create and run your first GitLab CI/CD pipeline This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. If you are already familiar with basic CI/CD concepts, you can learn ... What Is the .gitlab-ci.yml File and How to Work With It - Codefresh The .gitlab",
+          "source": "https://stackoverflow.com/questions/77495058/run-job-only-when-push-to-develop-or-tag-on-main",
+          "results_checked": 5,
+          "overlap": 0.4286
+        }
+      }
+    },
+    {
+      "claim": "GitHub automatically triggers the workflow; you can view the run under the **Actions** tab.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Events that trigger workflows - GitHub Docs You can configure your workflows to run when specific activity on GitHub happens, at a scheduled time, or when an event outside of GitHub occurs. Workflow syntax for GitHub Actions To automatically trigger a workflow, use on to define which events can cause the workflow to run. For a list of available events, see Events that trigger ... Missing workflow_dispatch at the Action tab #25219 - GitHub If you're not seeing the workflow trigger button, make su",
+          "source": "https://docs.github.com/actions/using-workflows/events-that-trigger-workflows",
+          "results_checked": 5,
+          "overlap": 0.5
+        }
+      }
+    },
+    {
+      "claim": "If the tests pass, the Docker image will be built",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "How to Build Docker Images with Test Stages - OneUptime Learn how to integrate testing directly into your Docker builds using multi-stage Dockerfiles to catch bugs before images reach production. Running Unit Tests during Docker build without making it ... - Reddit IMO you shouldn't be running your unit tests in the Dockerfile that creates your application image at all. You should be running your unit tests ... Run your tests - Docker Docs To run your tests when building, you need to update your",
+          "source": "https://oneuptime.com/blog/post/2026-01-30-docker-images-test-stages/view",
+          "results_checked": 5,
+          "overlap": 0.7778
+        }
+      }
+    },
+    {
+      "claim": "pushed (when secrets are set).",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Push Secrets - External Secrets Operator There are two ways to push an entire secret without defining all keys individually. By leaving off the secret key and remote property options. ... This will ... Pushing secrets - Validated Patterns This feature allows secrets to be securely retrieved from a different namespace or even a different cluster node, making it easier to manage and distribute ... Is it possible to push all secrets from a namespace to a ... - GitHub PushSecrets is a new, higher le",
+          "source": "https://external-secrets.io/v0.9.12/guides/pushsecrets/",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "| The article notes that “once I pushed the workflow file, the GitHub Action triggered automatically, built my Docker image",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Automating Tag Creation, Release, and Docker Image Publish with ... We can configure GitHub Actions to automate the tags creation, releases, and the process of building and publishing the Docker image. Publishing Docker images - GitHub Docs Introduction. This guide shows you how to create a workflow that performs a Docker build, and then publishes Docker images to Docker Hub or GitHub Packages. Using GitHub Actions to automatically build Docker images - Medium Using GitHub Actions to automatical",
+          "source": "https://dev.to/natilou/automating-tag-creation-release-and-docker-image-publishing-with-github-actions-49jg",
+          "results_checked": 5,
+          "overlap": 0.5
+        }
+      }
+    },
+    {
+      "claim": "pushed it to Docker Hub”【Source 2】.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Build and push your first image - Docker Docs To push images to Docker Hub, you will need to sign in with a Docker account. ... Once you're done, you should see the Sign in button turn into a profile picture. Pushing and Pulling to and from Docker Hub - YouTube Want to **push and pull Docker images** to and from **Docker Hub**? In this tutorial, I'll guide you through the **basics of Docker Hub**, ... docker image push - Docker Docs Use docker image push to share your images to the Docker Hub re",
+          "source": "https://docs.docker.com/get-started/introduction/build-and-push-first-image/",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "### Example `.github/workflows/ci.yml`",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "github-actions-demo/.github/workflows/ci.yml at master · ruanyf ... a demo of GitHub actions for a simple React App. Contribute to ruanyf/github-actions-demo development by creating an account on GitHub. Build a CI/CD workflow with Github Actions Let's create a workflow to run our tests when we open a new pull request. We create a YAML file to hold this workflow. NOTE: The YAML file format can be fiddly ... ci-configuration-examples/.github/workflows/ci.yml at main ... This repository makes it e",
+          "source": "https://github.com/ruanyf/github-actions-demo/blob/master/.github/workflows/ci.yml",
+          "results_checked": 5,
+          "overlap": 0.0
+        }
+      }
+    },
+    {
+      "claim": "name: CI/CD Pipeline",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "CI/CD pipelines - GitLab Docs CI/CD pipelines are the fundamental component of GitLab CI/CD. Pipelines are configured in a .gitlab-ci.yml file by using YAML keywords. What is CI/CD? - GitHub CI/CD comprises of continuous integration and continuous delivery or continuous deployment. Put together, they form a “CI/CD pipeline”—a ... Key Components of a CI/CD Pipeline - CloudBees CI/CD is a software development practice that automates the processes to enable rapid, reliable code releases. Components",
+          "source": "https://docs.gitlab.com/ci/pipelines/",
+          "results_checked": 5,
+          "overlap": 0.6667
+        }
+      }
+    },
+    {
+      "claim": "branches: [ main ]",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "About branches - GitHub Docs Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a contained area of your repository. Branches in a Nutshell - Git Branching means you diverge from the main line of development and continue to do work without messing with that main line. What is the difference of main and master branch? [duplicate] They are conceptually the same thing. The convention just changed: previously the primary branch was called master and for newer re",
+          "source": "https://docs.github.com/articles/about-branches",
+          "results_checked": 5,
+          "overlap": 0.25
+        }
+      }
+    },
+    {
+      "claim": "branches: [ main ]",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "About branches - GitHub Docs Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a contained area of your repository. What is the difference of main and master branch? [duplicate] They are conceptually the same thing. The convention just changed: previously the primary branch was called master and for newer repository that defaults to ... Branches in a Nutshell - Git Branching means you diverge from the main line of development and continue to do work without",
+          "source": "https://docs.github.com/articles/about-branches",
+          "results_checked": 5,
+          "overlap": 0.25
+        }
+      }
+    },
+    {
+      "claim": "name: Set up Python",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "NameError: name 'setup' is not defined - python - Stack Overflow NameError: name 'setup' is not defined · Where is Setup coming from? Patrick Haugh · @PatrickHaugh What do you mean? user8900239 · Setup(name=' ... How to Name Variables in Python (Rules for Naming ... - YouTube name variables in Python and the rules to follow as we continue our use cases for using them as we build our retail calculator application. Python Naming Conventions: 10 Essential Guidelines for Clean and ... For class name",
+          "source": "https://stackoverflow.com/questions/47426546/nameerror-name-setup-is-not-defined",
+          "results_checked": 5,
+          "overlap": 0.25
+        }
+      }
+    },
+    {
+      "claim": "name: Install dependencies",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "How to install dependency when JAR name differs from folder ... How can I tell Maven to pull a JAR whose version number filename is different from the containing folder filename? Specifying dependencies and devDependencies in a package.json file To specify the packages your project depends on, you must list them as \"dependencies\" or \"devDependencies\" in your package's package.json file. Install Python dependencies in an application | Divio Documentation Find Divio's how-to guide to installing Py",
+          "source": "https://stackoverflow.com/questions/39278327/how-to-install-dependency-when-jar-name-differs-from-folder-version-name",
+          "results_checked": 5,
+          "overlap": 0.6667
+        }
+      }
+    },
+    {
+      "claim": "pip install -r requirements.txt",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "How to Install Python Packages Using requirements.txt (The Right ... In this video of Joey'sTech, I will show you how to install multiple python packages using requirements.txt on Windows 11. This is the right ... Use requirements.txt (Python only) To specify module dependencies for your project, add a pip requirements file named requirements.txt to the root of your project folder. Warning. Using ... Install Python packages using `requirements.txt` - Mage Pro At the root of your project director",
+          "source": "https://www.youtube.com/watch?v=KdVAelLh-Uc",
+          "results_checked": 5,
+          "overlap": 0.75
+        }
+      }
+    },
+    {
+      "claim": "name: Run tests",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Running a Test by Name | TestComplete Documentation Create and run automated tests for desktop, web and mobile (Android and iOS) applications (.NET, C#, Visual Basic .NET, C++, Java, Delphi, C++Builder, ... Naming example tests when run Hi all, When I run cargo test, the examples which are run are named with a appended string like _0, _1, ... Is there a way to name such a ... Unique Test Names - NCrunch Documentation Unique Test Names. Summary. When working with NCrunch, it is extremely importan",
+          "source": "https://support.smartbear.com/testcomplete/docs/testing-with/running/tips/running-by-name.html",
+          "results_checked": 5,
+          "overlap": 0.6667
+        }
+      }
+    },
+    {
+      "claim": "needs: test          # only runs if tests succeed",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Unittest run a test only if the previous one is a success - Stack Overflow I want to ensure that the update and delete tests run only if the add tests succeeds. ... How can I include additional tests if a test passes? Is it possible for a test to require other tests to pass? : r/learnrust Create a script which runs the prerequired tests. If that run is successful, it runs the other test. Use thread synchronization primitives ... Should I use \"the test fails if\" instead of \"the test succeeds if\"?",
+          "source": "https://stackoverflow.com/questions/30442071/unittest-run-a-test-only-if-the-previous-one-is-a-success",
+          "results_checked": 5,
+          "overlap": 0.625
+        }
+      }
+    },
+    {
+      "claim": "name: Build Docker image",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Build, tag, and publish an image - Docker Docs In this hands-on guide, you will build a simple image using a provided Dockerfile and push it to Docker Hub. docker - How can I set an image name in a Dockerfile? docker build --tag <Docker Image name> --file <specific Dockerfile> . For example, docker build --tag second --file Dockerfile_Second . Name 'docker build' container - General When you build an image, you can execute docker build -t name:tag . That only assigns a name to the final image, n",
+          "source": "https://docs.docker.com/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/",
+          "results_checked": 5,
+          "overlap": 0.75
+        }
+      }
+    },
+    {
+      "claim": "docker build -t flask-app:latest .",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Flask samples - Docker Docs A sample Flask application. Looking for more samples? Visit the following GitHub repositories for more Docker samples. Awesome Compose: A curated repository ... Image Layer Details - eliamanara/flask-app:latest Docker Scout. Secure your supply chain at every level. Docker Desktop. Local development, simplified. Docker Build Cloud. Speed up your builds. Testcontainers ... How to dockerize a flask app - Reddit It focuses on setting up a Flask app that runs gunicorn, cel",
+          "source": "https://docs.docker.com/reference/samples/flask/",
+          "results_checked": 5,
+          "overlap": 0.4
+        }
+      }
+    },
+    {
+      "claim": "name: Push to Docker Hub",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "docker image push - Docker Docs Use docker image push to share your images to the Docker Hub registry or to a self-hosted one. Refer to the docker image tag reference for more information. Using Docker Push to Publish Images to Docker Hub - CloudBees When pushing an image to Docker Hub, we must specify our Docker Hub username as part of the image name. For the example above, I will need to create the image ... Pushing to a repository on DockerHub - name or tag The odd thing I see is when I push ",
+          "source": "https://docs.docker.com/reference/cli/docker/image/push/",
+          "results_checked": 5,
+          "overlap": 0.8
+        }
+      }
+    },
+    {
+      "claim": "DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "GitHub Actions Docker Push Failing: \"Username and password ... I've definitely added the Docker Hub username and PAT as repo secrets named DOCKER_USERNAME and DOCKER_PASSWORD. The action fails almost ... secrets not passing · Issue #57 · docker/login-action - GitHub Login to DockerHub uses: docker/login-action@v1 with: username: ${{ secrets.DOCKER_USERNAME }} password: ${{ secrets.DOCKER_TOKEN }} Using secrets with GitHub Actions - Docker Build A build secret is sensitive information, such as a ",
+          "source": "https://www.reddit.com/r/docker/comments/1me19uw/github_actions_docker_push_failing_username_and/",
+          "results_checked": 5,
+          "overlap": 0.75
+        }
+      }
+    },
+    {
+      "claim": "DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Personal access tokens - Docker Docs Personal access tokens (PATs) provide a secure alternative to passwords for Docker CLI authentication. Use PATs to authenticate automated systems, ... Manage sensitive data with Docker secrets You can use Docker secrets to centrally manage this data and securely transmit it to only those containers that need access to it. Build secrets - Docker Docs A build secret is any piece of sensitive information, such as a password or API token, consumed as part of your",
+          "source": "https://docs.docker.com/security/access-tokens/",
+          "results_checked": 5,
+          "overlap": 0.0
+        }
+      }
+    },
+    {
+      "claim": "echo \"$DOCKER_TOKEN\" | docker login -u \"$DOCKER_USERNAME\" --password-stdin",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "\"docker login\" AUTH conditionally by \"local gitlab-runner\" vs. \"gitlab ... A user's personal access token needs to auth against their own username, not the gitlab-ci-token username which is required for the CI_JOB_TOKEN magic. docker secure login #125 - GitHub To run the docker login command non-interactively, you can set the --password-stdin flag to provide a password through STDIN. Using STDIN prevents the ... Working with Docker | Semaphore ... Docker Hub so we can push images: Job commands. ",
+          "source": "https://forum.gitlab.com/t/docker-login-auth-conditionally-by-local-gitlab-runner-vs-gitlab-ci-pipeline/25272",
+          "results_checked": 5,
+          "overlap": 0.75
+        }
+      }
+    },
+    {
+      "claim": "docker tag flask-app:latest ${{ secrets.DOCKER_USERNAME }}/flask-app:latest",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Image Layer Details - julio0619/flask-app:latest julio0619/flask-app:latest ; OS/ARCH. linux/amd64 ; Compressed size. 31.23 MB ; Last pushed. over 3 years by julio0619 ; Type. Image. Automating Flask App Deployment with GitHub Actions - Medium ✓ Fix: I added my Docker username and a Docker Hub access token as GitHub secrets: DOCKER_USERNAME: nifecodes; DOCKER_PASSWORD: <Docker Hub ... devilbox/python-flask - Docker Image This project provides a Python Flask Docker image for development purposes.",
+          "source": "https://hub.docker.com/layers/julio0619/flask-app/latest/images/sha256-942e76ec2fdb5dbea2541eb1debc8238906a7db01dca8df9c69e387f10b3c0bb",
+          "results_checked": 5,
+          "overlap": 0.1667
+        }
+      }
+    },
+    {
+      "claim": "docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Automating Flask App Deployment with Docker and GitHub Actions Go to your GitHub repository > Settings > Secrets and variables > Actions > New Repository Secret; Add: DOCKER_USERNAME; DOCKER_PASSWORD. Each ... kcl-lang/flask-demo: Python Flask App Demo - GitHub Config yout secrets including DOCKER_USERNAME , DOCKER_PASSWORD and DEPLOY_ACCESS_TOKEN and update your application code to trigger automation build and deploy. Publish your Flask App Docker Image to Docker Hub using GitHub ... In this po",
+          "source": "https://medium.com/@abdulmalik.ibikunle/automating-flask-app-deployment-with-docker-and-github-actions-aa29877ab643",
+          "results_checked": 5,
+          "overlap": 0.4
+        }
+      }
+    },
+    {
+      "claim": "*The snippet mirrors the structure shown in the Medium guide (jobs `test`",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Taming Vibe Coding: The Engineer's Guide | Google Cloud | - Medium In this article, I share how my understanding of “vibe coding” evolved and the lessons I've learned. While often seen as a way for non- ... How to Structure AI Articles for Featured Snippets: 2026 Guide Your H1 should mirror exactly how people search. “How to Structure AI Articles for Featured Snippets” performs better than “AI Article Structure ... Beginner's notes on Grok Imagine: tips, limits, and what actually works I've been",
+          "source": "https://medium.com/google-cloud/taming-vibe-coding-the-engineers-guide-fff70b6d807a",
+          "results_checked": 5,
+          "overlap": 0.4545
+        }
+      }
+    },
+    {
+      "claim": "`build`, Python setup, dependency install, pytest, Docker build & push)【Source 4】.*",
+      "status": "UNSUPPORTED",
+      "support_count": 0,
+      "sources": {
+        "serper": {
+          "supported": false,
+          "evidence": "Integration testing for bunch of services with Pytest & Docker compose Today I want to share a guide on how to set up integration tests for a bunch of services. Last month I worked on a similar task and for some ... Docker Best Practices for Python Developers - TestDriven.io This article looks at some best practices to follow when writing Dockerfiles and working with Docker in general. Run py.test in a docker container as a service - Stack Overflow I am working on setting up a dockerised seleniu",
+          "source": "https://xnuinside.medium.com/integration-testing-for-bunch-of-services-with-pytest-docker-compose-4892668f9cba",
+          "results_checked": 5,
+          "overlap": 0.3
+        }
+      }
+    },
+    {
+      "claim": "Every push or PR to `main` runs the **test** job.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "GitHub Actions run on push to all branches - Stack Overflow I added this Action to a feature branch and GitHub didn't pick it up. Is there anything wrong with my glob? Why doesn't '*' work? Ensuring Your E2E Tests Run On Every Code Push - Anders Ramsay To help prevent regression, we want to make sure we run our full test suite every time we push code to a repo. Workflow syntax for GitHub Actions A workflow is a configurable automated process made up of one or more jobs. You must create a YAML fi",
+          "source": "https://stackoverflow.com/questions/64635032/github-actions-run-on-push-to-all-branches",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "If tests pass, the **build** job creates a Docker image",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "How to Build Docker Images with Test Stages - OneUptime This workflow runs tests as part of the Docker build and only pushes images if tests pass. The test stage acts as a gate. YAML Copy. name: ... Running Unit Tests during Docker build without making it ... - Reddit Running Unit Tests during Docker build without making it part of output image. I am creating a DockerFile which. Creates application image. [Github Actions] Testing a build before pushing to Docker Hub? The idea is to use CI/CD to ",
+          "source": "https://oneuptime.com/blog/post/2026-01-30-docker-images-test-stages/view",
+          "results_checked": 5,
+          "overlap": 0.7
+        }
+      }
+    },
+    {
+      "claim": "pushes it to Docker Hub (or any registry you configure).",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Build and push your first image - Docker Docs To push images to Docker Hub, you will need to sign in with a Docker account. Open the Docker Dashboard. Select Sign in at the top-right corner. If needed ... docker image push - Docker Docs Use docker image push to share your images to the Docker Hub registry or to a self-hosted one. Refer to the docker image tag reference for more information. How to push a docker image to a private repository - Stack Overflow Go into the hub, and create the reposi",
+          "source": "https://docs.docker.com/get-started/introduction/build-and-push-first-image/",
+          "results_checked": 5,
+          "overlap": 0.6
+        }
+      }
+    },
+    {
+      "claim": "You now have a minimal, fully‑automated CI/CD pipeline for your Flask application using only GitHub Actions.",
+      "status": "VERIFIED",
+      "support_count": 1,
+      "sources": {
+        "serper": {
+          "supported": true,
+          "evidence": "Automate Your Flask App Deployment with GitHub Actions CI/CD ... In this guide, we'll set up a GitHub Actions CI/CD pipeline to automate testing, building, and deploying a Flask application. How I Built a Minimal CI/CD Pipeline Using GitHub Actions for My ... So I built a lean and clean CI/CD pipeline using GitHub Actions, and now every push runs tests, builds the app, and deploys to my VPS — all ... CI/CD with GitHub Actions Self-Hosted Agent, Flask App, Docker ... Welcome to this step-by-step ",
+          "source": "https://medium.com/@rajiv8982/automate-your-flask-app-deployment-with-github-actions-ci-cd-pipeline-dde07593a92f",
+          "results_checked": 5,
+          "overlap": 0.625
+        }
+      }
+    }
+  ],
+  "scores": {
+    "total_claims": 53,
+    "verified_claims": 35,
+    "weakly_supported_claims": 0,
+    "unsupported_claims": 18,
+    "verification_score": 0.6604,
+    "confidence_score": 0.6604,
+    "consistency_score": 1.0,
+    "risk_score": 36,
+    "label": "HALLUCINATED"
+  },
+  "failure_reason": "FACT_MISMATCH",
+  "latency_ms": 111056.77,
+  "tools_used": [
+    "tavily"
+  ],
+  "retrieval_source_count": 5,
+  "retrieval_sources_preview": [
+    {
+      "title": "Automate Your Flask App Deployment with GitHub Actions CI/CD ...",
+      "url": "https://medium.com/@rajiv8982/automate-your-flask-app-deployment-with-github-actions-ci-cd-pipeline-dde07593a92f",
+      "source": ""
+    },
+    {
+      "title": "From Flask App to CI/CD Pipeline with GitHub Actions & Docker Hub - DEV Community",
+      "url": "https://dev.to/adeleke123/from-flask-app-to-cicd-pipeline-with-github-actions-docker-hub-aoa",
+      "source": ""
+    },
+    {
+      "title": "mgrum/flask-example-cicd: This is a simple python flask ... - GitHub",
+      "url": "https://github.com/mgrum/flask-example-cicd",
+      "source": ""
+    },
+    {
+      "title": "Building a Production-Ready CI/CD Pipeline: A Complete Guide with Flask, Docker, and GitHub Actions | by Noor Fatima | Medium",
+      "url": "https://medium.com/@noorfatimaafzalbutt/building-a-production-ready-ci-cd-pipeline-a-complete-guide-with-flask-docker-and-github-actions-c2bcea4bcf5b",
+      "source": ""
+    },
+    {
+      "title": "How I Built a Minimal CI/CD Pipeline Using GitHub Actions for My ...",
+      "url": "https://blog.stackademic.com/how-i-built-a-minimal-ci-cd-pipeline-using-github-actions-for-my-flask-app-d124033ef674",
+      "source": ""
+    }
+  ],
+  "comparison_summary": {
+    "supported_claims_by_source": {
+      "serper": 35
+    },
+    "verified_claims": 35,
+    "weakly_supported_claims": 0,
+    "unsupported_claims": 18
+  }
+}

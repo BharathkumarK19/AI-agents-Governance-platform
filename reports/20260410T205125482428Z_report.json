@@ -1,0 +1,98 @@
+{
+  "query": "What is the latest Tesla news?",
+  "response": "Tesla was founded in 2003 and probably launched a new model today.",
+  "generation_trace": {
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Search Agent",
+        "action": "Retrieved documents",
+        "output_summary": "Fetched two snippets.",
+        "source_used": true,
+        "basis": "context + prior knowledge"
+      },
+      {
+        "step": 2,
+        "agent": "LLM",
+        "action": "Generated response",
+        "output_summary": "",
+        "source_used": false,
+        "basis": "context + prior knowledge"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_summary": "Tesla was founded in 2003. No retrieved article confirms a launch today.",
+    "claims_in_response": [
+      {
+        "claim": "Tesla was founded in 2003",
+        "supported_by_context": true,
+        "supporting_text": "Tesla was founded in 2003.",
+        "confidence": 1.0
+      },
+      {
+        "claim": "probably launched a new model today.",
+        "supported_by_context": false,
+        "supporting_text": "No retrieved article confirms a launch today.",
+        "confidence": 0.31
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim": "probably launched a new model today.",
+        "reason": "Not found in retrieved context (similarity below 0.40)."
+      }
+    ]
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": true,
+      "used": false,
+      "status": "FAILED"
+    },
+    "context_overlap_check": {
+      "score": 0.4714,
+      "threshold": 0.5,
+      "status": "FAILED"
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [
+        "probably"
+      ],
+      "status": "WARNING"
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "LOW_CONTEXT_OVERLAP",
+      "TOOL_NOT_USED",
+      "UNSUPPORTED_CLAIMS",
+      "UNCERTAINTY_LANGUAGE"
+    ],
+    "scoring_breakdown": {
+      "context_score": -4,
+      "tool_penalty": -3,
+      "uncertainty_penalty": -2,
+      "unsupported_claims_penalty": -5,
+      "total_score": -14
+    }
+  },
+  "final_verdict": {
+    "label": "HALLUCINATED",
+    "confidence": 0.71,
+    "justification": "Response is classified as hallucinated because context overlap is 0.47, below the 0.50 threshold; 1 claims were not supported by retrieved context; a tool was required but not used; uncertainty language was found: probably."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Missing retrieval step",
+    "secondary_cause": "Model relied on hedged language instead of evidence-backed statements"
+  },
+  "prevention_recommendation": [
+    "Force tool usage for factual queries",
+    "Reject responses with low context overlap",
+    "Add claim verification layer",
+    "Flag hedged factual statements for review"
+  ],
+  "report_reference_id": "d493c8e8-1061-4b62-9a98-f447c07f42e1",
+  "generated_at": "2026-04-10T20:51:25.482428+00:00"
+}

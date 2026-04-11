@@ -1,0 +1,92 @@
+{
+  "query": "What are the latest market results?",
+  "response": "The latest results indicate strong performance, but this is likely to change if external market conditions shift.",
+  "generation_trace": {
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Search Agent",
+        "action": "Retrieved documents",
+        "output_summary": "Loaded retrieved documents for the query.",
+        "source_used": true,
+        "basis": "retrieved context"
+      },
+      {
+        "step": 2,
+        "agent": "LLM",
+        "action": "Generated response",
+        "output_summary": "The latest results indicate strong performance, but this is likely to change if external market conditions shift.",
+        "source_used": true,
+        "basis": "context + prior knowledge"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_summary": "Market summary says revenue grew 8% year-over-year. No live source confirms results from today.",
+    "claims_in_response": [
+      {
+        "claim": "The latest results indicate strong performance, but this is likely to change if external market conditions shift.",
+        "supported_by_context": false,
+        "supporting_text": "No live source confirms results from today.",
+        "confidence": 0.09
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim": "The latest results indicate strong performance, but this is likely to change if external market conditions shift.",
+        "reason": "Not found in retrieved context (similarity below 0.40)."
+      }
+    ]
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": true,
+      "used": false,
+      "status": "FAILED"
+    },
+    "context_overlap_check": {
+      "score": 0.1345,
+      "threshold": 0.5,
+      "status": "FAILED"
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [
+        "likely"
+      ],
+      "status": "WARNING"
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "LOW_CONTEXT_OVERLAP",
+      "TOOL_NOT_USED",
+      "UNSUPPORTED_CLAIMS",
+      "UNCERTAINTY_LANGUAGE"
+    ],
+    "scoring_breakdown": {
+      "context_score": -4,
+      "tool_penalty": -3,
+      "uncertainty_penalty": -2,
+      "unsupported_claims_penalty": -5,
+      "total_score": -14
+    }
+  },
+  "final_verdict": {
+    "label": "HALLUCINATED",
+    "confidence": 0.6,
+    "justification": "Response is classified as hallucinated because context overlap is 0.13, below the 0.50 threshold; 1 claims were not supported by retrieved context; a tool was required but not used; uncertainty language was found: likely."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Missing retrieval step",
+    "secondary_cause": "Model relied on hedged language instead of evidence-backed statements"
+  },
+  "prevention_recommendation": [
+    "Force tool usage for factual queries",
+    "Reject responses with low context overlap",
+    "Add claim verification layer",
+    "Flag hedged factual statements for review"
+  ],
+  "report_reference_id": "d25078b8-211f-44a9-ba28-caa16f8d36ee",
+  "generated_at": "2026-04-10T20:59:57.608383+00:00"
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "2026-04-11T00:39:31.401920+00:00",
+    "query": "What are the top 3 highest-rated vegetarian restaurants currently open in Hyderabad? List their signature dishes and one recent customer review for each.\"",
+    "response": "The retrieved evidence does not provide sufficient information to list the top 3 highest-rated vegetarian restaurants currently open in Hyderabad, their signature dishes, and recent customer reviews.",
+    "retrieved_context": "[Source 1]\nTitle: The 10 Best Vegetarian Restaurants in Hyderabad (2026)\nURL: https://www.tripadvisor.com/Restaurants-g297586-zfz10665-Hyderabad_Hyderabad_District_Telangana.html\nSummary: Vegetarian-Friendly Restaurants in Hyderabad ; 1. Mekong · (1,044 reviews). Thai, Szechuan ; 2. Bidri · (1,003 reviews). Indian, Healthy ; 3. Yi\n\n[Source 2]\nTitle: Top 5 newly opened pure vegetarian restaurants in Hyderabad ...\nURL: https://www.instagram.com/reel/DB8Buy4PEr1/?hl=en\nSummary: Number two, Temple Tree, a proper Janzi style restaurant with crazy veg dishes located at Tarwan. Number three, Take Dihati, Delhi's famous\n\n[Source 3]\nTitle: Best Veg Restaurants, Pure Veg in Hyderabad - Zomato\nURL: https://www.zomato.com/hyderabad/vegetarian-restaurants\nSummary: Pure Veg Places ; Naani's Pure Veg · Naani's Pure Veg · South Indian, North Indian, Chinese · Gachibowli, Hyderabad ; Amritsari Aangan · Amritsari Aangan.\n\n[Source 4]\nTitle: Good vegetarian restaurants in Hyderabad - Reddit\nURL: https://www.reddit.com/r/hyderabad/comments/1irk6zq/good_vegetarian_restaurants_in_hyderabad/\nSummary: Minerva - Madhapur Somajiguda · Tatwa - Kokapet, Jubilee Hills · Rajdhani - Nexus Mall KPHB, Banjara Hills · Bikanevala - Banjara Hills, Kondapur &\n\n[Source 5]\nTitle: Best Pure Veg Restaurants in Hyderabad - Order Food Online\nURL: https://www.justdial.com/Hyderabad/Pure-Veg-Restaurants/nct-10396867\nSummary: Best Pure Veg Restaurants in Hyderabad - Order Food Online · Taaza Kitchen · Santosh Dhaba · Squeeze @ The Lime · Sri Raghavendra Udupi Veg Restaurant · Subbayya\n\n[Source 6]\nTitle: The 10 Best Vegetarian Restaurants in Hyderabad District\nURL: https://www.tripadvisor.com/Restaurants-g12389092-zfz10665-Hyderabad_District_Telangana.html\nSummary: 1. Mekong. 4.9. (1,024 reviews). Thai, Szechuan$$$$ · 2. Bidri. 4.9. (978 reviews) · 3. Yi Jing. 5.0. (780 reviews) · 4. Dakshin. 4.8. (1,210 ...\n\n[Source 7]\nTitle: Vegetarian Food in Hyderabad - 29 Restaurants Tried & Tasted ...\nURL: https://socialmaharaj.com/2022/07/17/vegetarian-food-hyderabad-restaurants/\nSummary: The first pure vegetarian restaurant I visited after moving to Hyderabad was Ohri's Jiva. Located in Begumpet, this used to be our go-to place.\n\n[Source 8]\nTitle: Here are 7 must-try veg restaurants in Hyderabad - Facebook\nURL: https://www.facebook.com/hyderabadfoodich/posts/here-are-7-must-try-veg-restaurants-in-hyderabad-part-1-where-tradition-taste-an/24991477533807305/\nSummary: Went to Food Corner Hyderabad and tried their 1. Alfredo Pasta 10/10 (definitely a must try) 2. Masala Dosa 9/10 (if you have taste buds ...\n\n[Source 9]\nTitle: Good vegetarian restaurants in Hyderabad - Reddit\nURL: https://www.reddit.com/r/hyderabad/comments/1irk6zq/good_vegetarian_restaurants_in_hyderabad/\nSummary: Istaa, Tatva, Parampara, Sweekar, Kamat, Kamadhenu, Kshetra, Clove Fine Dining, Masala Republic, Dadus, Pizza Den, Little Italy, Taj Mahal, Swad ...\n\n[Source 10]\nTitle: Top 5 Premium Pure Veg Restaurants Hyderabad 2025 - YouTube\nURL: https://www.youtube.com/watch?v=Atrv1gj2T40\nSummary: Naani's Pure Veg Hyder... · Kake Di Hatti Hyderaba... · Itlu Restaurant - Pure... · Saffron Restaurant Hyd... · Chives Restaurant Hyde... · The ...",
+    "tools_used": [
+      "tavily",
+      "serper"
+    ],
+    "report_reference_id": "ff7711b2-5d5c-4c69-8160-34e51c1505c4",
+    "report_file_path": "observability_logs\\reports\\report_ff7711b2-5d5c-4c69-8160-34e51c1505c4_20260411T003931392253Z.json",
+    "hallucination_analysis": {
+      "label": "GROUNDED",
+      "overlap_score": 0.5,
+      "risk_score": 4,
+      "reasoning": {
+        "verification": "1 of 2 claims verified.",
+        "decision_trace": "Attempt 1 failed verification; switching to model openai/gpt-4o-mini and datasource hybrid. Attempt 2 accepted with hybrid and openai/gpt-4o-mini."
+      },
+      "root_cause": "Self-healing pipeline execution completed.",
+      "prevention_suggestion": "Use verification-first acceptance and fallback retrieval as implemented.",
+      "tools_used": [
+        "tavily",
+        "serper"
+      ],
+      "report_reference_id": "ff7711b2-5d5c-4c69-8160-34e51c1505c4",
+      "report_file_path": "observability_logs\\reports\\report_ff7711b2-5d5c-4c69-8160-34e51c1505c4_20260411T003931392253Z.json"
+    }
+  }
+]

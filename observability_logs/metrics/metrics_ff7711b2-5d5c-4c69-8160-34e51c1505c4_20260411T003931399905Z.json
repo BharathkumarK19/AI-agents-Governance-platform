@@ -1,0 +1,10 @@
+{
+  "id": "ff7711b2-5d5c-4c69-8160-34e51c1505c4",
+  "total_claims": 2,
+  "verified": 1,
+  "unsupported": 1,
+  "confidence_score": 0.5,
+  "verification_score": 0.5,
+  "consistency_score": 0.55,
+  "latency_ms": 20545.6
+}

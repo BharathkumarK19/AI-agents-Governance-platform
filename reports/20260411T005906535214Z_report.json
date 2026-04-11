@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "query": "A",
+  "response": "{\"status\": \"failed\", \"error\": \"Tavily search failed before the research crew could start.\", \"stack_trace\": \"Traceback (most recent call last):\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\agents\\\\tools.py\\\", line 36, in search_tavily\\n    response = _get_client().search(query=query, max_results=5)\\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\site-packages\\\\tavily\\\\tavily.py\\\", line 170, in search\\n    response_dict = self._search(query,\\n                    ^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\LENOVO\\\\anaconda3\\\\.anaconda\\\\Lib\\\\site-packages\\\\tavily\\\\tavily.py\\\", line 139, in _search\\n    raise BadRequestError(detail)\\ntavily.errors.BadRequestError: Query is too short. Min query length is 2 characters.\\n\\nThe above exception was the direct cause of the following exception:\\n\\nTraceback (most recent call last):\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\main.py\\\", line 586, in run_research_system\\n    source_results = search_tavily(query)\\n                     ^^^^^^^^^^^^^^^^^^^^\\n  File \\\"F:\\\\Projects\\\\Agents-Governance-Platform\\\\agents\\\\tools.py\\\", line 45, in search_tavily\\n    raise TavilySearchError(\\nagents.tools.TavilySearchError: Tavily search failed before the research crew could start.\\n\"}",
+  "report_summary": {
+    "response_generation_status": "completed",
+    "claims_evaluated": 0,
+    "supported_claims": 0,
+    "independently_verified_claims": 0,
+    "unsupported_claims": 0,
+    "overall_outcome": "HALLUCINATED"
+  },
+  "generation_trace": {
+    "process_description": "Execution steps were recorded first. The final response was then audited using deterministic claim extraction, context matching, overlap scoring, tool-usage checks, and uncertainty checks.",
+    "response_construction_basis": "model output without retrieved context",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "LLM",
+        "action": "Generated response",
+        "output_summary": "Response generated without intermediate trace details.",
+        "source_used": false,
+        "basis": "prior knowledge or hidden runtime context"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": false,
+    "context_documents_count": 0,
+    "context_summary": "No context was provided.",
+    "verification_method": {
+      "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
+      "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
+      "support_threshold": 0.4,
+      "multi_source_verification": "Each claim is checked against retrieved tool results first, then against Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+    },
+    "claims_in_response": [],
+    "unsupported_claims": [],
+    "missing_evidence_summary": "No evidence was available, so every response claim lacked a retrievable support base."
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": false,
+      "used": true,
+      "tools_observed": [
+        "tavily"
+      ],
+      "status": "PASSED",
+      "explanation": "Tools were used even though the query did not strictly demand them."
+    },
+    "context_overlap_check": {
+      "score": 0.0,
+      "threshold": 0.5,
+      "status": "FAILED",
+      "explanation": "The final response diverged materially from the retrieved evidence."
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [],
+      "status": "PASSED",
+      "explanation": "No hedging language was detected."
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "NO_CONTEXT",
+      "LOW_CONTEXT_OVERLAP"
+    ],
+    "rule_evaluations": [
+      {
+        "rule": "NO_CONTEXT",
+        "triggered": true,
+        "impact_score": -3,
+        "evidence": "No retrieved context was available during verification."
+      },
+      {
+        "rule": "LOW_CONTEXT_OVERLAP",
+        "triggered": true,
+        "impact_score": -4,
+        "evidence": "Overlap score 0.00 is below threshold 0.50."
+      },
+      {
+        "rule": "TOOL_NOT_USED",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "The query appears time-sensitive or factual, but no retrieval tool was recorded."
+      },
+      {
+        "rule": "UNSUPPORTED_CLAIMS",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "0 claims could not be mapped back to retrieved context."
+      },
+      {
+        "rule": "UNCERTAINTY_LANGUAGE",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No uncertainty language found."
+      }
+    ],
+    "score_inputs": {
+      "context_present": false,
+      "tool_required": false,
+      "tool_used": true,
+      "context_overlap_score": 0.0,
+      "total_claims": 0,
+      "supported_claims": 0,
+      "independently_verified_claims": 0,
+      "unsupported_claims": 0,
+      "uncertainty_terms_found": []
+    },
+    "scoring_breakdown": {
+      "context_score": -7,
+      "tool_penalty": 0,
+      "uncertainty_penalty": 0,
+      "unsupported_claims_penalty": 0,
+      "total_score": -7,
+      "decision_threshold": -6
+    },
+    "decision_trace": [
+      "Extracted 0 atomic claims from the response.",
+      "Verified 0 claims directly against retrieved context.",
+      "Measured overall context overlap at 0.00.",
+      "Triggered rules: NO_CONTEXT, LOW_CONTEXT_OVERLAP.",
+      "Final classification set to HALLUCINATED."
+    ]
+  },
+  "final_verdict": {
+    "label": "HALLUCINATED",
+    "confidence": 0.65,
+    "justification": "Response is classified as hallucinated because context overlap is 0.00, below the 0.50 threshold."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Weak grounding context",
+    "secondary_cause": "Model relied on prior knowledge instead of data",
+    "explanation": "The response-context similarity score of 0.00 was too low for a grounded answer."
+  },
+  "prevention_recommendation": [
+    "Reject responses with low context overlap"
+  ],
+  "report_reference_id": "02b693f6-79de-4fa4-a5ae-bc97bc38d3dc",
+  "generated_at": "2026-04-11T00:59:06.535214+00:00"
+}

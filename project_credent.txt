@@ -1,0 +1,12 @@
+NEWS_API = 69b534b7907b4e119ea0b48cd09d8f15
+👉 Use this official API (no signup, no key required):
+
+Base Endpoint:
+
+https://en.wikipedia.org/api/rest_v1/
+
+Example (Direct Use in Browser):
+
+https://en.wikipedia.org/api/rest_v1/page/summary/Elon_Musk
+DuckDuckGo
+serper_API = 6e5b54f9e699baf8cfd65e8d54aeac85cce0d2f3

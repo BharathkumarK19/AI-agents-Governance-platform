@@ -1,0 +1,624 @@
+{
+  "schema_version": "2.0",
+  "query": "\"Who won the 2026 ICC Men's T20 World Cup, and what was the final score?\"",
+  "response": "# Tournament Report: 2026 ICC Men's T20 World Cup Final\n\n## **Executive Summary**\nThe 2026 ICC Men's T20 World Cup concluded with a historic victory for **India**, who defeated New Zealand in a record-breaking final. This victory solidifies India’s dominance in the format, marking several \"firsts\" in the history of the tournament.\n\n---\n\n## **Final Match Results**\n*   **Champion:** India\n*   **Runner-up:** New Zealand\n*   **Margin of Victory:** India won by **96 runs**\n*   **Player of the Match:** Jasprit Bumrah\n\n### **The Scorecard**\n| Team | Score | Status |\n| :--- | :--- | :--- |\n| **India** | **255/5** | (20 Overs) |\n| **New Zealand** | **159** | (All Out) |\n\n---\n\n## **Key Achievements & Milestones**\n\n### **Historical Records**\n*   **Successful Defense:** India became the first team in history to successfully defend their T20 World Cup title (winning back-to-back trophies).\n*   **Triple Crown:** This marks India’s **third** ICC Men's T20 World Cup title.\n*   **Host Nation Hoodoo Broken:** India is the first host nation to win the tournament on home soil.\n\n### **Statistical Highlights**\n*   **Record Total:** India’s 255/5 is the highest score ever recorded in a T20 World Cup final, as well as the highest in any T20I knockout match.\n*   **Winning Streak:** India set a new tournament record with **nine consecutive wins** leading up to and including the final.\n\n---\n\n## **Conclusion**\nThe 2026 tournament ended with India re-writing the record books. Through a combination of clinical bowling led by Jasprit Bumrah and a high-octane batting performance, India has established itself as the premier force in international T20 cricket.",
+  "report_summary": {
+    "response_generation_status": "completed",
+    "claims_evaluated": 8,
+    "supported_claims": 5,
+    "independently_verified_claims": 4,
+    "unsupported_claims": 4,
+    "overall_outcome": "GROUNDED"
+  },
+  "generation_trace": {
+    "process_description": "Execution steps were recorded first. The final response was then audited using deterministic claim extraction, context matching, overlap scoring, tool-usage checks, and uncertainty checks.",
+    "response_construction_basis": "retrieved context only",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Research Agent",
+        "action": "Research",
+        "output_summary": "**India won the 2026 ICC Men's T20 World Cup, defeating New Zealand by 96 runs in the final.**[1][2] India scored **255/5** in their 20 overs, while New Zealand were all out for **159** in 19 overs.[2]\n\nThe final was played at the Narendra Modi Stadium in Ahmedabad on March 8, 2026.[2] New Zealand won the toss and elected to field first, but India's dominant batting performance proved insurmountable.[2]\n\nThis victory marked several historic milestones for India:[1][2]\n\n- **First team to win t...",
+        "source_used": true,
+        "basis": "retrieved context"
+      },
+      {
+        "step": 2,
+        "agent": "Analysis Agent",
+        "action": "Analysis",
+        "output_summary": "Here are the key insights from the research output:\n\n*   **India won the 2026 ICC Men's T20 World Cup.**\n*   **India defeated New Zealand in the final by 96 runs.**\n*   **India's final score was 255/5, and New Zealand's was 159 all out.**\n*   This victory marks India's **third T20 World Cup title** and their **second consecutive win**, making them the first team to successfully defend their title.\n*   India also became the **first host nation to win the Men's T20 World Cup**.\n*   India achiev...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 3,
+        "agent": "Summary Agent",
+        "action": "Summary",
+        "output_summary": "# Tournament Report: 2026 ICC Men's T20 World Cup Final\n\n## **Executive Summary**\nThe 2026 ICC Men's T20 World Cup concluded with a historic victory for **India**, who defeated New Zealand in a record-breaking final. This victory solidifies India’s dominance in the format, marking several \"firsts\" in the history of the tournament.\n\n---\n\n## **Final Match Results**\n*   **Champion:** India\n*   **Runner-up:** New Zealand\n*   **Margin of Victory:** India won by **96 runs**\n*   **Player of the Matc...",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      },
+      {
+        "step": 4,
+        "agent": "Evaluation",
+        "action": "Evaluation",
+        "output_summary": "{'hallucination_detected': False, 'confidence_score': 1.0, 'issues': [], 'verdict': 'Reliable', 'explanation': 'No major unsupported or fabricated claims were detected against the research evidence.', 'suggested_failed_agents': []}",
+        "source_used": false,
+        "basis": "retrieved context + prior analysis"
+      }
+    ]
+  },
+  "evidence_analysis": {
+    "context_provided": true,
+    "context_documents_count": 64,
+    "context_summary": "User query: \"Who won the 2026 ICC Men's T20 World Cup, and what was the final score?\" Live web findings: [Source 1]",
+    "verification_method": {
+      "claim_extraction": "Response split into sentence-level and clause-level factual claims.",
+      "support_check": "Each claim compared against retrieved context snippets using cosine-style token overlap.",
+      "support_threshold": 0.4,
+      "multi_source_verification": "Each claim is checked against retrieved tool results first, then against Wikipedia, DuckDuckGo, and NewsAPI when realtime validation is relevant."
+    },
+    "claims_in_response": [
+      {
+        "claim": "# Tournament Report: 2026 ICC Men's T20 World Cup Final",
+        "supported_by_context": true,
+        "supporting_text": "Title: All records broken at the ICC Men's T20 World Cup 2026 | ICC Men's T20 World Cup, 2026 | ICC",
+        "confidence": 0.76,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "2026",
+          "cup",
+          "icc",
+          "men",
+          "s",
+          "t20",
+          "world"
+        ],
+        "support_reason": "Similarity 0.76 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "Home | ICC Men's T20 World Cup, 2026 Official ICC Men's T20 World Cup, 2026 website – live cricket scores, fixtures, results, teams, rankings, news, videos and exclusive updates ... ICC Men's T20 World Cup 2026 - ESPNcricinfo ICC Men's T20 World Cup 2026 ; Final (N), Ahmedabad, March 08, 2026, · IND Flag. IND. 255/5 ; 2nd Semi-Final (N), Wankhede, March 05, 2026, · IND Flag. IND. 253/7. An epic recap of the T20 World Cup 2026 Final - ICC Cricket A huge end to an enthralling ICC Men's T20 World C",
+              "source": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026",
+              "top_sources": [
+                {
+                  "title": "Home | ICC Men's T20 World Cup, 2026",
+                  "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026"
+                },
+                {
+                  "title": "ICC Men's T20 World Cup 2026 - ESPNcricinfo",
+                  "url": "https://www.espncricinfo.com/series/icc-men-s-t20-world-cup-2025-26-1502138"
+                },
+                {
+                  "title": "An epic recap of the T20 World Cup 2026 Final - ICC Cricket",
+                  "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/videos/an-epic-recap-of-the-t20-world-cup-2026-final-t20wc-2026"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.7
+            }
+          }
+        }
+      },
+      {
+        "claim": "The 2026 ICC Men's T20 World Cup concluded with a historic victory for **India**, who defeated New Zealand in a record-breaking final.",
+        "supported_by_context": true,
+        "supporting_text": "Summary: A record-breaking third ICC Men's T20 World Cup title for India as they defeat New Zealand by 96 runs in Ahmedabad.",
+        "confidence": 0.6,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "a",
+          "breaking",
+          "cup",
+          "for",
+          "icc",
+          "in",
+          "india",
+          "men",
+          "new",
+          "record"
+        ],
+        "support_reason": "Similarity 0.60 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "IND vs NZ, T20 World Cup 2026: India beat New Zealand in final to ... This was also India's third crown, granting them sole custody of the record for the most successful team in the ICC Men's T20 World Cup history, ... India clinch a landmark win in style | ICC Men's T20 World Cup, 2026 A record-breaking third ICC Men's T20 World Cup title for India as they defeat New Zealand by 96 runs in Ahmedabad. IND vs NZ Cricket Scorecard, Final at Ahmedabad, March 08, 2026 NZ Flag NZ. (19/20 ov, T:256) 15",
+              "source": "https://www.olympics.com/en/news/t20-world-cup-2026-india-vs-new-zealand-final-match-report",
+              "top_sources": [
+                {
+                  "title": "IND vs NZ, T20 World Cup 2026: India beat New Zealand in final to ...",
+                  "url": "https://www.olympics.com/en/news/t20-world-cup-2026-india-vs-new-zealand-final-match-report"
+                },
+                {
+                  "title": "India clinch a landmark win in style | ICC Men's T20 World Cup, 2026",
+                  "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/videos/india-clinch-a-landmark-win-in-style-final-match-highlights-t20wc-2026"
+                },
+                {
+                  "title": "IND vs NZ Cricket Scorecard, Final at Ahmedabad, March 08, 2026",
+                  "url": "https://www.espncricinfo.com/series/icc-men-s-t20-world-cup-2025-26-1502138/india-vs-new-zealand-final-1512773/full-scorecard"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.7143
+            }
+          }
+        }
+      },
+      {
+        "claim": "This victory solidifies India’s dominance in the format, marking several \"firsts\" in the history of the tournament.",
+        "supported_by_context": true,
+        "supporting_text": "**255/5:** India’s score against New Zealand was the highest total in a T20 World Cup final, and the highest in any T20I knockout or playoff match.",
+        "confidence": 0.4,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "in",
+          "india",
+          "s",
+          "the"
+        ],
+        "support_reason": "Similarity 0.40 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "This image celebrates India winning the 2026 ICC Men's T20 World ... ... history yesterday in claiming a number of firsts as they celebrated the win as ICC 2026 Men T20 Champion. Resoundingly beating a flustered ... Simply Excellent, with 10 overs to spare! A whirlwind 8⃣-wicket ... The 2026 triumph further cements India's dominance in the shortest format ... firsts as they celebrated the win as ICC 2026 Men T20 Champion. If India win the men's T20 World Cup in 2026, which of these firsts ... If",
+              "source": "https://www.facebook.com/100063508819543/posts/this-image-celebrates-india-winning-the-2026-icc-mens-t20-world-cup-held-on-home/1532011718925774/",
+              "top_sources": [
+                {
+                  "title": "This image celebrates India winning the 2026 ICC Men's T20 World ...",
+                  "url": "https://www.facebook.com/100063508819543/posts/this-image-celebrates-india-winning-the-2026-icc-mens-t20-world-cup-held-on-home/1532011718925774/"
+                },
+                {
+                  "title": "Simply Excellent, with 10 overs to spare! A whirlwind 8⃣-wicket ...",
+                  "url": "https://www.facebook.com/IndianCricketTeam/posts/simply-excellent-with-10-overs-to-spare-a-whirlwind-8%E2%83%A3-wicket-victory-for-teamin/1307742118049842/"
+                },
+                {
+                  "title": "If India win the men's T20 World Cup in 2026, which of these firsts ...",
+                  "url": "https://www.facebook.com/Cricinfo/posts/if-india-win-the-mens-t20-world-cup-in-2026-which-of-these-firsts-will-they-have/1455422019278843/"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.4286
+            }
+          }
+        }
+      },
+      {
+        "claim": "*   **Margin of Victory:** India won by **96 runs**",
+        "supported_by_context": false,
+        "supporting_text": "Summary: A record-breaking third ICC Men's T20 World Cup title for India as they defeat New Zealand by 96 runs in Ahmedabad.",
+        "confidence": 0.29,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "96",
+          "by",
+          "india",
+          "runs"
+        ],
+        "support_reason": "Similarity 0.29 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "Brilliant India crushes NZ by 96 runs to win T20 World Cup for a ... India has won the T20 World Cup for a record third time with a 96-run victory over New Zealand to the delight of 86000 cricket fans at ... India's biggest margin of victory by runs in T20 World Cup history ... India's biggest margin of victory by runs in T20 World Cup history India's 93-run win over Namibia is their biggest victory margin by runs ... India's 96-run victory is the biggest winning margin in a final of the ... Ind",
+              "source": "https://www.boston25news.com/sports/india-wins-crickets/4KWQ3RBWYEYI3EZHPQHB6RCCZE/",
+              "top_sources": [
+                {
+                  "title": "Brilliant India crushes NZ by 96 runs to win T20 World Cup for a ...",
+                  "url": "https://www.boston25news.com/sports/india-wins-crickets/4KWQ3RBWYEYI3EZHPQHB6RCCZE/"
+                },
+                {
+                  "title": "India's biggest margin of victory by runs in T20 World Cup history ...",
+                  "url": "https://www.facebook.com/Vtrakit/posts/indias-biggest-margin-of-victory-by-runs-in-t20-world-cup-historyindias-93-run-w/1496000312528780/"
+                },
+                {
+                  "title": "India's 96-run victory is the biggest winning margin in a final of the ...",
+                  "url": "https://x.com/cricinfo_record/status/2030696638474539311"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.4444
+            }
+          }
+        }
+      },
+      {
+        "claim": "*   **Player of the Match:** Jasprit Bumrah",
+        "supported_by_context": true,
+        "supporting_text": "**[^](https://en.wikipedia.org/wiki/2026_Men's_T20_World_Cup_final#cite_ref-33)**[\"Jasprit Bumrah wins Player of match award in T20 World Cup 2026 final\"](https://sportstar.thehindu.com/cricket/jasprit-bumrah-player-of-the-match-t20-world-cup-final-2026-india-vs-new-zealand-stats-record/article70719726.ece).",
+        "confidence": 0.46,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "bumrah",
+          "jasprit",
+          "match",
+          "of",
+          "player",
+          "the"
+        ],
+        "support_reason": "Similarity 0.46 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "Player of the Match Jasprit Bumrah reacts to India's - #T20WorldCup Bumrah receives Final Player of the Match award | T20WC 2026 · Player of the Match Jasprit Bumrah reacts to India's #T20WorldCup Final victory. Jasprit Bumrah wins Player of the Match in T20 World Cup 2026 final Jasprit Bumrah was named Player of the Match for his mesmerising spell in the final of the T20 World Cup 2026 against New Zealand in Ahmedabad ... 'Man of the match was Jasprit Bumrah': Irfan Pathan disagrees with ... \"A",
+              "source": "https://www.facebook.com/icc/videos/bumrah-receives-final-player-of-the-match-award-t20wc-2026/887770684250349/",
+              "top_sources": [
+                {
+                  "title": "Player of the Match Jasprit Bumrah reacts to India's - #T20WorldCup",
+                  "url": "https://www.facebook.com/icc/videos/bumrah-receives-final-player-of-the-match-award-t20wc-2026/887770684250349/"
+                },
+                {
+                  "title": "Jasprit Bumrah wins Player of the Match in T20 World Cup 2026 final",
+                  "url": "https://sportstar.thehindu.com/cricket/jasprit-bumrah-player-of-the-match-t20-world-cup-final-2026-india-vs-new-zealand-stats-record/article70719726.ece"
+                },
+                {
+                  "title": "'Man of the match was Jasprit Bumrah': Irfan Pathan disagrees with ...",
+                  "url": "https://sports.yahoo.com/articles/man-match-jasprit-bumrah-irfan-152200833.html"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.5714
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **India** | **255/5** | (20 Overs) |",
+        "supported_by_context": false,
+        "supporting_text": "[Source 5]",
+        "confidence": 0.32,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "5"
+        ],
+        "support_reason": "Similarity 0.32 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "India's 255-5 ranks as the third-highest T20 World Cup total, leaving ... ... India in the final! India post a mammoth 255/5 in 20 overs, powered by brilliant fifties from the top three and a strong finishing ... India scores imposing 255-5 in T20 World Cup final against New ... India scored an imposing 255-5 in the final of cricket's T20 World Cup against New Zealand on Sunday but could be forgiven for leaving the ... India posted a massive total of **255/5 in 20 overs**, setting a ... India po",
+              "source": "https://www.facebook.com/dailynews.lk/posts/indias-255-5-ranks-as-the-third-highest-t20-world-cup-total-leaving-new-zealand-/1479467527526474/",
+              "top_sources": [
+                {
+                  "title": "India's 255-5 ranks as the third-highest T20 World Cup total, leaving ...",
+                  "url": "https://www.facebook.com/dailynews.lk/posts/indias-255-5-ranks-as-the-third-highest-t20-world-cup-total-leaving-new-zealand-/1479467527526474/"
+                },
+                {
+                  "title": "India scores imposing 255-5 in T20 World Cup final against New ...",
+                  "url": "https://sports.yahoo.com/articles/zealand-wins-toss-opts-bowl-132548523.html"
+                },
+                {
+                  "title": "India posted a massive total of **255/5 in 20 overs**, setting a ...",
+                  "url": "https://www.instagram.com/p/DVoNAcrjGxV/"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.0
+            }
+          }
+        }
+      },
+      {
+        "claim": "| **New Zealand** | **159** | (All Out) |",
+        "supported_by_context": false,
+        "supporting_text": "*   [2.2 New Zealand](https://en.wikipedia.org/wiki/2026_Men's_T20_World_Cup_final#New_Zealand).",
+        "confidence": 0.37,
+        "verification_status": "UNSUPPORTED",
+        "matched_terms": [
+          "new",
+          "zealand"
+        ],
+        "support_reason": "Similarity 0.37 stayed below the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "UNSUPPORTED",
+          "support_count": 0,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": false,
+              "evidence": "New Zealand never posed a threat in its chase and was all out for ... New Zealand never posed a threat in its chase and was all out for 159 in 19 overs ... New Zealand: 159/7 (20 overs) England: 161/6 ... New Zealand beats Australia by 159 runs in ODI series opener at ... Australia collapses to a thumping 159-run defeat at the hands of New Zealand in the opening one-day international at Eden Park. New Zealand beat Australia, New Zealand won by 159 runs NZ 307/8 vs AUS 148 - New Zealand won by 15",
+              "source": "https://www.facebook.com/1NewsNZ/posts/new-zealand-never-posed-a-threat-in-its-chase-and-was-all-out-for-159-in-19-over/1390035449833309/",
+              "top_sources": [
+                {
+                  "title": "New Zealand never posed a threat in its chase and was all out for ...",
+                  "url": "https://www.facebook.com/1NewsNZ/posts/new-zealand-never-posed-a-threat-in-its-chase-and-was-all-out-for-159-in-19-over/1390035449833309/"
+                },
+                {
+                  "title": "New Zealand beats Australia by 159 runs in ODI series opener at ...",
+                  "url": "https://www.abc.net.au/news/2016-02-03/australia-new-zealand-odi-cricket/7137500"
+                },
+                {
+                  "title": "New Zealand beat Australia, New Zealand won by 159 runs",
+                  "url": "https://www.espncricinfo.com/series/australia-tour-of-new-zealand-2015-16-914197/new-zealand-vs-australia-1st-odi-914231/live-cricket-score"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.0
+            }
+          }
+        }
+      },
+      {
+        "claim": "*   **Successful Defense:** India became the first team in history to successfully defend their T20 World Cup title (winning back-to-back trophies).",
+        "supported_by_context": true,
+        "supporting_text": "The defending champions also became the first team to win back-to-back titles and the first to win a home Men’s T20 World Cup.",
+        "confidence": 0.59,
+        "verification_status": "SUPPORTED",
+        "matched_terms": [
+          "back",
+          "became",
+          "cup",
+          "first",
+          "t20",
+          "team",
+          "the",
+          "to",
+          "world"
+        ],
+        "support_reason": "Similarity 0.59 met the 0.40 threshold.",
+        "multi_source_verification": {
+          "status": "VERIFIED",
+          "support_count": 1,
+          "sources_checked": [
+            "Serper"
+          ],
+          "sources": {
+            "serper": {
+              "supported": true,
+              "evidence": "India create history; become 1st team in world to win T20 World Cup ... India created history on Sunday, March 8 by becoming the first team in the world to successfully defend the ICC Men's T20 World Cup title and the first to ... india become the first team to win back-to - Facebook 🏟️ • India lift their 3rd T20 World Cup title. • The first team ever to defend the T20 World Cup successfully. • The first ... Become first team to successfully defend their T20 World Cup title India etched their na",
+              "source": "https://www.msn.com/en-in/sports/cricket/india-create-history-become-1st-team-in-world-to-win-t20-world-cup-on-home-soil-defend-title-win-back-to-back-trophies/ar-AA1XLQme?ocid=TobArticle",
+              "top_sources": [
+                {
+                  "title": "India create history; become 1st team in world to win T20 World Cup ...",
+                  "url": "https://www.msn.com/en-in/sports/cricket/india-create-history-become-1st-team-in-world-to-win-t20-world-cup-on-home-soil-defend-title-win-back-to-back-trophies/ar-AA1XLQme?ocid=TobArticle"
+                },
+                {
+                  "title": "india become the first team to win back-to - Facebook",
+                  "url": "https://www.facebook.com/Cricinfo/posts/india-become-the-first-team-to-win-back-to-back-mens-t20-world-cups-/1498277544993290/"
+                },
+                {
+                  "title": "Become first team to successfully defend their T20 World Cup title",
+                  "url": "https://www.cricketnews.com/en/cricket/news/india-history-first-team-defend-t20-world-cup-title/073eeb0d615f068a31bcfde2"
+                }
+              ],
+              "results_checked": 5,
+              "overlap": 0.7143
+            }
+          }
+        }
+      }
+    ],
+    "verified_sources": [
+      {
+        "source_name": "serper",
+        "title": "Home | ICC Men's T20 World Cup, 2026",
+        "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026"
+      },
+      {
+        "source_name": "serper",
+        "title": "ICC Men's T20 World Cup 2026 - ESPNcricinfo",
+        "url": "https://www.espncricinfo.com/series/icc-men-s-t20-world-cup-2025-26-1502138"
+      },
+      {
+        "source_name": "serper",
+        "title": "An epic recap of the T20 World Cup 2026 Final - ICC Cricket",
+        "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/videos/an-epic-recap-of-the-t20-world-cup-2026-final-t20wc-2026"
+      },
+      {
+        "source_name": "serper",
+        "title": "IND vs NZ, T20 World Cup 2026: India beat New Zealand in final to ...",
+        "url": "https://www.olympics.com/en/news/t20-world-cup-2026-india-vs-new-zealand-final-match-report"
+      },
+      {
+        "source_name": "serper",
+        "title": "India clinch a landmark win in style | ICC Men's T20 World Cup, 2026",
+        "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/videos/india-clinch-a-landmark-win-in-style-final-match-highlights-t20wc-2026"
+      },
+      {
+        "source_name": "serper",
+        "title": "IND vs NZ Cricket Scorecard, Final at Ahmedabad, March 08, 2026",
+        "url": "https://www.espncricinfo.com/series/icc-men-s-t20-world-cup-2025-26-1502138/india-vs-new-zealand-final-1512773/full-scorecard"
+      },
+      {
+        "source_name": "serper",
+        "title": "This image celebrates India winning the 2026 ICC Men's T20 World ...",
+        "url": "https://www.facebook.com/100063508819543/posts/this-image-celebrates-india-winning-the-2026-icc-mens-t20-world-cup-held-on-home/1532011718925774/"
+      },
+      {
+        "source_name": "serper",
+        "title": "Simply Excellent, with 10 overs to spare! A whirlwind 8⃣-wicket ...",
+        "url": "https://www.facebook.com/IndianCricketTeam/posts/simply-excellent-with-10-overs-to-spare-a-whirlwind-8%E2%83%A3-wicket-victory-for-teamin/1307742118049842/"
+      },
+      {
+        "source_name": "serper",
+        "title": "If India win the men's T20 World Cup in 2026, which of these firsts ...",
+        "url": "https://www.facebook.com/Cricinfo/posts/if-india-win-the-mens-t20-world-cup-in-2026-which-of-these-firsts-will-they-have/1455422019278843/"
+      },
+      {
+        "source_name": "serper",
+        "title": "Brilliant India crushes NZ by 96 runs to win T20 World Cup for a ...",
+        "url": "https://www.boston25news.com/sports/india-wins-crickets/4KWQ3RBWYEYI3EZHPQHB6RCCZE/"
+      },
+      {
+        "source_name": "serper",
+        "title": "India's biggest margin of victory by runs in T20 World Cup history ...",
+        "url": "https://www.facebook.com/Vtrakit/posts/indias-biggest-margin-of-victory-by-runs-in-t20-world-cup-historyindias-93-run-w/1496000312528780/"
+      },
+      {
+        "source_name": "serper",
+        "title": "India's 96-run victory is the biggest winning margin in a final of the ...",
+        "url": "https://x.com/cricinfo_record/status/2030696638474539311"
+      }
+    ],
+    "unsupported_claims": [
+      {
+        "claim": "This victory solidifies India’s dominance in the format, marking several \"firsts\" in the history of the tournament.",
+        "reason": "Claim matched local context weakly but did not receive enough independent external support.",
+        "best_available_context": "**255/5:** India’s score against New Zealand was the highest total in a T20 World Cup final, and the highest in any T20I knockout or playoff match.",
+        "observed_similarity": 0.4,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "*   **Margin of Victory:** India won by **96 runs**",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "Summary: A record-breaking third ICC Men's T20 World Cup title for India as they defeat New Zealand by 96 runs in Ahmedabad.",
+        "observed_similarity": 0.29,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **India** | **255/5** | (20 Overs) |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "[Source 5]",
+        "observed_similarity": 0.32,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      },
+      {
+        "claim": "| **New Zealand** | **159** | (All Out) |",
+        "reason": "Claim failed both context grounding and independent multi-source verification.",
+        "best_available_context": "*   [2.2 New Zealand](https://en.wikipedia.org/wiki/2026_Men's_T20_World_Cup_final#New_Zealand).",
+        "observed_similarity": 0.37,
+        "multi_source_status": "UNSUPPORTED",
+        "multi_source_support_count": 0
+      }
+    ],
+    "missing_evidence_summary": "4 claims lacked sufficient textual support in the retrieved context. Those claims should be backed by stronger retrieval or removed."
+  },
+  "validation_checks": {
+    "tool_usage_check": {
+      "required": true,
+      "used": true,
+      "tools_observed": [
+        "tavily"
+      ],
+      "status": "PASSED",
+      "explanation": "Tool usage matched the query risk profile, so factual grounding was attempted."
+    },
+    "context_overlap_check": {
+      "score": 0.632,
+      "threshold": 0.5,
+      "status": "PASSED",
+      "explanation": "The final response remained sufficiently close to the retrieved evidence."
+    },
+    "uncertainty_check": {
+      "uncertain_phrases_found": [],
+      "status": "PASSED",
+      "explanation": "No hedging language was detected."
+    }
+  },
+  "decision_engine": {
+    "rules_triggered": [
+      "UNSUPPORTED_CLAIMS"
+    ],
+    "rule_evaluations": [
+      {
+        "rule": "NO_CONTEXT",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No retrieved context was available during verification."
+      },
+      {
+        "rule": "LOW_CONTEXT_OVERLAP",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "Overlap score 0.63 is below threshold 0.50."
+      },
+      {
+        "rule": "TOOL_NOT_USED",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "The query appears time-sensitive or factual, but no retrieval tool was recorded."
+      },
+      {
+        "rule": "UNSUPPORTED_CLAIMS",
+        "triggered": true,
+        "impact_score": -5,
+        "evidence": "4 claims could not be mapped back to retrieved context."
+      },
+      {
+        "rule": "UNCERTAINTY_LANGUAGE",
+        "triggered": false,
+        "impact_score": 0,
+        "evidence": "No uncertainty language found."
+      }
+    ],
+    "score_inputs": {
+      "context_present": true,
+      "tool_required": true,
+      "tool_used": true,
+      "context_overlap_score": 0.632,
+      "total_claims": 8,
+      "supported_claims": 5,
+      "independently_verified_claims": 4,
+      "unsupported_claims": 4,
+      "uncertainty_terms_found": []
+    },
+    "scoring_breakdown": {
+      "context_score": 0,
+      "tool_penalty": 0,
+      "uncertainty_penalty": 0,
+      "unsupported_claims_penalty": -5,
+      "total_score": -5,
+      "decision_threshold": -6
+    },
+    "decision_trace": [
+      "Extracted 8 atomic claims from the response.",
+      "Verified 5 claims directly against retrieved context.",
+      "Measured overall context overlap at 0.63.",
+      "Triggered rules: UNSUPPORTED_CLAIMS.",
+      "Final classification set to GROUNDED."
+    ]
+  },
+  "final_verdict": {
+    "label": "GROUNDED",
+    "confidence": 0.99,
+    "justification": "Response is grounded overall, although minor warnings were noted: 4 claims were not supported by retrieved context."
+  },
+  "root_cause_analysis": {
+    "primary_cause": "Claims exceeded retrieved evidence",
+    "secondary_cause": "Model relied on prior knowledge instead of data",
+    "explanation": "The model produced 4 claims that could not be substantiated by the available context."
+  },
+  "prevention_recommendation": [
+    "Add claim verification layer"
+  ],
+  "report_reference_id": "cc6b5fe0-9b00-4500-9fb7-6fe93e30f61a",
+  "generated_at": "2026-04-11T01:13:11.847860+00:00"
+}

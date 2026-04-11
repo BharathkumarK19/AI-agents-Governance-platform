@@ -4,6 +4,7 @@ import os
 import re
 import time
 import traceback
+import ast
 from pathlib import Path
 from datetime import datetime, timezone
 from uuid import uuid4
@@ -15,12 +16,15 @@ import yaml
 
 from agents.crewai_runtime import get_crewai_components
 from agents.tools import build_source_bundle, search_tavily
+from hallucination_report_engine import HallucinationReportEngine
+from self_healing_pipeline import SelfHealingPipeline
 
 
 load_dotenv()
 
 MODEL_NAME = "openrouter/auto"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+DEFAULT_MAX_TOKENS = 1024
 
 
 class JsonFormatter(logging.Formatter):
@@ -126,6 +130,18 @@ def require_env(name):
     return value
 
 
+def _max_tokens() -> int:
+    raw = os.getenv("OPENROUTER_MAX_TOKENS", "").strip()
+    if raw:
+        try:
+            value = int(raw)
+            if value > 0:
+                return value
+        except ValueError:
+            pass
+    return DEFAULT_MAX_TOKENS
+
+
 def format_runtime_error(exc):
     message = str(exc)
     lowered = message.lower()
@@ -183,12 +199,14 @@ def build_llms():
         api_key=api_key,
         model=MODEL_NAME,
         temperature=0.2,
+        max_tokens=_max_tokens(),
     )
     crewai_llm = LLM(
         model=MODEL_NAME,
         base_url=OPENROUTER_BASE_URL,
         api_key=api_key,
         temperature=0.2,
+        max_tokens=_max_tokens(),
     )
     return langchain_llm, crewai_llm
 
@@ -321,8 +339,12 @@ def parse_json_block(text):
     except json.JSONDecodeError:
         match = re.search(r"\{.*\}", cleaned, re.DOTALL)
         if match:
-            return json.loads(match.group(0))
-        raise
+            block = match.group(0)
+            try:
+                return json.loads(block)
+            except json.JSONDecodeError:
+                return ast.literal_eval(block)
+        return ast.literal_eval(cleaned)
 
 
 def execute_agent_step(agent, agent_name, task_name, input_data, trace, metrics):
@@ -560,13 +582,14 @@ def run_research_system(query):
     metrics = build_metrics()
     final_result = None
     hallucination_report = None
+    source_results = []
 
     try:
         _, crewai_llm = build_llms()
         research_agent, analysis_agent, summary_agent, evaluation_agent = create_agents(crewai_llm)
 
-        results = search_tavily(query)
-        source_bundle = build_source_bundle(results)
+        source_results = search_tavily(query)
+        source_bundle = build_source_bundle(source_results)
 
         step_inputs = create_step_inputs(query, source_bundle)
         research_output = execute_agent_step(
@@ -667,7 +690,7 @@ def run_research_system(query):
         metrics["total_execution_time"] = round(time.perf_counter() - total_start, 6)
         metrics = finalize_metrics(metrics)
 
-    return final_result, hallucination_report, trace, metrics
+    return final_result, hallucination_report, trace, metrics, source_results
 
 
 def _prompt_with_default(prompt: str, env_name: str | None = None) -> str:
@@ -717,12 +740,174 @@ def _apply_runtime_env(config: dict) -> None:
         os.environ["GOOGLE_SERVICE_ACCOUNT_FILE"] = google_service_account_file.strip()
 
 
+def _save_and_print_advanced_report(
+    query,
+    response,
+    context,
+    tools_used,
+    intermediate_steps,
+    reference_sources=None,
+):
+    report_engine = HallucinationReportEngine()
+    report = report_engine.generate_report(
+        query=query,
+        response=response,
+        context=context,
+        tools_used=tools_used,
+        intermediate_steps=intermediate_steps,
+        reference_sources=reference_sources,
+    )
+    saved_report = report_engine.save_report(report)
+    report_payload = {
+        "report_reference_id": saved_report["report_reference_id"],
+        "report_file_path": saved_report["report_file_path"],
+        "latest_report_file_path": saved_report["latest_report_file_path"],
+        "hallucination_report": saved_report["report"],
+    }
+    print(json.dumps(report_payload, indent=2, ensure_ascii=False, default=str))
+    final_label = saved_report["report"].get("final_verdict", {}).get("label", "UNKNOWN")
+    verified_sources = saved_report["report"].get("evidence_analysis", {}).get("verified_sources", [])
+    if verified_sources:
+        print("Verified sources:")
+        for source in verified_sources[:10]:
+            title = source.get("title") or source.get("source_name") or "source"
+            url = source.get("url", "")
+            print(f"- {title}: {url}")
+    print(f"Verification verdict: {'HALLUCINATED' if final_label == 'HALLUCINATED' else 'NOT HALLUCINATED'}")
+    return saved_report
+
+
+def _build_research_intermediate_steps(trace: Trace) -> list[dict]:
+    steps = []
+    for index, span in enumerate(trace.steps, start=1):
+        steps.append(
+            {
+                "agent": span.get("agent_responsible") or span.get("step_name") or "Unknown Agent",
+                "action": span.get("step_name", "Executed step"),
+                "output_summary": _truncate_text(span.get("output_data")),
+                "source_used": span.get("step_name") == "Research",
+                "basis": "retrieved context + prior analysis" if span.get("step_name") != "Research" else "retrieved context",
+            }
+        )
+    return steps
+
+
+def _build_business_intermediate_steps(pipeline_result, metrics, user_answers, insight):
+    return [
+        {
+            "agent": "Sheet Ingestion",
+            "action": "Fetched and synchronized transaction rows",
+            "output_summary": json.dumps(pipeline_result, ensure_ascii=False, default=str),
+            "source_used": True,
+            "basis": "google sheets + neon",
+        },
+        {
+            "agent": "Query Engine",
+            "action": "Computed performance metrics",
+            "output_summary": json.dumps(metrics, ensure_ascii=False, default=str),
+            "source_used": True,
+            "basis": "neon aggregation",
+        },
+        {
+            "agent": "Insight Generator",
+            "action": "Generated governance insight",
+            "output_summary": _truncate_text(insight),
+            "source_used": True,
+            "basis": f"metrics + user answers {json.dumps(user_answers, ensure_ascii=False, default=str)}",
+        },
+    ]
+
+
+def _verify_business_query(user_query: str, data_profile: dict) -> dict:
+    normalized = user_query.lower()
+    available_dimensions = set(data_profile.get("available_dimensions", []))
+    supported_keywords = {
+        "customer": "customer_id",
+        "customers": "customer_id",
+        "buyer": "customer_id",
+        "item": "item_name",
+        "items": "item_name",
+        "product": "item_name",
+        "sku": "item_id",
+        "price": "price",
+        "pricing": "price",
+        "discount": "discount",
+        "gst": "gst",
+        "tax": "gst",
+        "total": "total_price",
+        "revenue": "total_price",
+        "sales": "total_price",
+        "sale": "total_price",
+        "profit": "profit",
+        "margin": "margin",
+        "date": "timestamp",
+        "time": "timestamp",
+        "trend": "timestamp",
+    }
+
+    matched_dimensions = sorted(
+        {
+            dimension
+            for keyword, dimension in supported_keywords.items()
+            if keyword in normalized and dimension in available_dimensions
+        }
+    )
+    matched_items = [
+        item["item_name"]
+        for item in data_profile.get("top_items", [])
+        if item.get("item_name") and item["item_name"].lower() in normalized
+    ]
+    matched_customers = [
+        customer["customer_id"]
+        for customer in data_profile.get("top_customers", [])
+        if customer.get("customer_id") and customer["customer_id"].lower() in normalized
+    ]
+
+    supported = bool(matched_dimensions or matched_items or matched_customers)
+    if not supported:
+        reason = (
+            "The question does not map to the available transaction fields or known entities in the ingested business data."
+        )
+        proof_points = [
+            f"Available fields: {', '.join(data_profile.get('available_dimensions', []))}",
+            f"Known sample items: {', '.join(item['item_name'] for item in data_profile.get('top_items', [])[:5]) or 'none'}",
+            f"Known sample customers: {', '.join(customer['customer_id'] for customer in data_profile.get('top_customers', [])[:5]) or 'none'}",
+        ]
+        summary = "Question is hallucinated for this business dataset because no relevant data field or known entity supports answering it."
+    else:
+        reason = "The question maps to fields/entities that exist in the ingested business data."
+        proof_points = [
+            f"Matched dimensions: {', '.join(matched_dimensions) or 'none'}",
+            f"Matched items: {', '.join(matched_items) or 'none'}",
+            f"Matched customers: {', '.join(matched_customers) or 'none'}",
+            f"Dataset coverage: {data_profile.get('transaction_count', 0)} transactions, {data_profile.get('item_count', 0)} items, {data_profile.get('customer_count', 0)} customers",
+        ]
+        summary = "Question is not hallucinated for this business dataset because it matches available business fields or known entities."
+
+    return {
+        "hallucinated": not supported,
+        "reason": reason,
+        "proof_points": proof_points,
+        "summary": summary,
+        "matched_dimensions": matched_dimensions,
+        "matched_items": matched_items,
+        "matched_customers": matched_customers,
+    }
+
+
+def _truncate_text(value, limit: int = 500) -> str:
+    text = str(value) if value is not None else ""
+    if len(text) <= limit:
+        return text
+    return text[: limit - 3] + "..."
+
+
 def run_business_mode():
     from agents.llm import get_llm
     from db import connect_db
     from interactive_query import ask_followup_questions, generate_insight
     from pipeline_runner import run_pipeline
-    from query_engine import get_performance_data
+    from query_engine import get_business_data_profile, get_performance_data
 
     config = _load_datafetch_config()
     _apply_runtime_env(config)
@@ -744,16 +929,72 @@ def run_business_mode():
         pipeline_result = run_pipeline(sheet_url, conn)
         print(json.dumps(pipeline_result, indent=2, default=str))
 
+        if getattr(conn, "closed", 1) == 0:
+            conn.close()
+        conn = connect_db(db_connection_string)
+
         user_query = input("Ask your business question: ").strip()
         if not user_query:
             raise ValueError("A user query is required.")
 
-        user_answers = ask_followup_questions(user_query)
+        data_profile = get_business_data_profile(conn)
+        verification = _verify_business_query(user_query, data_profile)
+        print("Business verification summary:")
+        print(json.dumps(verification, indent=2, ensure_ascii=False, default=str))
+        print(f"Verification verdict: {'HALLUCINATED' if verification['hallucinated'] else 'NOT HALLUCINATED'}")
+
+        if verification["hallucinated"]:
+            response = (
+                "This question appears unrelated to the ingested business data.\n\n"
+                f"Reason: {verification['reason']}\n"
+                f"Summary: {verification['summary']}"
+            )
+            print(response)
+            _save_and_print_advanced_report(
+                query=user_query,
+                response=response,
+                context={
+                    "pipeline_result": pipeline_result,
+                    "data_profile": data_profile,
+                    "verification": verification,
+                },
+                tools_used=["google_sheets", "neon_postgresql"],
+                intermediate_steps=[
+                    {
+                        "agent": "Business Verifier",
+                        "action": "Validated question against dataset coverage",
+                        "output_summary": json.dumps(verification, ensure_ascii=False, default=str),
+                        "source_used": True,
+                        "basis": "dataset schema + known entities",
+                    }
+                ],
+            )
+            return
+
+        user_answers = ask_followup_questions(user_query, data_profile=data_profile)
         days = int(user_answers.get("days") or os.getenv("PERFORMANCE_LOOKBACK_DAYS", "30"))
         metrics = get_performance_data(conn, days)
         llm = get_llm()
         insight = generate_insight(metrics, user_answers, llm)
         print(insight)
+        _save_and_print_advanced_report(
+            query=user_query,
+            response=insight,
+            context={
+                "pipeline_result": pipeline_result,
+                "data_profile": data_profile,
+                "verification": verification,
+                "metrics": metrics,
+                "user_answers": user_answers,
+            },
+            tools_used=["google_sheets", "neon_postgresql"],
+            intermediate_steps=_build_business_intermediate_steps(
+                pipeline_result=pipeline_result,
+                metrics=metrics,
+                user_answers=user_answers,
+                insight=insight,
+            ),
+        )
     finally:
         conn.close()
 
@@ -763,7 +1004,7 @@ def run_research_mode():
     if not query:
         raise ValueError("A query is required.")
 
-    final_result, hallucination_report, trace, metrics = run_research_system(query)
+    final_result, hallucination_report, trace, metrics, source_results = run_research_system(query)
     final_payload = {
         "final_answer": final_result,
         "hallucination_report": hallucination_report,
@@ -772,6 +1013,39 @@ def run_research_mode():
         "replay": trace.replay(),
     }
     print(json.dumps(final_payload, indent=2, ensure_ascii=False, default=str))
+    research_context = ""
+    for span in trace.steps:
+        if span.get("step_name") == "Research":
+            research_context = span.get("input_data", "")
+            break
+    _save_and_print_advanced_report(
+        query=query,
+        response=final_result,
+        context=research_context,
+        tools_used=["tavily"],
+        intermediate_steps=_build_research_intermediate_steps(trace),
+        reference_sources=source_results,
+    )
+
+    if hallucination_report.get("hallucination_detected"):
+        pipeline = SelfHealingPipeline(neon_db_url=os.getenv("NEON_DATABASE_URL", "").strip() or None)
+        try:
+            healed_result = pipeline.run(query)
+            print(
+                json.dumps(
+                    {
+                        "self_healing_triggered": True,
+                        "self_healing_result": healed_result,
+                    },
+                    indent=2,
+                    ensure_ascii=False,
+                    default=str,
+                )
+            )
+            healed_label = healed_result.get("scores", {}).get("label", "UNKNOWN")
+            print(f"Verification verdict: {'HALLUCINATED' if healed_label == 'HALLUCINATED' else 'NOT HALLUCINATED'}")
+        finally:
+            pipeline.close()
 
 
 def main():
