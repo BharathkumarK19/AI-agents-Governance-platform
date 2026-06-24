@@ -1,12 +1,10 @@
-# Byte-compiled / optimized / DLL files
+# ===========================
+# PYTHON & VIRTUALENV
+# ===========================
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -25,18 +23,82 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+
+# ===========================
+# ENVIRONMENT & CREDENTIALS
+# ===========================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+*.p12
+credentials.json
+project_credent.txt
+secrets.json
+aws_credentials
+
+# ===========================
+# IDE & EDITOR
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+*.sublime-workspace
+*.sublime-project
+.vim/
+
+# ===========================
+# LOGS & TEMPORARY FILES
+# ===========================
+logs/
+*.log
+*.log.*
+tmp/
+temp/
+*.tmp
+
+# ===========================
+# PROJECT SPECIFIC
+# ===========================
+.crewai/
+workspace/
+observability_logs/
+.crewai_storage/
+.crewai_cache/
+
+# ===========================
+# DATABASE & DATA
+# ===========================
+*.db
+*.sqlite
+*.sqlite3
+*.pkl
+*.pickle
+*.csv
+db.sqlite3
+*.postgresql
+
+# ===========================
+# TEST & COVERAGE
+# ===========================
 htmlcov/
 .tox/
 .nox/
@@ -48,6 +110,74 @@ coverage.xml
 *.cover
 *.py.cover
 .hypothesis/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ===========================
+# NODE & FRONTEND
+# ===========================
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# ===========================
+# OS SPECIFIC
+# ===========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.directory
+.~*
+
+# ===========================
+# JETBRAINS & PYCHARM
+# ===========================
+.idea/
+*.iml
+*.iws
+*.ipr
+.pytest_cache/
+
+# ===========================
+# GENERATED FILES
+# ===========================
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-selfcheck.json
+
+# ===========================
+# BACKUP & ARCHIVE
+# ===========================
+*.bak
+*.backup
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ===========================
+# VSCODE
+# ===========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# ===========================
+# API & WEB
+# ===========================
+.env.*.local
+.env.production.local
 .pytest_cache/
 cover/
 
