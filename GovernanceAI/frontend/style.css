@@ -1356,6 +1356,24 @@ body {
 }
 .btn-trace:hover { border-color: var(--accent); color: var(--accent); }
 
+.message-verification-text {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.message-verification-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.message-verification-list li {
+  margin: 4px 0;
+}
+
 /* Typing indicator */
 .typing-indicator {
   display: flex;

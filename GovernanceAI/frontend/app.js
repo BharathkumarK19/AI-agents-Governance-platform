@@ -164,7 +164,9 @@ function initModelSelect() {
 
   btnConfirm.addEventListener('click', () => {
     if (!selectedModel) return;
+    const selected = AVAILABLE_MODELS.find(model => model.id === selectedModel);
     sessionStorage.setItem('gov_ai_model', selectedModel);
+    sessionStorage.setItem('gov_ai_model_name', selected ? selected.name : 'Assistant');
     btnConfirm.classList.add('loading');
     btnConfirm.disabled = true;
     setTimeout(() => {
@@ -180,7 +182,7 @@ async function initApp() {
   try {
     await apiFetch('/api/health');
   } catch (e) {
-    showToast('⚠️ Backend unreachable. Start server on port 8090.', 'error');
+    showToast('⚠️ Backend unreachable. Start server on port 8088.', 'error');
   }
 
   await Promise.all([loadConversations(), loadAgents()]);
@@ -223,7 +225,7 @@ const state = {
     messageCount: 0,
   },
   profile: {
-    name: 'John Doe',
+    name: 'Bharath',
     role: 'Policy Analyst',
     dept: 'Governance',
     email: '',
@@ -451,6 +453,7 @@ async function loadConversation(convId) {
     // Update title
     const conv = state.conversations.find(c => c.id === convId);
     if (els.chatTitle) els.chatTitle.textContent = conv ? conv.title : 'Conversation';
+    showView('chat');
   } catch (e) {
     showToast('Failed to load conversation', 'error');
   }
@@ -529,7 +532,7 @@ function renderAgentsGrid() {
 // ── Chat functions ─────────────────────────────────────────────────────────
 function startNewChat() {
   state.currentConvId = null;
-  els.chatTitle.textContent = 'Governance AI';
+  personalizeInterface();
   els.welcomeScreen.classList.remove('hidden');
   els.messagesList.innerHTML = '';
   resetSidebarMetrics();
@@ -600,7 +603,7 @@ async function sendMessage() {
     appendMessage({
       id: 'err-' + Date.now(),
       role: 'assistant',
-      content: `⚠️ **Error**: ${e.message}\n\nPlease check if the backend server is running on port 8080.`,
+      content: `⚠️ **Error**: ${e.message}\n\nPlease check if the backend server is running on port 8088.`,
       timestamp: new Date().toISOString(),
     });
     scrollToBottom();
@@ -621,6 +624,7 @@ function appendMessage(msg) {
   const name   = isUser ? (state.profile.name || 'User') : (sessionStorage.getItem('gov_ai_model_name') || 'Assistant');
 
   const contentHtml = isUser ? escHtml(msg.content) : renderMarkdown(msg.content);
+  const footerHtml = isUser ? '' : renderMessageFooter(msg);
 
   if (!isUser) updateSidebarMetrics(msg);
 
@@ -632,12 +636,75 @@ function appendMessage(msg) {
         <span class="message-time">${formatTime(msg.timestamp)}</span>
       </div>
       <div class="message-body">${contentHtml}</div>
+      ${footerHtml}
     </div>
   `;
 
   if (msg.trace) div._trace = msg.trace;
   els.messagesList.appendChild(div);
   scrollToBottom();
+}
+
+function renderMessageFooter(msg) {
+  const hr = msg.hallucination_report || {};
+  const m = msg.metrics || {};
+  const badges = [];
+  const details = [];
+
+  if (hr.confidence_score != null) {
+    const confidence = Math.round(Number(hr.confidence_score) * 100);
+    if (!Number.isNaN(confidence)) {
+      const cls = confidence >= 85 ? 'safe' : confidence >= 65 ? 'warn' : 'danger';
+      badges.push(`<span class="metric-badge ${cls}">🎯 ${confidence}% Confidence</span>`);
+    }
+  }
+
+  if (hr.verdict) {
+    const isReliable = hr.verdict === 'SAFE' || hr.verdict === 'Reliable';
+    badges.push(
+      `<span class="metric-badge ${isReliable ? 'safe' : 'warn'}">${isReliable ? '✅' : '⚠️'} ${escHtml(hr.verdict)}</span>`
+    );
+  }
+
+  if (hr.hallucination_detected) {
+    badges.push('<span class="metric-badge danger">🚨 Hallucination detected</span>');
+  }
+
+  if (m.total_execution_time) {
+    badges.push(`<span class="metric-badge">⏱ ${escHtml(String(m.total_execution_time))}s</span>`);
+  }
+
+  if (m.number_of_steps_executed) {
+    badges.push(`<span class="metric-badge">🤖 ${escHtml(String(m.number_of_steps_executed))} steps</span>`);
+  }
+
+  if (msg.trace) {
+    badges.push(`<button type="button" class="btn-trace" onclick="openTrace('${msg.id}')">View execution trace →</button>`);
+  }
+
+  if (hr.explanation) {
+    details.push(`<div class="message-verification-text">${escHtml(hr.explanation)}</div>`);
+  }
+
+  if (Array.isArray(hr.issues) && hr.issues.length > 0) {
+    const items = hr.issues.slice(0, 3).map(issue => {
+      const claim = issue?.claim ? escHtml(issue.claim) : 'Unsupported claim';
+      const reason = issue?.reason ? `: ${escHtml(issue.reason)}` : '';
+      return `<li><strong>${claim}</strong>${reason}</li>`;
+    }).join('');
+    details.push(`<ul class="message-verification-list">${items}</ul>`);
+  }
+
+  if (badges.length === 0 && details.length === 0) {
+    return '';
+  }
+
+  return `
+    <div class="message-footer">
+      ${badges.join('')}
+    </div>
+    ${details.join('')}
+  `;
 }
 
 function updateSidebarMetrics(msg) {

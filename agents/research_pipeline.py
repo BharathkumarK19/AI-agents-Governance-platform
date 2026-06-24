@@ -1,3 +1,4 @@
+from agents.async_utils import resolve_agent_result
 from agents.crewai_runtime import get_crewai_components
 from agents.llm import get_crewai_llm
 from agents.tools import TavilySearchError, build_source_bundle, search_tavily
@@ -98,8 +99,8 @@ def run_research_crew(query):
         raise
     source_bundle = build_source_bundle(results)
     crew = build_research_crew()
-    final_output = crew.kickoff(
-        inputs={"query": query, "source_bundle": source_bundle}
+    final_output = resolve_agent_result(
+        crew.kickoff(inputs={"query": query, "source_bundle": source_bundle})
     )
     return {
         "query": query,
